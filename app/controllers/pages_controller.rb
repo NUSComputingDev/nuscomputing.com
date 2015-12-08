@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+      home()
   end
 
   def home

@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-
-  get 'pages/home'
-
-  get 'pages/about'
-
-  get 'pages/events'
-
-  get 'pages/connect'
+  get '/index', to: 'pages#home', as: 'index'
+  get '/home', to: 'pages#home', as: 'home'
+  get '/about', to: 'pages#about', as: 'about'
+  get '/events', to: 'pages#events', as: 'events'
+  get '/connect', to: 'pages#connect', as: 'connect'
 
   # Rails will auto put new routes above this
 
@@ -15,7 +11,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
+  root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
