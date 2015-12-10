@@ -17,8 +17,11 @@ class PagesController < ApplicationController
   
   def enquiry
   	@enquiry = Enquiry.new(enquiry_params)
-  	@enquiry.save
-  	redirect_to @enquiry
+  	if @enquiry.save
+  		redirect_to @enquiry
+  	else
+  		render "connect"
+  	end
   end
   
   private
