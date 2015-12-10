@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require_tree .
 //= require owl_carousel
+//= require magnific
 
 $(function(){ $(document).foundation(); });

@@ -1,2 +1,64 @@
-<h1>Pages#events</h1>
-<p>Find me in app/views/pages/events.html.erb</p>
+<div class="row row_div">
+	
+	<a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a><br>
+	<a class="popup-vimeo" href="https://vimeo.com/45830194">Open Vimeo video</a><br>
+	<a class="popup-gmaps" href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">Open Google Map</a>
+	
+	<h2 class = 'events_h2'>Upcoming Events</h2>
+
+	<p class = 'events_p'>Lorem Ipsum</p>
+		
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>		
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>		
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+</div>
+
+
+<div class="row row_div">	
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>		
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+</div>
+
+
+
+<div class="row row_div">	
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'events_h3'>Sports Camp</h3>
+		
+	</div>
+	<div class="large-4 columns events_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>		
+		<h3 class = 'events_h3'>Sports Camp</h3>	
+	</div>
+</div>
+
+
+<script>
+	$(document).ready(function() {
+		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+
+			fixedContentPos: false
+		});
+	});
+
+</script>
