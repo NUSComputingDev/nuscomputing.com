@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: 'about'
   get '/events', to: 'pages#events', as: 'events'
   get '/connect', to: 'pages#connect', as: 'connect'
+  post '/connect', to: 'pages#enquiry', as: 'enquiry'
 
   # Rails will auto put new routes above this
 

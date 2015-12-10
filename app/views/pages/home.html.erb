@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="owl-demo" class="owl-carousel owl-theme">
+ 
+  <div class="item"><%= image_tag("a.jpg") %></div>
+  <div class="item"><%= image_tag("b.jpg") %></div>
+  <div class="item"><%= image_tag("c.jpg") %></div>
+</div>
+
+<div class="row row_div">
+	<h2 class = 'home_h2'>Upcoming Events</h2>
+	
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>		
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+
+      navigation : true,
+      slideSpeed : 500,
+      paginationSpeed : 400,
+      singleItem : true,
+	  autoPlay: 5000
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+    </script>
