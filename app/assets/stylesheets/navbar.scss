@@ -1,0 +1,35 @@
+// NAVIGATION BAR CSS
+// For additional CSS that cannot be set in foundation_and_overrides
+
+/* Gives the margins of the navbar some color */
+.nav-wrapper {
+    background-color: #011640;
+}
+
+
+
+
+
+// The CSS below should be removed as they have been ported to the foundation_and_overrides file
+// Rationale for porting to overrides: Because we are actually overriding the presets for the top bar
+
+/* Left, NUS Computing */
+.top-bar .name h1 a {
+    /*font-size: 16pt;*/
+    /*padding-right: 14pt;*/
+    /*font-weight: bold;*/
+}
+
+/* Right button */
+.top-bar-section li:not(.has-form) a:not(.button) {
+    /*background-color: rgb(1, 22, 64);*/
+    /*padding: 0px 0.9375rem;*/
+    /*font-family: 'Open Sans';*/
+    /*font-weight: bold;*/
+    /*font-size: 10pt;*/
+}
+
+/* Corresponding hover */
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    /*background-color: rgb(1, 11, 32);*/
+}

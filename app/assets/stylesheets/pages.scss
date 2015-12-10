@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'foundation_and_overrides';
-@import 'foundation/components/grid';
+/*@import 'foundation_and_overrides';*/
+/*@import 'foundation/components/grid';*/
 
 .home_col {
 	margin-left: 0px;
@@ -226,47 +226,3 @@
 	background: url(AjaxLoader.gif) no-repeat center center
 }
 
-
-
-
-/* NAVIGATION BAR */
-.top-bar {
-  background-color: rgb(1, 22, 64);
-}
-/* Left, NUS Computing */
-.top-bar .name h1 a {
-  font-size: 16pt;
-  padding-right: 14pt;
-}
-/* Right button */
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background-color: rgb(1, 22, 64);
-  padding: 0px 0.9375rem;
-  font-family: 'Open Sans';
-  font-weight: bold;
-  font-size: 10pt;
-}
-/* Corresponding hover */
-.top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: rgb(1, 11, 32);
-}
-
-
-
-
-/* Footer element */
-footer {
-  background-color: rgb(1, 22, 64);
-  color: ghostwhite;
-  font-size: 10pt;
-  padding: 10pt;
-  text-align: center;
-}
-/* Unordered list in foot class */
-.foot ul {
-  list-style-type: none;
-}
-/* List items in foot class */
-.foot li {
-  display: inline;
-}
