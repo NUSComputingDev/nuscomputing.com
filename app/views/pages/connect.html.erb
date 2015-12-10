@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="large-4 columns">
-  	<h3>Contact Info</h3>
+  	<h3 class="text-center">Contact Info</h3>
   	<ul class="vcard">
   		<li>Computing 1, 13 Computing Drive, Singapore 117417</li>
   		<li>+65 6516 6759</li>
@@ -19,37 +19,9 @@
   	-->
   </div>
   <div class="large-8 columns">
-  	<form>
-  		<div class="row">
-  			<h3>Contact Form</h3>
-  		</div>
-  		<div class="row">
-  			<div class="large-4 columns">
-  				<input type="text" placeholder="Name" />
-  			</div>
-  			<div class="large-4 columns">
-  				<input type="text" placeholder="Email" />
-  			</div>
-  			<div class="large-4 columns">
-  				<input type="text" placeholder="Contact" />
-  			</div>
-  		</div>
-  		<div class="row">
-  			<div class="large-12 columns">
-	  			<textarea placeholder="Message"></textarea>
-	  		</div>
-  		</div>
-  		<div class="row">
-  			<div class="large-3 columns">
-  				<button type="submit" class="medium button green">Submit</button>
-  			</div>
-  			<div class="large-6 columns">
-  				&nbsp;
-  			</div>
-  			<div class="large-3 columns">
-  				<button type="reset" class="medium button green">Reset</button>
-  			</div>
-  		</div>
-  	</form>
+  	<div class="row">
+  		<h3 class="text-center">Contact Form</h3>
+  	</div>
+  	<%= render 'form' %>
   </div>
 </div>
