@@ -15,6 +15,6 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
-//= require jcarousel
+//= require owl_carousel
 
 $(function(){ $(document).foundation(); });
