@@ -1,22 +1,11 @@
-<div class="jcarousel-wrapper">
-    <div class="jcarousel">
-        <ul>
-            <li class = 'jcarousel_li'><img src="http://sorgalla.com/jcarousel/examples/_shared/img/img1.jpg" width="600" height="400" alt=""></li>
-            <li class = 'jcarousel_li'><img src="http://sorgalla.com/jcarousel/examples/_shared/img/img2.jpg" width="600" height="400" alt=""></li>
-
-            
-        </ul>
-    </div>
-
-    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+<div id="owl-demo" class="owl-carousel owl-theme">
+ 
+  <div class="item"><%= image_tag("a.jpg") %></div>
+  <div class="item"><%= image_tag("b.jpg") %></div>
+  <div class="item"><%= image_tag("c.jpg") %></div>
 </div>
 
-
-<div class="row">
-	
-  
-	
+<div class="row row_div">
 	<h2 class = 'home_h2'>Upcoming Events</h2>
 	
 	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
@@ -33,45 +22,24 @@
 	</div>
 </div>
 
+
 <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
 
-	(function($) {
-	    $(function() {
-	        $('.jcarousel').jcarousel();
+      navigation : true,
+      slideSpeed : 500,
+      paginationSpeed : 400,
+      singleItem : true,
+	  autoPlay: 5000
 
-	        $('.jcarousel-control-prev')
-	            .on('jcarouselcontrol:active', function() {
-	                $(this).removeClass('inactive');
-	            })
-	            .on('jcarouselcontrol:inactive', function() {
-	                $(this).addClass('inactive');
-	            })
-	            .jcarouselControl({
-	                target: '-=1'
-	            });
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
 
-	        $('.jcarousel-control-next')
-	            .on('jcarouselcontrol:active', function() {
-	                $(this).removeClass('inactive');
-	            })
-	            .on('jcarouselcontrol:inactive', function() {
-	                $(this).addClass('inactive');
-	            })
-	            .jcarouselControl({
-	                target: '+=1'
-	            });
-
-	        $('.jcarousel-pagination')
-	            .on('jcarouselpagination:active', 'a', function() {
-	                $(this).addClass('active');
-	            })
-	            .on('jcarouselpagination:inactive', 'a', function() {
-	                $(this).removeClass('active');
-	            })
-	            .jcarouselPagination();
-	    });
-	})(jQuery);
-
-	
-
-</script>
+      });
+    });
+    </script>
