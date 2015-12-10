@@ -15,3 +15,6 @@
  *= require foundation_and_overrides
 
  */
+.container {
+    background-color: #E1E3E4;
+}
