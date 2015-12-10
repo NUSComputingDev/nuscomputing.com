@@ -3,21 +3,21 @@
   <div class="row">
 		<div class="large-4 columns">
 			<%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, required: "required" %>
 		</div>
 		<div class="large-4 columns">
 			<%= f.label :email %><br>
-    	<%= f.text_field :email, type: "email", required: "required" %>
+    	<%= f.text_field :email, pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$", required: "required" %>
 		</div>
 		<div class="large-4 columns">
 			<%= f.label :contact %><br>
-    	<%= f.text_field :contact, pattern: "[0-9]+" %>
+    	<%= f.text_field :contact, pattern: "[0-9]{5,13}", required: "required" %>
 		</div>
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
 			<%= f.label :message %><br>
-    	<%= f.text_area :message %>
+    	<%= f.text_area :message, required: "required" %>
 		</div>
 	</div>
 	<div class="row">
