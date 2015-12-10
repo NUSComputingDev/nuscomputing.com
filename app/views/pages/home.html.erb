@@ -1,2 +1,77 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="jcarousel-wrapper">
+    <div class="jcarousel">
+        <ul>
+            <li class = 'jcarousel_li'><img src="http://sorgalla.com/jcarousel/examples/_shared/img/img1.jpg" width="600" height="400" alt=""></li>
+            <li class = 'jcarousel_li'><img src="http://sorgalla.com/jcarousel/examples/_shared/img/img2.jpg" width="600" height="400" alt=""></li>
+
+            
+        </ul>
+    </div>
+
+    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+</div>
+
+
+<div class="row">
+	
+  
+	
+	<h2 class = 'home_h2'>Upcoming Events</h2>
+	
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+	<div class="large-4 columns home_col"><img src = 'http://lorempixel.com/1000/1000/sports/'>		
+		<h3 class = 'home_h3'>Sports Camp</h3>
+		<p>Happening from 6th to 8th Jan 2016</p>
+	</div>
+</div>
+
+<script>
+
+	(function($) {
+	    $(function() {
+	        $('.jcarousel').jcarousel();
+
+	        $('.jcarousel-control-prev')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                target: '-=1'
+	            });
+
+	        $('.jcarousel-control-next')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                target: '+=1'
+	            });
+
+	        $('.jcarousel-pagination')
+	            .on('jcarouselpagination:active', 'a', function() {
+	                $(this).addClass('active');
+	            })
+	            .on('jcarouselpagination:inactive', 'a', function() {
+	                $(this).removeClass('active');
+	            })
+	            .jcarouselPagination();
+	    });
+	})(jQuery);
+
+	
+
+</script>
