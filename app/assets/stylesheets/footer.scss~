@@ -3,7 +3,6 @@
 
 
 
-
 footer {
     background-color: rgb(1, 22, 64);
     color: ghostwhite;
@@ -19,3 +18,4 @@ footer {
 .foot li {
     display: inline;
 }
+

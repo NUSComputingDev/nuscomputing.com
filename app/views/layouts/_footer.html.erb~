@@ -4,7 +4,7 @@
       <ul>
         <li><a href="https://www.facebook.com/nuscomputing/"><%= image_tag "social_media_icons_SVG/1449751978_facebook_square_gray.svg", :size => "32x32" %></a></li>
         <li><a href="https://twitter.com/NUSComputing"><%= image_tag "social_media_icons_SVG/1449751973_twitter_square_gray.svg", :size => "32x32" %></a></li>
-        <li><a href="https://www.instagram.com/nuscomputing/"><%= image_tag "social_media_icons_SVG/1449751992_instagram_square.svg", :size => "32x32" %></a></li>
+        <li><%= image_tag "social_media_icons_SVG/1449751992_instagram_square.svg", :size => "32x32" %></a></li>
         <li><a href="https://www.youtube.com/channel/UCVd-qsSFF328UUqcNxudy0w"><%= image_tag "social_media_icons_SVG/1449751539_youtube_square_gray.svg", :size => "32x32" %></a></li>
         <li><a href="https://www.linkedin.com/company/nuscomputing"><%= image_tag "social_media_icons_SVG/1449751969_linkedin_square_gray.svg", :size => "32x32" %></a></li>
       </ul>
