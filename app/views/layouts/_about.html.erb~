@@ -1,0 +1,21 @@
+<div class="medium-3 large-3 columns">
+  
+</div>
+
+<!--
+http://stackoverflow.com/questions/3203816/whats-the-correct-way-to-read-some-data-from-a-yaml-file-and-use-it-in-an-erb-p
+config/initializers/load_about.rb
+
+=begin
+ABOUT = YAML.load_file("#{Rails.root}/config/about.yml")
+general_about = ABOUT['general']
+specific_about = ABOUT['specific']
+=end
+
+for committee_member in specific_about:
+
+<h3><%= committee_member['name'] %></h3>
+<h3><%= committee_member['course'] %>, Year <%= committee_member['year'] %></h3>
+<h3><%= committee_member['position'] %></h3>
+<p><%= committee_member['description'] %></p>
+-->

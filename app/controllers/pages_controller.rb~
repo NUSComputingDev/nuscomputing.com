@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @images = Dir.glob("app/assets/images/about/*")
+    # @images = Dir.glob("app/assets/images/about/*")
   end
 
   def events
