@@ -1,26 +1,40 @@
-<div class="row">
-  <div id="owl-home" class="owl-carousel owl-theme">
+<section class="main-carousel">
+  <div class="row">
+    <div id="owl-home" class="owl-carousel owl-theme">
 
-    <div class="item"><%= image_tag "home/1.jpg"  %></div>
-    <div class="item"><%= image_tag "home/2.jpg" %></div>
-    <!--<div class="item"><%= image_tag "c.jpg" %></div>-->
+      <div class="item"><%= image_tag "home/1.jpg"  %></div>
+      <div class="item"><%= image_tag "home/2.jpg" %></div>
+      <!--<div class="item"><%= image_tag "c.jpg" %></div>-->
+    </div>
   </div>
+</section>
+
+<div class="row">
+  <hr>
 </div>
 
-<div class="row">
-  <div class="small-12 columns">
-    <h3 class="bold">Upcoming Events</h3>
+<section class="events-section">
+  <div  class="row">
+    <div class="small-12 columns">
+      <h3 class="bold">Upcoming Events</h3>
+    </div>
+    <div class="small-4 columns upcoming-header-bar end">
+    </div>
   </div>
 
-  <%# loop through the upcoming 3 events and create the partial for each. %>
-  <% @events.each do |event| %>
-    <%= render partial: "event", locals: {event: event} %>
-  <% end %>
-
-  <%# button to see more %>
-  <div class="small-12 columns text-center">
-    <a href="events" class="button radius">
-      See All Events
-    </a>
+  <div class="row">
+    <%# loop through the upcoming 3 events and create the partial for each. %>
+    <% @events.each do |event| %>
+        <%= render partial: "event", locals: {event: event} %>
+    <% end %>
   </div>
-</div>
+
+  <div class="row">
+    <%# button to see more %>
+    <div class="small-12 columns text-center">
+      <a href="events" class="button radius">
+        See All Events
+      </a>
+    </div>
+  </div>
+</section>

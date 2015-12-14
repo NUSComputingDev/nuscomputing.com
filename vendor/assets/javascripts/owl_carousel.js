@@ -1,6 +1,7 @@
 /* BEGIN */
 // Custom style for home page carousel
 $(document).ready(function() {
+    console.log("owl");
     $("#owl-home").owlCarousel({
 
         navigation : false,

@@ -1,6 +1,9 @@
 <div class="medium-4 columns">
   <a href="<%= "events/"+event.link %>">
-    <%= image_tag "events/"+event.img %>
-    <h5 class=""><%= event.name %></h5>
+    <div class="panel radius event-box">
+      <%= image_tag "events/"+event.img %>
+      <hr>
+      <h6 class="bold"><%= event.name %></h6>
+    </div>
   </a>
 </div>
