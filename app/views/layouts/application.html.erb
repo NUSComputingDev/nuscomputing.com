@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "NUS Computing" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -15,10 +16,15 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   <body>
+    <%# Load the nav bar %>
+    <%= render "layouts/navbar" %>
+
+    <%# Load the main view %>
     <div class="container">
-        <%= render "layouts/navbar" %>
         <%= yield %>
     </div>
+
+    <%# Load the footer %>
     <%= render "layouts/footer" %>
 
   </body>

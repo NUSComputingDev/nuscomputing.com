@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require owl_carousel
 //= require_tree .
 //= require owl_carousel
 
