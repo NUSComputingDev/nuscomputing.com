@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "NUS Computing" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "NUS Computing" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= favicon_link_tag 'favicon.ico' %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-    <%# Load the nav bar %>
-    <%= render "layouts/navbar" %>
+<body>
+<div class="container">
 
-    <%# Load the main view %>
-    <div class="container">
-        <%= yield %>
+  <div class="asd">
+  <%# Load the nav bar %>
+  <%= render "layouts/navbar" %>
+
+  <%# Load the main view %>
+  <div class="main-view">
+    <%= yield %>
+  </div>
     </div>
 
-    <%# Load the footer %>
-    <%= render "layouts/footer" %>
+  <%# To push the footer to the bottom %>
+  <div class="push-footer">
+  </div>
 
-  </body>
+  <%# Load the footer %>
+  <%= render "layouts/footer" %>
+</div>
+</body>
 </html>
