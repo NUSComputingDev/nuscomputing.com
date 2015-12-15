@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214110138) do
+ActiveRecord::Schema.define(version: 20151214112152) do
 
   create_table "enquiries", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
-    t.integer  "contact",    limit: 4
+    t.string   "contact",    limit: 255
     t.text     "message",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
