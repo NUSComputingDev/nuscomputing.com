@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>New enquiry from <%= @enquiry.name %></h1>
+    <p>
+    	<strong>Email: </strong>
+    	<%= @enquiry.email %>
+    </p>
+    <% if @enquiry.contact? %>
+			<p>
+				<strong>Contact: </strong>
+				<%= @enquiry.contact %>
+			</p>
+		<% end %>
+    <p>
+    	<strong>Message: </strong>
+    	<%= @enquiry.message %>
+    </p>
+  </body>
+</html>
