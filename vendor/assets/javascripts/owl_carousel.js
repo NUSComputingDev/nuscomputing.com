@@ -1,3 +1,29 @@
+/* BEGIN */
+// Custom style for home page carousel
+$(document).ready(function() {
+    console.log("owl");
+    $("#owl-home").owlCarousel({
+
+        navigation : false,
+        slideSpeed : 500,
+        paginationSpeed : 400,
+        singleItem : true,
+        autoPlay: 5000
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1,
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+
+    });
+});
+/* END */
+
+
+
+
 /*
  *  jQuery OwlCarousel v1.3.3
  *

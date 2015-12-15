@@ -12,6 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+ * require foundation_and_overrides
+ * require owl_carousel
 
  */
+@import "custom_fonts";
+@import "foundation_and_overrides";
+@import "owl_carousel";
