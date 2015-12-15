@@ -22,9 +22,9 @@ Rails.application.configure do
 		address: 'smtp.gmail.com', 
 		port: 587,   
 		domain: 'nuscomputing.com', 
-		user_name: '<webmaster account>',
-		password: '<webmaster password>',     
-		authentication: 'login',   
+		user_name: Rails.application.secrets.mailer_username,
+		password: Rails.application.secrets.mailer_password,
+		authentication: 'login',
 		enable_starttls_auto: true  
 	}
 
