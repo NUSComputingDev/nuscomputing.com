@@ -1,0 +1,20 @@
+.event-box {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.event-box:hover {
+  background: #E5E5E5;
+}
+
+.upcoming-header-bar {
+  position: absolute;
+  margin: auto;
+  z-index: 1;
+  content: "";
+  width: 15%;
+  height: 2px;
+  background: #e96656;
+  bottom: 7px;
+  left: 15px;
+}
