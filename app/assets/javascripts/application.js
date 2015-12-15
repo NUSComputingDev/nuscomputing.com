@@ -12,10 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
-//= require_tree .
+//= require jquery.turbolinks
 //= require owl_carousel
+<<<<<<< HEAD
 //= require magnific
+=======
+//= require_tree .
+//= require foundation
+>>>>>>> NUSComputingDev/develop
 
 $(function(){ $(document).foundation(); });
