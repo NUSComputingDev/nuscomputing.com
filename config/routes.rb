@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'templates/events'
+  get 'templates/events/:link', to: 'templates#events'
 
   get '/index', to: 'pages#home', as: 'index'
   get '/home', to: 'pages#home', as: 'home'
   get '/about', to: 'pages#about', as: 'about'
+  get '/events/:link', to: 'pages#event', as: 'event'
   get '/events', to: 'pages#events', as: 'events'
   get '/connect', to: 'pages#connect', as: 'connect'
   post '/connect', to: 'pages#enquiry', as: 'enquiry'
