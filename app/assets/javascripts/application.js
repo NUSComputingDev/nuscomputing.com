@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require owl_carousel
+//= require magnific
 //= require_tree .
 //= require foundation
 
