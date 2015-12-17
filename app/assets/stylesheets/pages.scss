@@ -13,44 +13,16 @@
   text-decoration: underline;
 }
 
-@media (min-width: 960px){
 
-
+// ensure footer sticks to bottom of page
+.container {
+	display: table;
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
 }
 
-
-@media (min-width: 768px) and (max-width: 959px) {
-	.row_div {
-		padding-left: 15px;
-		padding-right: 15px;	
-	}
-	
-	.home_col {
-		padding-right: 0px;
-	}
+.asd {
+	display: table-row;
+	height: 100%;
 }
-
-@media (max-width: 767px) {
-	.row_div {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	
-	.home_col {
-		padding-right: 0px;
-	}
-}
-
-@media (max-width: 480px) {
-	.row_div {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	
-	.home_col {
-		padding-right: 0px;
-	}
-}
-
-
-
