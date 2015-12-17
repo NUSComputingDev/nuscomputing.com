@@ -12,3 +12,16 @@
 .underline {
   text-decoration: underline;
 }
+
+// ensure footer sticks to bottom of page
+.container {
+	display: table;
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.asd {
+	display: table-row;
+	height: 100%;
+}

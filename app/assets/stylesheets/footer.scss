@@ -4,8 +4,8 @@
 footer {
   background-color: rgb(1, 22, 64);
   color: ghostwhite;
-  padding: 10pt;
   text-align: center;
+  display: table-row;
 }
 
 /* Unordered list in foot class */
@@ -17,3 +17,6 @@ footer li {
   display: inline;
 }
 
+.footer-container {
+	padding: 2%;
+}
