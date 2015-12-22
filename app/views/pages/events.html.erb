@@ -3,7 +3,13 @@
 		$('.popup-link').magnificPopup({
 			type: 'ajax',
 			alignTop: true,
-			overflowY: 'scroll'
+			overflowY: 'scroll',
+			callbacks: {
+				afterClose: function () {
+					// upon close of popup, redirect to /events link
+					window.location.href = "/events";
+				}
+			}
 		});
 	});
 	
