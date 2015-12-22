@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @members = MCMember.all
+    @members = McMember.all
   end
   
 	def event

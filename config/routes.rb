@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'templates/about'
+  get 'templates/about/:name', to: 'templates#about'
   get 'templates/events'
   get 'templates/events/:link', to: 'templates#events'
 
