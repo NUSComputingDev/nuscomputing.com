@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   def about
   end
 
+	def event
+		render "events"
+	end
+
   def events
   end
 
