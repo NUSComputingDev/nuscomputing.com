@@ -1,0 +1,11 @@
+<% @mcmem = McMember.find_by(name: params[:name]) %>
+<div class="row">
+		<div class = 'columns medium-4'>
+			<%= image_tag "about/"+@mcmem.casualimg %>
+		</div>
+		
+		<div class = 'columns medium-8'>
+			<h1><%= @mcmem.name %></h1>
+			<p><%= @mcmem.description %></p>
+		</div>
+</div>
