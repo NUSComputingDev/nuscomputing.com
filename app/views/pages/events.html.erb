@@ -1,31 +1,5 @@
-<script>
-	$(document).ready(function() {
-		$('.popup-link').magnificPopup({
-			type: 'ajax',
-			callbacks: {
-				afterClose: function () {
-					// upon close of popup, redirect to /events link
-					window.location.href = "/events";
-				}
-			}
-		});
-	});
-	
-</script>
-
 <% if params[:link] %>
-	<a class="popup-link popup-instant" href="/templates/events/<%= params[:link] %>">
-	<script>
-		$(document).ready(function() {
-			// disable link after "click"
-			$('.popup-instant').on("click", function () { 
-				$(this).unbind("click"); 
-				$(this).removeAttr("href"); 
-			});
-			// simulate click for popup window to appear
-			$('.popup-instant').trigger("click");
-		});
-	</script>
+	<a class="popup-link popup-instant" href="/templates/events/<%= params[:link] %>"></a>
 <% end %>
 
 <div class="row row_div">
