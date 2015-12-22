@@ -8,3 +8,6 @@
 events = Event.create([{name: "Halloween Celebrations", img: "halloween.jpg", link:"halloween", description: "Long description of event. Long description of event. "},
                        {name: "Welfare Pack Giveaway", img: "welfarepack.png", link:"welfare-pack", description: "Long description of event. Long description of event. "},
                        {name: "Committee Recruitment", img: "recruitment.jpg", link:"recruitment", description: "Long description of event. Long description of event. "}]);
+                       
+mcwings = McWing.create({wingid: 0, wingname: "Yo"});
+mcmembers = McMember.create({name: "Thenaesh", position: "Boss", wingid: 0, wingrank: 0, cellrank: 0, course: "DDP", year: 3, description: "Hello!", casualimg: "Thenaesh", formalimg:"Thenaesh"});

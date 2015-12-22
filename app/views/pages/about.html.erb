@@ -1,2 +1,42 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Magnific Popup core JS file -->
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
+
+<link rel="stylesheet" href="stylesheets/about.scss">
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.ajax-popup').magnificPopup({
+      type: 'ajax'
+    }); 
+  });
+</script>
+
+<div class="row">
+  <div class="medium-12 large-12 columns">
+    <h3>About Us</h3>
+    <p>This is about us.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-12 large-12 columns">
+    <h3>18th MC</h3>
+  </div>
+  
+  <% @members = McMember.all %>
+  <% @members.each do |mcmem| %>
+    <div class="medium-3 large-3 columns">
+      <a class="ajax-popup" href="/templates/about/<%= mcmem.name %>">
+        <p><%= image_tag ""+mcmem.casualimg %></p>
+        <p><%= mcmem.name %></p>
+        <p><%= mcmem.position %></p>
+      </a>
+    </div>
+  <% end %>
+</div>
