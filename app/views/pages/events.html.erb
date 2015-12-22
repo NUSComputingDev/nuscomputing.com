@@ -1,33 +1,11 @@
-<script>
-	$(document).ready(function() {
-		$('.popup-link').magnificPopup({
-			type: 'ajax',
-			alignTop: true,
-			overflowY: 'scroll'
-		});
-	});
-	
-</script>
-
 <% if params[:link] %>
-	<a class="popup-link popup-instant" href="/templates/events/<%= params[:link] %>">
-	<script>
-		$(document).ready(function() {
-			// disable link after "click"
-			$('.popup-instant').on("click", function () { 
-				$(this).unbind("click"); 
-				$(this).removeAttr("href"); 
-			});
-			// simulate click for popup window to appear
-			$('.popup-instant').trigger("click");
-		});
-	</script>
+	<a class="popup-link popup-instant" href="/templates/events/<%= params[:link] %>"></a>
 <% end %>
 
 <div class="row row_div">
 
 	<div class = 'columns small-12'>
-		<h2 class = 'events_h2'>Upcoming Events</h2>
+		<h3 class = 'bold'>Upcoming Events</h3>
 
 		<p class = 'events_p'>Lorem Ipsum</p>
 	</div>
@@ -35,7 +13,7 @@
 	<% @events = Event.all %>
 	<% @events.each do |event| %>
 		<a class="popup-link" href="/templates/events/<%= event.link %>">
-			<div class="medium-4 columns events_col">
+			<div class="medium-3 columns events_col">
 				<div class = 'panel'><%= image_tag "events/"+event.img %>
 					<h3 class = 'events_h3'><%= event.name %></h3>
 				</div>

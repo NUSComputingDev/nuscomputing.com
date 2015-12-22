@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'templates/about'
-  get 'templates/about/:name', to: 'templates#about'
   get 'templates/events'
   get 'templates/events/:link', to: 'templates#events'
+  get 'templates/about'
+  get 'templates/about/:name', to: 'templates#about'
 
   get '/index', to: 'pages#home', as: 'index'
   get '/home', to: 'pages#home', as: 'home'
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/events/:link', to: 'pages#event', as: 'event'
   get '/events', to: 'pages#events', as: 'events'
   get '/connect', to: 'pages#connect', as: 'connect'
+  get '/sponsors', to: 'pages#sponsors', as: 'sponsors'
+
   post '/connect', to: 'pages#enquiry', as: 'enquiry'
 
   # Rails will auto put new routes above this

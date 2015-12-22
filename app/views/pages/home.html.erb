@@ -26,10 +26,18 @@
   </div>
 
   <div class="row">
-    <%# loop through the upcoming 3 events and create the partial for each. %>
+    <%# loop through the upcoming (at most 3) events and create the partial for each. %>
+    <% count = 0 %>
     <% @events.each do |event| %>
+    	<% if event.featured && count < 3 %>
         <%= render partial: "event", locals: {event: event} %>
+        <% count += 1 %>
+      <% end %>
     <% end %>
+    <script>
+    	// add "end" class to the last event partial to smoothen layout
+    	$(".event-columns:last").addClass("end");
+    </script>
   </div>
 
   <div class="row">

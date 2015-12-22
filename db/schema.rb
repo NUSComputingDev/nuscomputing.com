@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151222083111) do
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.boolean  "featured"
   end
 
   create_table "mc_members", force: :cascade do |t|

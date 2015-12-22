@@ -22,6 +22,9 @@ class PagesController < ApplicationController
   def events
   end
 
+  def sponsors
+  end
+
   def connect
   end
   
