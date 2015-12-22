@@ -6,9 +6,13 @@ class PagesController < ApplicationController
   def home
     @events = Event.all
   end
-
+  
+  def mcmem
+    render "about"
+  end
+  
   def about
-    @members = MCMember.all
+    @members = McMember.all
   end
   
 	def event

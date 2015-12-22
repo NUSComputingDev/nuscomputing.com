@@ -33,9 +33,9 @@
   <% @members.each do |mcmem| %>
     <div class="medium-3 large-3 columns">
       <a class="ajax-popup" href="/templates/about/<%= mcmem.name %>">
-        <%= image_tag "about/"+mcmem.casualimg %>
-        <p><%= mcmem.name %><br>
-        <%= mcmem.position %></p>
+        <p><%= image_tag "about/"+mcmem.casualimg %></p>
+        <p><%= mcmem.name %></p>
+        <p><%= mcmem.position %></p>
       </a>
     </div>
   <% end %>
