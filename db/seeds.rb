@@ -14,6 +14,14 @@ events = Event.create([{name: "Halloween Celebrations", img: "halloween.jpg", li
                        {name: "Sports Camp 16", img: "sportscamp2.jpg", link:"sports-camp-2", description: "Long description of event. Long description of event. ", featured: true},
                        {name: "Academic Feedback", img: "acadfeedback.png", link:"acad-feedback", description: "Long description of event. Long description of event. ", featured: true}]);
 
+sponsors = Sponsor.create([{name: "Grabtaxi", link: "http://www.grabtaxi.com", img: "grabtaxi.png"},
+													 {name: "IMH", link: "https://www.imh.com.sg", img: "imh.jpg"},
+													 {name: "CSIT", link: "http://www.csit.gov.sg", img: "csit.jpg"},
+													 {name: "Garena", link: "http://www.garena.sg", img: "garena.png"},
+													 {name: "Meiji", link: "http://www.meiji.com.sg", img: "meiji.jpg"},
+													 {name: "NTUC", link: "https://www.ntuc.org.sg", img: "ntuc.jpg"},
+													 {name: "London Choco Roll", link: "http://www.lbbg.com.my/lbb/products/londonroll.php", img: "london.png"}]);
+
 mcwings = McWing.create(
 [
   {

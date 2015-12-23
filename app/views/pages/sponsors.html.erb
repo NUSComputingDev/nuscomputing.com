@@ -1,35 +1,33 @@
 <div class="row row_div">
 
-  <div class = 'columns small-12'>
-    <h3 class = 'bold'>Our Sponsors</h3>
+	<div class = 'columns small-12'>
+		<h3 class = 'bold'>Our Sponsors</h3>
 
-    <p>Lorem Ipsum</p>
-  </div>
+		<p>Lorem Ipsum</p>
+	</div>
 
 </div>
 
 <div class="row">
-  <hr>
+	<hr>
 </div>
 
-<div class="row">
-
-
-  <div class="medium-3 columns events_col">
-    <a href = 'http://www.apple.com' target="_blank"><img src = 'https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl_400x400.png'></a>
-  </div>
-
-  <div class="medium-3 columns events_col">
-    <a href = 'http://www.apple.com' target="_blank"><img src = 'https://pbs.twimg.com/profile_images/666407537084796928/YBGgi9BO_400x400.png'></a>
-  </div>
-
-  <div class="medium-3 columns events_col">
-    <a href = 'http://www.apple.com' target="_blank"><img src = 'https://pbs.twimg.com/profile_images/674026885580386304/a3rxT9ck_400x400.jpg'></a>
-  </div>
-
-  <div class="medium-3 columns events_col">
-    <a href = 'http://www.apple.com' target="_blank"><img src = 'https://pbs.twimg.com/profile_images/3513354941/24aaffa670e634a7da9a087bfa83abe6_400x400.png'></a>
-  </div>
-
-
+<div class="row white">
+	<% @sponsors.each_with_index do |sponsor, index| %>
+		<% # create row for each 4 sponsors %>
+		<% if index % 4 == 0 %>
+			<div class="row">
+		<% end %>
+				<div class="medium-3 columns sponsors_col">
+					<%= link_to image_tag("sponsors/"+sponsor.img), sponsor.link, target: "_blank" %>
+				</div>
+		<% # close tag for last sponsor of the row %>
+		<% if index % 4 == 3 || sponsor == @sponsors.last %>
+			</div>
+		<% end %>
+	<% end %>
+	<script>
+		// add "end" class to the last sponsors panel to smoothen layout
+		$(".sponsors_col:last").addClass("end");
+	</script>
 </div>
