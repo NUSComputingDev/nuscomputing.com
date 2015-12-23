@@ -11,13 +11,21 @@
 	</div>
 	
 	<% @events = Event.all %>
-	<% @events.each do |event| %>
-		<a class="popup-link" href="/templates/events/<%= event.link %>">
-			<div class="medium-3 columns events_col">
-				<div class = 'panel'><%= image_tag "events/"+event.img %>
-					<h3 class = 'events_h3'><%= event.name %></h3>
-				</div>
+	<% @events.each_with_index do |event, index| %>
+		<% # create row for each 4 events %>
+		<% if index % 4 == 0 %>
+			<div class="row">
+		<% end %>
+				<a class="popup-link" href="/templates/events/<%= event.link %>">
+					<div class="medium-3 columns events_col">
+						<div class = 'panel'><%= image_tag "events/"+event.img %>
+							<h3 class = 'events_h3'><%= event.name %></h3>
+						</div>
+					</div>
+				</a>
+		<% # close tag for last event of the row %>
+		<% if index % 4 == 3 || event == @events.last %>
 			</div>
-		</a>
+		<% end %>
 	<% end %>
 </div>
