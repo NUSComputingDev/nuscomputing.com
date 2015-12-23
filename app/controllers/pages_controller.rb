@@ -23,6 +23,7 @@ class PagesController < ApplicationController
   end
 
   def sponsors
+  	@sponsors = Sponsor.all
   end
 
   def connect

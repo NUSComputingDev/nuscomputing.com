@@ -9,23 +9,27 @@
 
 		<p class = 'events_p'>Lorem Ipsum</p>
 	</div>
-	
-	<% @events = Event.all %>
-	<% @events.each_with_index do |event, index| %>
-		<% # create row for each 4 events %>
-		<% if index % 4 == 0 %>
-			<div class="row">
-		<% end %>
-				<a class="popup-link" href="/templates/events/<%= event.link %>">
-					<div class="medium-3 columns events_col">
-						<div class = 'panel'><%= image_tag "events/"+event.img %>
-							<h3 class = 'events_h3'><%= event.name %></h3>
-						</div>
-					</div>
-				</a>
-		<% # close tag for last event of the row %>
-		<% if index % 4 == 3 || event == @events.last %>
-			</div>
-		<% end %>
-	<% end %>
 </div>
+	
+<% @events = Event.all %>
+<% @events.each_with_index do |event, index| %>
+	<% # create row for each 4 events %>
+	<% if index % 4 == 0 %>
+		<div class="row">
+	<% end %>
+			<a class="popup-link" href="/templates/events/<%= event.link %>">
+				<div class="medium-3 columns events_col">
+					<div class = 'panel'><%= image_tag "events/"+event.img %>
+						<h3 class = 'events_h3'><%= event.name %></h3>
+					</div>
+				</div>
+			</a>
+	<% # close tag for last event of the row %>
+	<% if index % 4 == 3 || event == @events.last %>
+		</div>
+	<% end %>
+<% end %>
+<script>
+	// add "end" class to the last event panel to smoothen layout
+	$(".events_col:last").addClass("end");
+</script>
