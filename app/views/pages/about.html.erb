@@ -11,16 +11,20 @@
   </div>
   
   <% @members = McMember.all %>
-  <% @members.each do |mcmem| %>
-    <div class="medium-3 large-3 columns end">
-      <a class="ajax-popup" href="/templates/about/<%= mcmem.name %>">
-        <%= image_tag "about/"+mcmem.casualimg, :class => "rounded-image" %>
-        <center>
-          <%= mcmem.name %><br>
-          <%= mcmem.position %>
-        </center>
-      </a>
-      <br><br>
+  <% @members.each_slice(4) do |member_row_slice| %>
+    <div class="row">
+      <% member_row_slice.each do |mc_member| %>
+        <div class="medium-3 large-3 columns end">
+          <a class="ajax-popup" href="/templates/about/<%= mc_member.name %>">
+            <%= image_tag "about/"+mc_member.casualimg, :class => "rounded-image" %>
+            <center>
+              <%= mc_member.name %><br>
+              <%= mc_member.position %>
+            </center>
+          </a>
+          <br><br>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
