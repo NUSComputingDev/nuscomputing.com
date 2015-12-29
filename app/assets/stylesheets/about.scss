@@ -2,8 +2,20 @@ a {
   outline: 0;
 }
 
-.rounded-image {
+.center-wraper {
+  margin: 0 auto;
+}
+
+.mcmember {
+  color: black;
+  margin-bottom: 25px;
+}
+
+.thumbnail {
   border-radius: 100%;
+  overflow: hidden;
+  height: 240px;
+  width: 240px;
 }
 
 .mfp-content {
