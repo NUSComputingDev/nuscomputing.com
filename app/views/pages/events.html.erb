@@ -20,7 +20,7 @@
     <div class="row">
       <% event_row.each do |event| %>
           <a class="popup-link" href="/templates/events/<%= event.link %>">
-            <div class="medium-3 columns">
+            <div class="medium-3 columns end">
               <div class='panel radius event-box'>
                 <%= image_tag "events/"+event.img %>
                 <hr>
@@ -31,7 +31,3 @@
       <% end %>
     </div>
 <% end %>
-<script>
-	// add "end" class to the last event panel to smoothen layout
-	$(".events_col:last").addClass("end");
-</script>
