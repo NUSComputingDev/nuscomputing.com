@@ -1,15 +1,32 @@
 <div class="row">
   <div class="medium-12 large-12 columns">
-    <h3>About Us</h3>
-    <p>This is about us.</p>
+    <h3 class="bold">About Us</h3>
+    <p>
+      The NUS Students’ Computing Club represents undergraduates in NUS School of Computing. Our mission is to provide support for our undergraduates during their stay in NUS School of Computing. This is achieved by taking strides in efforts to enhance their welfare, provide leadership opportunities and provide liaising opportunities between the IT industry and them.
+    </p>
+    <p>
+      Many key activities are carried out throughout the year. The Freshmen Orientation Project is the most important project undertaken by each Management Committee. Its purpose is to welcome and initiate freshmen into our School.
+    </p>
+    <p>
+      The Club has also been very pro-active in going beyond its boundaries. We continue to successfully organize flagship events such as Cyber-Gaming Festival, a national electronic gaming competition, and PoolFest, a recreational activity for all NUS Students.
+    </p>
+    <p>
+      The Club continues to strive for excellence every single year. With the support of the School of Computing, the undergraduate population, to whom we serve and close links with the industry, we are confident of carrying out our mission.
+    </p>
   </div>
 </div>
 
 <div class="row">
+  <hr>
+</div>
+
+<div class="row">
   <div class="medium-12 large-12 columns">
-    <h3>18th MC</h3>
+    <h3 class="bold">18<sup>th</sup> Management Committee</h3>
   </div>
-  
+</div>
+
+<div class="row">
   <% @members = McMember.all %>
   <% @members.each_slice(4) do |member_row_slice| %>
     <div class="row">
