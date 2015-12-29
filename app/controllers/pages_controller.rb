@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   
   def about
     @members = McMember.all
+    @wings = McWing.all
   end
   
 	def event
