@@ -3,36 +3,33 @@
 <% end %>
 
 <div class="row row_div">
-	<div class = 'columns small-12'>
-		<h3 class = 'bold'>Upcoming Events</h3>
-
-		<p class = 'events_p'>
+  <div class ='columns small-12'>
+    <h3 class ='bold'>Computing Club Events</h3>
+  </div>
+  <div class ='columns small-12'>
+    <p>
       Lorem ipsum dolor sit amet, sed tamquam oblique ne. Urbanitas expetendis et sed, porro voluptatibus ne qui, eu omnis persius sit. Duis cetero appareat usu ad. Utinam partem volutpat at mel, cu ullum possit vim.
-
       Nostrum percipit vulputate no mel. Mel docendi intellegat dissentiet id, ex zril recusabo mea, cu esse ocurreret vis. Eam te dictas iisque, usu tempor possit cotidieque eu. His no etiam qualisque, ex eum nisl percipitur. No option concludaturque sea, audiam persius eam et. Eirmod principes ad sit, sanctus omittam cu qui.
-
       Cum affert molestiae scriptorem cu, erant laoreet recteque nec at. Mel aeque legendos inimicus ea, vim et magna possim delectus, usu ea quem enim. Tota doctus at eam. Ea eos eros magna temporibus, alii affert contentiones id vim. No admodum efficiendi per.
     </p>
-	</div>
+  </div>
 </div>
-	
+
 <% @events = Event.all %>
-<% @events.each_with_index do |event, index| %>
-	<% # create row for each 4 events %>
-	<% if index % 4 == 0 %>
-		<div class="row">
-	<% end %>
-			<a class="popup-link" href="/templates/events/<%= event.link %>">
-				<div class="medium-3 columns events_col">
-					<div class = 'panel'><%= image_tag "events/"+event.img %>
-						<h3 class = 'events_h3'><%= event.name %></h3>
-					</div>
-				</div>
-			</a>
-	<% # close tag for last event of the row %>
-	<% if index % 4 == 3 || event == @events.last %>
-		</div>
-	<% end %>
+<% @events.each_slice(4) do |event_row| %>
+    <div class="row">
+      <% event_row.each do |event| %>
+          <a class="popup-link" href="/templates/events/<%= event.link %>">
+            <div class="medium-3 columns">
+              <div class='panel radius event-box'>
+                <%= image_tag "events/"+event.img %>
+                <hr>
+                <h6 class='bold'><%= event.name %></h6>
+              </div>
+            </div>
+          </a>
+      <% end %>
+    </div>
 <% end %>
 <script>
 	// add "end" class to the last event panel to smoothen layout
