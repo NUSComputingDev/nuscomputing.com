@@ -16,8 +16,10 @@
       <% member_row_slice.each do |mc_member| %>
         <div class="medium-3 large-3 columns end">
           <a class="ajax-popup" href="/templates/about/<%= mc_member.name %>">
-            <%= image_tag "about/"+mc_member.casualimg, :class => "rounded-image" %>
             <center>
+              <div class="thumbnail">
+                <%= image_tag "about/"+mc_member.casualimg %>
+              </div>
               <%= mc_member.name %><br>
               <%= mc_member.position %>
             </center>
