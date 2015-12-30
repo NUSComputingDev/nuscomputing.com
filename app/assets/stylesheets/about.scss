@@ -1,3 +1,24 @@
+/* If too narrow (mobile phone portrait), then one bigger picture per row */
+/* Else if too wide (computer), then four bigger pictures per row */
+@media (max-width: 650px), (min-width: 801px) {
+  .about-thumbnail {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+/* If wide but not enough (mobile phone landscape), then four smaller pictures per row */
+@media (min-width: 651px) and (max-width: 800px) {
+  .about-thumbnail {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+  }
+}
+
 a {
   outline: 0;
 }
@@ -9,13 +30,6 @@ a {
 .mcmember {
   color: black;
   margin-bottom: 25px;
-}
-
-.thumbnail {
-  border-radius: 100%;
-  overflow: hidden;
-  height: 200px;
-  width: 200px;
 }
 
 .mfp-content {

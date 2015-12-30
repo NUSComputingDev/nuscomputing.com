@@ -152,7 +152,7 @@ Step 3: Profit",
   },
   {
     name: "Terence Chok",
-    position: "Deputy Student Relations Secretary",
+    position: "Director of Welfare",
     wingid: 1,
     wingrank: 1,
     cellrank: 0,
