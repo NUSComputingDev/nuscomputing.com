@@ -1,11 +1,16 @@
 <% @event = Event.find_by(link: params[:link]) %>
-<div class="row panel">
-		<div class = 'columns medium-4'>
-			<%= image_tag "events/"+@event.img %>
-		</div>
-		
-		<div class = 'columns medium-8'>
-			<h1><%= @event.name %></h1>
-			<p><%= @event.description %></p>
-		</div>
+
+
+<div class="row collapse" style="position: relative; background: white;">
+  <div class='medium-4 columns'>
+    <%= image_tag "events/"+@event.img %>
+  </div>
+
+  <div class='medium-8 columns'>
+    <h1><%= @event.name %></h1>
+    <p>
+      <%= @event.description %>
+    </p>
+  </div>
+  <div style="clear:both; line-height: 0;"></div>
 </div>

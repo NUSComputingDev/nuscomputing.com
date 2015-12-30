@@ -20,15 +20,15 @@
 <% @events.each_slice(4) do |event_row| %>
     <div class="row">
       <% event_row.each do |event| %>
-          <a class="popup-link" href="/templates/events/<%= event.link %>">
-            <div class="medium-3 columns end">
+          <div class="medium-3 columns end">
+            <a class="popup-link" href="/templates/events/<%= event.link %>">
               <div class='panel radius event-box'>
                 <%= image_tag "events/"+event.img %>
                 <hr>
                 <h6 class='bold'><%= event.name %></h6>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
       <% end %>
     </div>
 <% end %>
