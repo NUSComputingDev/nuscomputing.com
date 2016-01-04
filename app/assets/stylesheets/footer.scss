@@ -1,0 +1,23 @@
+// FOOTER CSS
+// Place footer CSS here
+
+footer {
+  background-color: rgb(1, 22, 64);
+  color: ghostwhite;
+  text-align: center;
+  display: table-row;
+}
+
+/* Unordered list in foot class */
+footer ul {
+  list-style-type: none;
+  margin: 16px 0;
+}
+/* List items in foot class */
+footer li {
+  display: inline;
+}
+
+.footer-container {
+	padding: 2%;
+}

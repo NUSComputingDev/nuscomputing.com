@@ -1,2 +1,57 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="row">
+  <div class="medium-12 large-12 columns">
+    <h3 class="bold">About Us</h3>
+    <p>
+      The NUS Students’ Computing Club represents undergraduates in NUS School of Computing. Our mission is to provide support for our undergraduates during their stay in NUS School of Computing. This is achieved by taking strides in efforts to enhance their welfare, provide leadership opportunities and provide liaising opportunities between the IT industry and them.
+    </p>
+    <p>
+      Many key activities are carried out throughout the year. The Freshmen Orientation Project is the most important project undertaken by each Management Committee. Its purpose is to welcome and initiate freshmen into our School.
+    </p>
+    <p>
+      The Club has also been very pro-active in going beyond its boundaries. We continue to successfully organize flagship events such as Cyber-Gaming Festival, a national electronic gaming competition, and PoolFest, a recreational activity for all NUS Students.
+    </p>
+    <p>
+      The Club continues to strive for excellence every single year. With the support of the School of Computing, the undergraduate population, to whom we serve and close links with the industry, we are confident of carrying out our mission.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+</div>
+
+<div class="row">
+  <div class="medium-12 large-12 columns">
+    <h3 class="bold">18<sup>th</sup> Management Committee</h3>
+  </div>
+</div>
+
+<% @members = McMember.all %>
+<% @wings = McWing.all %>
+
+
+<% @wings.each do |wing| %>
+  <% wing_members = McMember.where(:wingid => wing.wingid) %>
+  <div class="row">
+    <div class="medium-12 large-12 columns end">
+      <h4><%= wing.wingname %></h4>
+    </div>
+  </div>
+  <% wing_members.each_slice(4) do |member_row_slice| %>
+  <div class ="row">
+    <% member_row_slice.each do |mc_member| %>
+      <a class="ajax-popup" href="/templates/about/<%= mc_member.name %>">
+          <div class="medium-3 large-3 columns end">
+            <div class="mcmember"><center>
+              <div class="about-thumbnail">
+                <%= image_tag "about/"+mc_member.casualimg %>
+              </div>
+              <span class="bold"><%= mc_member.name %></span><br>
+              <%= mc_member.position %>
+            </center></div>
+          </div>
+      </a>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>

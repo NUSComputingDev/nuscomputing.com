@@ -41,4 +41,5 @@ bower.json
 # Ignore the public assets folders
 /public/assets
 
-
+# Ignore backup files in the form of *~
+*~
