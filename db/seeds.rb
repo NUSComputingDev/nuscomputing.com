@@ -6,13 +6,72 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-events = Event.create([{name: "Halloween Celebrations", img: "halloween.jpg", link:"halloween", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Welfare Pack Giveaway", img: "welfarepack.png", link:"welfare-pack", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Committee Recruitment", img: "recruitment.jpg", link:"recruitment", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Christmas Party", img: "christmas.jpg", link:"christmas", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Sports Camp", img: "sportscamp.jpg", link:"sports-camp", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Sports Camp 16", img: "sportscamp2.jpg", link:"sports-camp-2", description: "Long description of event. Long description of event. ", featured: true},
-                       {name: "Academic Feedback", img: "acadfeedback.png", link:"acad-feedback", description: "Long description of event. Long description of event. ", featured: true}]);
+events = Event.create(
+    [
+        {
+            name: "Halloween Celebrations",
+            img: "halloween.jpg",
+            link:"halloween",
+            externalpage: "https://www.facebook.com/nuscomputing/photos/869736583094560/",
+            description: "Computing Club's Welfare Cell proudly presents... Halloween Celebration 2015: The Monster Invasion. We will be giving out free candies to SoC students on that day. Stand to win additional prizes if you take part in our Photo-booth Contest and Oculus Rift Hub.
+
+Last but not least... Shirt Sales are back!
+
+See you there!",
+            featured: false
+        },
+        {
+            name: "Welfare Pack Giveaway",
+            img: "welfarepack.png",
+            link:"welfare-pack",
+            externalpage: "https://www.facebook.com/nuscomputing/photos/875257525875799/",
+            description: "Exam Welfare Pack Distribution is coming to you soon!
+
+Remember to complete the survey at least ONE DAY before you come and collect the goodies! http://tiny.cc/welfarepack15sem1",
+            featured: true
+        },
+        {
+            name: "Christmas Party",
+            img: "christmas.jpg",
+            link:"christmas",
+            externalpage: "https://www.facebook.com/events/1177463648949180/",
+            description: "Christmas just around the corner! The Computing Club has exciting plans to spread joy to all of NUS Computing, Students or Staff during this festive season!
+
+To celebrate the spirit of giving, we are going to give everyone the opportunity to be givers in a Secret Santa Gift Exchange! On top of that, we are also organising a potluck dinner for that night! If you're interested, do join us!
+
+~~Please read below for more details~~
+
+Event Date: 23 December 2015
+Registration: 1830 - 1900H (Participants without gifts will not need to register)
+Event Start / End Time: 1900 - 2230H (You may leave early if you want)
+Venue: COM1, Level 2, Lobby (Outside SR1 / Student Lounge)
+
+Highlights
+1) Potluck (No food will be provided, so bring and share food or order food with your peers)
+2) Interesting Games (may have prizes)
+3) Secret Santa (Gift exchange! If interested please bring along a gift that cost between $5 to $10. You are discouraged to bring any gifts that cost beyond the recommended price range)
+4) Console games will be set-up in the Student Lounge so you may bring along XBox 360 titles or Wii titles! We have some game titles of our own as well.
+5) Board games will be avaible for loan to play as well!
+
+All SoC students and staff are welcomed to join.
+
+If you are preparing homemade food, please prepare a list of ingredients you will be using for other participants to check for their allergens on that evening!
+
+The theme for the attire is HUMAN XMAS TREE =)",
+            featured: true
+        },
+        {
+            name: "Sports Camp",
+            img: "sportscamp.jpg",
+            link:"sports-camp",
+            externalpage: "https://www.facebook.com/nuscomputing/photos/876412282426990/",
+            description: "Want to find somewhere to bond, chillax and play sports at the same time? SoC Sports Cell invites you to Sports Camp 16! We have fun and exciting programs such as PARKOUR, LACROSSE and NIGHT CYCLING in store for you. Most importantly, don't forget the highlight of the camp, PAINTBALL!
+
+SoC Sports Camp will be held on 6-8 Jan 2016 at a price of $50 per camper.",
+            featured: true
+        },
+    ]
+);
 
 sponsors = Sponsor.create([{name: "Grabtaxi", link: "http://www.grabtaxi.com", img: "grabtaxi.png"},
 													 {name: "IMH", link: "https://www.imh.com.sg", img: "imh.jpg"},
