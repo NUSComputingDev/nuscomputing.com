@@ -34,7 +34,9 @@
   <% wing_members = McMember.where(:wingid => wing.wingid) %>
   <div class="row">
     <div class="medium-12 large-12 columns end">
-      <h4><%= wing.wingname %></h4>
+      <h4>
+        <div class="wing-name-class"><%= wing.wingname %></div>
+      </h4>
     </div>
   </div>
   <% wing_members.each_slice(4) do |member_row_slice| %>
