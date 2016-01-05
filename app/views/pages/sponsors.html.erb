@@ -12,7 +12,7 @@
 
 <div class="row white">
   <% @sponsors.each_slice(4) do |sponsor_row| %>
-      <div class="row">
+      <div class="row sponsor-row">
         <% sponsor_row.each do |sponsor| %>
             <div class="medium-3 columns end">
               <%= link_to image_tag("sponsors/"+sponsor.img), sponsor.link, target: "_blank" %>
