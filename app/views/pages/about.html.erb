@@ -31,29 +31,31 @@
 
 
 <% @wings.each do |wing| %>
-  <% wing_members = McMember.where(:wingid => wing.wingid) %>
-  <div class="row">
-    <div class="medium-12 large-12 columns end">
-      <h4>
-        <div class="wing-name-class"><%= wing.wingname %></div>
-      </h4>
+    <% wing_members = McMember.where(:wingid => wing.wingid) %>
+    <div class="row">
+      <div class="medium-12 large-12 columns end">
+        <h4>
+          <div class="wing-name-class"><%= wing.wingname %></div>
+        </h4>
+      </div>
     </div>
-  </div>
-  <% wing_members.each_slice(4) do |member_row_slice| %>
-  <div class ="row">
-    <% member_row_slice.each do |mc_member| %>
-      <a class="ajax-popup" href="/templates/about/<%= mc_member.name %>">
-          <div class="medium-3 large-3 columns end">
-            <div class="mcmember"><center>
-              <div class="about-thumbnail">
-                <%= image_tag "about/"+mc_member.casualimg %>
-              </div>
-              <span class="bold"><%= mc_member.name %></span><br>
-              <%= mc_member.position %>
-            </center></div>
-          </div>
-      </a>
+    <% wing_members.each_slice(4) do |member_row_slice| %>
+        <div class ="row">
+          <% member_row_slice.each do |mc_member| %>
+              <a class="ajax-popup" href="/templates/about/<%= mc_member.name %>">
+                <div class="medium-3 large-3 columns end">
+                  <div class="mcmember">
+                    <center>
+                      <div class="about-thumbnail">
+                        <%= image_tag "about/"+mc_member.casualimg %>
+                      </div>
+                      <span class="bold"><%= mc_member.name %></span><br>
+                      <%= mc_member.position %>
+                    </center>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+        </div>
     <% end %>
-  </div>
-  <% end %>
 <% end %>
