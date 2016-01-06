@@ -897,7 +897,7 @@ $.magnificPopup = {
 
 		prependTo: null,
 		
-		fixedContentPos: 'auto', 
+		fixedContentPos: 'center',
 	
 		fixedBgPos: 'auto',
 

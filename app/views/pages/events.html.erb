@@ -8,9 +8,10 @@
   </div>
   <div class ='columns small-12'>
     <p>
-      Lorem ipsum dolor sit amet, sed tamquam oblique ne. Urbanitas expetendis et sed, porro voluptatibus ne qui, eu omnis persius sit. Duis cetero appareat usu ad. Utinam partem volutpat at mel, cu ullum possit vim.
-      Nostrum percipit vulputate no mel. Mel docendi intellegat dissentiet id, ex zril recusabo mea, cu esse ocurreret vis. Eam te dictas iisque, usu tempor possit cotidieque eu. His no etiam qualisque, ex eum nisl percipitur. No option concludaturque sea, audiam persius eam et. Eirmod principes ad sit, sanctus omittam cu qui.
-      Cum affert molestiae scriptorem cu, erant laoreet recteque nec at. Mel aeque legendos inimicus ea, vim et magna possim delectus, usu ea quem enim. Tota doctus at eam. Ea eos eros magna temporibus, alii affert contentiones id vim. No admodum efficiendi per.
+      Computing Club organises events for its members to help create bonds and foster a sense of family between its members. We urge all club members to come down for our events and mingle with your fellow students!
+    </p>
+    <p>
+      Find out more about each event by clicking the links below!
     </p>
   </div>
 </div>
@@ -19,15 +20,15 @@
 <% @events.each_slice(4) do |event_row| %>
     <div class="row">
       <% event_row.each do |event| %>
-          <a class="popup-link" href="/templates/events/<%= event.link %>">
-            <div class="medium-3 columns end">
+          <div class="medium-3 columns end">
+            <a class="popup-link" href="/templates/events/<%= event.link %>">
               <div class='panel radius event-box'>
                 <%= image_tag "events/"+event.img %>
                 <hr>
                 <h6 class='bold'><%= event.name %></h6>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
       <% end %>
     </div>
 <% end %>
