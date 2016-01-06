@@ -56,11 +56,12 @@ ActiveRecord::Schema.define(version: 20160105112715) do
   end
 
   create_table "sponsors", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "link",       limit: 255
-    t.string   "img",        limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.string   "link",        limit: 255
+    t.string   "img",         limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "description", limit: 65535
   end
 
 end
