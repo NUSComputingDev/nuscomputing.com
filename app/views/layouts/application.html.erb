@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "NUS Computing" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "NUS Students' Computing Club" %></title>
 
   <%= stylesheet_link_tag    "application" %>
   <%= favicon_link_tag 'favicon.ico' %>
@@ -17,14 +17,14 @@
 <div class="container">
 
   <div class="asd">
-  <%# Load the nav bar %>
-  <%= render "layouts/navbar" %>
+    <%# Load the nav bar %>
+    <%= render "layouts/navbar" %>
 
-  <%# Load the main view %>
-  <div class="main-view">
-    <%= yield %>
-  </div>
+    <%# Load the main view %>
+    <div class="main-view">
+      <%= yield %>
     </div>
+  </div>
 
   <%# To push the footer to the bottom %>
   <div class="push-footer">
