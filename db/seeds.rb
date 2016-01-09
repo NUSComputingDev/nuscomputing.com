@@ -18,7 +18,7 @@ events = Event.create(
 Last but not least... Shirt Sales are back!
 
 See you there!",
-            featured: false
+            featured: true
         },
         {
             name: "Welfare Pack Giveaway",
@@ -68,7 +68,7 @@ The theme for the attire is HUMAN XMAS TREE =)",
             description: "Want to find somewhere to bond, chillax and play sports at the same time? SoC Sports Cell invites you to Sports Camp 16! We have fun and exciting programs such as PARKOUR, LACROSSE and NIGHT CYCLING in store for you. Most importantly, don't forget the highlight of the camp, PAINTBALL!
 
 SoC Sports Camp will be held on 6-8 Jan 2016 at a price of $50 per camper.",
-            featured: true
+            featured: false
         }
     ]
 );

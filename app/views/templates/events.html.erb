@@ -4,13 +4,15 @@
 <div class="row event-popup">
 
   <div class='medium-8 columns'>
-    <h3 class="bold"><%= @event.name %></h3>
-    <p>
-      <%= simple_format @event.description %>
-    </p>
-    <p>
-      <a href="<%= @event.externalpage %>" target="_blank"><button class="radius"><i class="fa fa-external-link"></i>&nbsp;External Link</button></a>
-    </p>
+    <div class="event-popup-text">
+      <h3 class="bold"><%= @event.name %></h3>
+      <p>
+        <%= simple_format @event.description %>
+      </p>
+      <p>
+        <a href="<%= @event.externalpage %>" target="_blank"><button class="radius"><i class="fa fa-external-link"></i>&nbsp;External Link</button></a>
+      </p>
+    </div>
   </div>
 
   <div class='medium-4 columns'>
