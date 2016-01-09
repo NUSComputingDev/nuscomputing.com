@@ -184,7 +184,7 @@ sponsors = Sponsor.create(
 		{
 			name: "Paper Innovation Pte Ltd", 
 			link: "http://print-it.com.sg/", 
-			img: "milkcow.png", 
+			img: "paper_talk.png", 
 			description: "With a combined skillset of over 30 years in the printing industries, Paper Innovation has expanded into the role of a quick response printer and has distinguished ourselves by offering: 
 		 
 			­ On Time Delivery  
