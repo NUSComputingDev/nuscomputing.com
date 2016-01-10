@@ -1,3 +1,16 @@
 // Place all the styles related to the templates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.popup-box {
+  position: relative;
+  background: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.popup-column {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
