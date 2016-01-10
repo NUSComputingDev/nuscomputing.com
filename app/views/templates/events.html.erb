@@ -1,10 +1,10 @@
 <% @event = Event.find_by(link: params[:link]) %>
 
 
-<div class="row event-popup">
+<div class="row popup-box">
 
   <div class='medium-8 columns'>
-    <div class="event-popup-text">
+    <div class="popup-column">
       <h3 class="bold"><%= @event.name %></h3>
       <p>
         <%= simple_format @event.description %>
@@ -16,7 +16,7 @@
   </div>
 
   <div class='medium-4 columns'>
-    <div class="event-popup-poster">
+    <div class="popup-column">
       <%= image_tag "events/"+@event.img %>
     </div>
   </div>
