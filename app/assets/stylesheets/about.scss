@@ -1,3 +1,5 @@
+@import "templates";
+
 /* If too narrow (mobile phone portrait), then one bigger picture per row */
 /* Else if too wide (computer), then four bigger pictures per row */
 @media (max-width: 650px), (min-width: 801px) {
@@ -32,10 +34,8 @@ a {
   margin-bottom: 25px;
 }
 
-.mfp-content {
-  //background-color: rgba(255, 255, 255, 0.75);
-}
-
 .wing-name-class {
   font-style: italic;
 }
+
+
