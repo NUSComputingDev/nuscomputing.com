@@ -402,7 +402,7 @@ mcmembers = McMember.create(
 			wingid: 0,
 			wingrank: 4,
 			cellrank: 0,
-			course: "Computer Science",
+			course: "Electronic Commerce",
 			year: 2,
 			description: "As a NUSSU representative of Computing Club, improving relationships between Computing Club and NUSSU EXCO will be a movement that I will be championing for. This allows me to better reach out to Computing Club and computing students to understand students' lives and the concerns that they may have. I strive to build and maintain a sturdy bridge between NUSSU EXCO and Computing Club.",
 			casualimg: "javier.jpg",
