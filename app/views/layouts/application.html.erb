@@ -4,6 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!--Google metas-->
+  <meta name="description" content="A Constituent Club of the NUS Students' Union." />
+  <meta name="keywords" content="NUS, Computer, Science, Society" />
+
+  <!-- Facebook metas -->
+  <meta property="og:title" content="NUS Students' Computing Club" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<%= image_path "home/highlight-0.jpg" %>" />
+  <meta property="og:url" content="http://nuscomputing.com" />
+  <meta property="og:description" content="A Constituent Club of the NUS Students' Union." />
+
+  <!-- Twitter metas -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="NUS Students' Computing Club" />
+  <meta name="twitter:description" content="A Constituent Club of the NUS Students' Union." />
+  <meta name="twitter:image" content="<%= image_path "home/highlight-0.jpg" %>" />
+
   <title><%= content_for?(:title) ? yield(:title) : "NUS Students' Computing Club" %></title>
 
   <%= stylesheet_link_tag    "application" %>
@@ -11,6 +28,7 @@
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 
 <body>
