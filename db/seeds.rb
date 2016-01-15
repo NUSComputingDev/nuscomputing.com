@@ -360,9 +360,12 @@ mcmembers = McMember.create(
 			course: "Computer Science",
 			year: 3,
 			description: "I love stories and I am here to seek out the hidden stories of SoC.
-	As the SRS, I will be the bridge between the club members and the management committee.
-	My team and I will do our best to find out what Computing students want and translate it into actions by the student leaders.
-	Tell us your tales and we will do our best to make them true!",
+
+As the SRS, I will be the bridge between the club members and the management committee.
+
+My team and I will do our best to find out what Computing students want and translate it into actions by the student leaders.
+
+Tell us your tales at studentrelations@nuscomputing.com and we will do our best to make them true!",
 			casualimg: "ben.jpg",
 			formalimg:"ben.jpg"
 		},
