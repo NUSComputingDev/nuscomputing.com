@@ -18,7 +18,10 @@ class PagesController < ApplicationController
   
 	def event
 		render "events"
-	end
+  end
+
+  def students
+  end
 
   def events
   end
