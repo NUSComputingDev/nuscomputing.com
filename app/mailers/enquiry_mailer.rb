@@ -3,6 +3,6 @@ class EnquiryMailer < ApplicationMailer
 		
 	def notify(enquiry)
 		@enquiry = enquiry
-		mail(from: @enquiry.email, subject: 'New Enquiry')
+		mail(from: @enquiry.email, subject: '[Website Enquiry] New Enquiry coming from nuscomputing.com')
 	end
 end

@@ -18,7 +18,10 @@ class PagesController < ApplicationController
   
 	def event
 		render "events"
-	end
+  end
+
+  def students
+  end
 
   def events
   end
@@ -34,11 +37,8 @@ class PagesController < ApplicationController
   	@enquiry = Enquiry.new(enquiry_params)
   	if @enquiry.save
   		EnquiryMailer.notify(@enquiry).deliver_now
-  		sleep 2.0
-  		redirect_to @enquiry
-  	else
-  		render "connect"
   	end
+  	render "connect"
   end
   
   private

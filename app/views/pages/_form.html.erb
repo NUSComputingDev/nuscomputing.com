@@ -1,4 +1,4 @@
-<%= form_for :enquiry, html: { onsubmit: "$('#successModal').foundation('reveal', 'open');" } do |f| %>
+<%= form_for :enquiry, remote: true, html: { class: "enquiry-form" } do |f| %>
   
   <div class="row">
 		<div class="large-4 medium-6 columns">
@@ -34,8 +34,8 @@
 		</div>
 	</div>
 	
-	<div id="successModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-		<p>Enquiry Submitted!</p>
+	<div id="loadingModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		<span class="loading-message">Submitting enquiry, please wait</span>
 	</div>
  
 <% end %>

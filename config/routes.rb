@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: 'about'
   get '/events/:link', to: 'pages#event', as: 'event'
   get '/events', to: 'pages#events', as: 'events'
+  get '/students', to: 'pages#students', as: 'students'
   get '/connect', to: 'pages#connect', as: 'connect'
   get '/sponsors', to: 'pages#sponsors', as: 'sponsors'
 

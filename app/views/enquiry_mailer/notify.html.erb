@@ -1,22 +1,28 @@
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h2>New enquiry from <%= @enquiry.name %></h1>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h2>New enquiry from <%= @enquiry.name %></h2>
+<p>
+  <strong>Name: </strong>
+  <%= @enquiry.name %>
+</p>
+<p>
+  <strong>Email: </strong>
+  <%= @enquiry.email %>
+</p>
+<% if @enquiry.contact? %>
     <p>
-    	<strong>Email: </strong>
-    	<%= @enquiry.email %>
+      <strong>Contact number: </strong>
+      <%= @enquiry.contact %>
     </p>
-    <% if @enquiry.contact? %>
-			<p>
-				<strong>Contact: </strong>
-				<%= @enquiry.contact %>
-			</p>
-		<% end %>
-    <p>
-    	<strong>Message: </strong>
-    	<%= @enquiry.message %>
-    </p>
-  </body>
+<% end %>
+<p>
+  <strong>Message: </strong>
+</p>
+<p>
+  <%= @enquiry.message %>
+</p>
+</body>
 </html>
