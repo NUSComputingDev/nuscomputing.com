@@ -17,14 +17,20 @@ $(document).ready(function() {
   .on("ajax:success", function (e, data, status, xhr) {
   	$("#loadingModal").foundation("reveal", "close");
   	clearInterval(intervalDots);
-  	alert("Enquiry submitted!");
+  	$(".complete-message").text("Enquiry submitted!");
+  	$("#completeModal").foundation("reveal", "open");
   	// reset form
   	$(".enquiry-form").trigger("reset");
   })
   .on("ajax:error", function (e, xhr, status, error) {
   	$("#loadingModal").foundation("reveal", "close");
   	clearInterval(intervalDots);
-  	alert("Enquiry failed! Please try again...");
+  	$(".complete-message").text("Enquiry failed! Please try again...");
+  	$("#completeModal").foundation("reveal", "open");
   	// keep form data in UI intact
   });
+  
+  $('a.close').on('click', function() {
+		$('#completeModal').foundation('reveal', 'close');
+	});
 });
