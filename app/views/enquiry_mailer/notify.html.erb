@@ -1,28 +1,75 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
+  <style type="text/css">
+	  .wrapper {
+		  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  }
+
+	  table, th, td {
+		border: 1px solid #dddddd
+	  }
+
+	  td {
+		  padding: 15px;
+	  }
+
+	  .attr-name {
+		  font-weight: bold;
+	  }
+
+	  .footer {
+		  border-top: 1px solid #dddddd;
+		  padding-top: 8px;
+		  font-size: 12px;
+		  font-style: italic;
+	  }
+  </style>
+
 </head>
+
 <body>
-<h2>New enquiry from <%= @enquiry.name %></h2>
-<p>
-  <strong>Name: </strong>
-  <%= @enquiry.name %>
-</p>
-<p>
-  <strong>Email: </strong>
-  <%= @enquiry.email %>
-</p>
-<% if @enquiry.contact? %>
-    <p>
-      <strong>Contact number: </strong>
-      <%= @enquiry.contact %>
-    </p>
-<% end %>
-<p>
-  <strong>Message: </strong>
-</p>
-<p>
-  <%= @enquiry.message %>
-</p>
+<div class="wrapper">
+  <p>
+    Dear colleagues,
+  </p>
+  <p>
+    Please handle the following enquiry from a user on our website.
+  </p>
+  <p>
+    Thank you.
+  </p>
+
+  <table>
+    <tr>
+      <td class="attr-name">Name:</td>
+      <td class="attr-value"><%= @enquiry.name %></td>
+    </tr>
+
+    <tr>
+      <td class="attr-name">Email:</td>
+      <td class="attr-value"><%= @enquiry.email %></td>
+    </tr>
+
+    <% if @enquiry.contact? %>
+        <tr>
+          <td class="attr-name">Contact number:</td>
+          <td class="attr-value"><%= @enquiry.contact %></td>
+        </tr>
+    <% end %>
+
+    <tr>
+      <td class="attr-name">Message:</td>
+      <td class="attr-value"><%= simple_format @enquiry.message %></td>
+    </tr>
+  </table>
+
+  <div class="footer">
+    <a href="nuscomputing.com">NUS Computing</a>
+  </div>
+
+</div>
 </body>
 </html>
