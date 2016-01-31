@@ -16,19 +16,41 @@
 <div class="row">
   <div class="medium-12 large-12 columns">
     <h3 class="bold">Student Services</h3>
-    <h4 class="italics">Lockers</h4>
+
+    <h4 class="italics">Up For Loan!</h4>
+
+    <div class="row" data-equalizer>
+      <div class="large-4 columns">
+        <div class="panel radius poster-box">
+          <div data-equalizer-watch>
+            <%= image_tag "students/lockers.jpg", class: "radius" %>
+          </div>
+          <hr>
+          <h6 class='bold'>Lockers</h6>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="panel radius poster-box">
+          <div data-equalizer-watch>
+            <%= image_tag "students/games-loan.jpg", class: "radius" %>
+          </div>
+          <hr>
+          <h6 class='bold'>Board Games</h6>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="panel radius poster-box">
+          <div data-equalizer-watch>
+            <%= image_tag "students/extension-loan.jpg", class: "radius" %>
+          </div>
+          <hr>
+          <h6 class='bold'>Extensions Cords</h6>
+        </div>
+      </div>
+    </div>
     <p>
-      Students are entitled to one locker allocation, free of charge, every year. Email logistics[at]nuscomputing[dot]com to request for your free locker allocation if you have not already gotten one yet!
+      Loan free lockers, board games and extension cords from us! Shoot an email to logistics[at]nuscomputing[dot]com or come down to <%= link_to "our clubroom", "/connect" %> to see what we have in store!
     </p>
 
-    <h4 class="italics">Board Games</h4>
-    <p>
-      Board games can be loaned from us as well! We have Avalon, Monopoly, Twister and many more. Shoot an email to logistics[at]nuscomputing[dot]com or come down to <%= link_to "our clubroom", "/connect" %> to view our collection!
-    </p>
-
-    <h4 class="italics">Miscellaneous Items</h4>
-    <p>
-      We have extension sockets and LCD monitors that are up for loan. If you ever need any of these, drop logistics[at]nuscomputing[dot]com an email with your request, or simply visit <%= link_to "our clubroom", "/connect" %> to take a look!
-    </p>
   </div>
 </div>
