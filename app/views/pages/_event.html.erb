@@ -1,7 +1,9 @@
-<div class="event-columns medium-4 columns">
+<div class="medium-4 columns end">
   <a href="<%= "events/"+event.link %>">
     <div class="panel radius event-box">
-      <%= image_tag "events/"+event.img %>
+      <div data-equalizer-watch>
+        <%= image_tag "events/"+event.img %>
+      </div>
       <hr>
       <h6 class="bold"><%= event.name %></h6>
     </div>
