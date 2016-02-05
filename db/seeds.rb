@@ -9,6 +9,22 @@
 events = Event.create(
     [
 				{
+						name: "LoveBytes",
+						img: "lovebytes.jpg",
+						link:"lovebytes",
+						externalpage: "https://mysurvey.nus.edu.sg/EFM/se.ashx?s=54CCD14B7E4B65F8",
+						description: "Orders are closing soon for LoveBytes2016! Order now if you want SoCupids to send your message for you! :3
+
+Are you Wi-Fi?
+
+Because I'm feeling the connection
+
+Looking to show your appreciation for people that have always stood by you?
+
+SoC LoveBytes orders are open now at AMAZING prices! Visit http://tiny.cc/LoveBytes2016 now to make your orders! Don't miss the chance to show your appreciation to your loved ones and friends this Valentine's Day!",
+						featured: true
+				},
+				{
 						name: "FOP Recruitment",
 						img: "fop-recruitment.jpg",
 						link:"fop-recruitment",
@@ -81,7 +97,7 @@ All SoC students and staff are welcomed to join.
 If you are preparing homemade food, please prepare a list of ingredients you will be using for other participants to check for their allergens on that evening!
 
 The theme for the attire is HUMAN XMAS TREE =)",
-            featured: true
+            featured: false
         },
         {
             name: "Sports Camp",
