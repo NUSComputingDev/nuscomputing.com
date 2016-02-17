@@ -1,3 +1,6 @@
+<!-- ReCaptcha -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <%= form_for :enquiry, remote: true, html: { class: "enquiry-form" } do |f| %>
   
   <div class="row">
@@ -28,6 +31,16 @@
 	    </label>
 		</div>
 	</div>
+	
+	<!-- ReCaptcha -->
+	<div class="row>
+	  <div class="large-12 columns">
+	    <label>
+	      <div class="g-recaptcha" data-sitekey="6LfyyBITAAAAABZZkMOWxQz18D1NFSKz2Xm0bolb" />
+      </label>
+    </div>
+  </div>
+  
 	<div class="row">
 		<div class="large-12 columns">
 			<%= f.button "Submit", class: "right" %>

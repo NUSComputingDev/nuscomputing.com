@@ -14,54 +14,54 @@
 ActiveRecord::Schema.define(version: 20160105112715) do
 
   create_table "enquiries", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.string   "contact",    limit: 255
-    t.text     "message",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "img",          limit: 255
-    t.string   "link",         limit: 255
-    t.text     "description",  limit: 65535
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name"
+    t.string   "img"
+    t.string   "link"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.boolean  "featured"
-    t.string   "externalpage", limit: 255
+    t.string   "externalpage"
   end
 
   create_table "mc_members", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "position",    limit: 255
-    t.integer  "wingid",      limit: 4
-    t.integer  "wingrank",    limit: 4
-    t.integer  "cellrank",    limit: 4
-    t.string   "course",      limit: 255
-    t.integer  "year",        limit: 4
-    t.text     "description", limit: 65535
-    t.string   "casualimg",   limit: 255
-    t.string   "formalimg",   limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name"
+    t.string   "position"
+    t.integer  "wingid"
+    t.integer  "wingrank"
+    t.integer  "cellrank"
+    t.string   "course"
+    t.integer  "year"
+    t.text     "description"
+    t.string   "casualimg"
+    t.string   "formalimg"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "mc_wings", force: :cascade do |t|
-    t.integer  "wingid",     limit: 4
-    t.string   "wingname",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "wingid"
+    t.string   "wingname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sponsors", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "link",        limit: 255
-    t.string   "img",         limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.text     "description", limit: 65535
+    t.string   "name"
+    t.string   "link"
+    t.string   "img"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
 
 end
