@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // dynamically write the email address
+  $(".connect-email").html("conect@nuscomputing.com");
+  
 	// add event listeners to display user feedback
 	var intervalDots, dotCount = 0;
   $(".enquiry-form").on("ajax:send", function (e, xhr) {
