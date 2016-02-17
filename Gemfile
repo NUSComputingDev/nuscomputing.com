@@ -58,5 +58,8 @@ group :development, :test do
   
   # ReCaptcha
   gem "recaptcha", require: "recaptcha/rails"
+  
+  # SEO
+  gem 'meta-tags'
 end
 
