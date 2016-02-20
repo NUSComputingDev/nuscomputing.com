@@ -35,9 +35,9 @@ class PagesController < ApplicationController
   
   def enquiry
   	@enquiry = Enquiry.new(enquiry_params)
-  	if @enquiry.save
-  		EnquiryMailer.notify(@enquiry).deliver_now
-  	end
+  	if verify_recaptcha and @enquiry.save
+  		  EnquiryMailer.notify(@enquiry).deliver_now
+	  end
   	render "connect"
   end
   

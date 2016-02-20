@@ -28,6 +28,17 @@
 	    </label>
 		</div>
 	</div>
+	
+	<!-- ReCaptcha -->
+	<div class="row">
+	  <div class="large-12 columns">
+	    <label>
+	      <%= recaptcha_tags %>
+	      <%= print Rails.env %>
+      </label>
+    </div>
+  </div>
+  
 	<div class="row">
 		<div class="large-12 columns">
 			<%= f.button "Submit", class: "right" %>
