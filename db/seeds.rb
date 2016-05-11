@@ -9,6 +9,16 @@
 events = Event.create(
     [
 				{
+						name: "FOP 2016",
+						img: "fop2016.jpg",
+						link:"fop2016",
+						externalpage: "http://freshmen.nuscomputing.com",
+						description: "Are you an incoming freshman who wants to find out more about the school? Or do you simply want to make some friends and have fun?
+
+NUS Computing Freshmen Orientation Projects (FOP) 2016 presents to you Virtutem Quattuor. With an exciting lineup of events, we will help you integrate into our Computing family in no time. At FOP, not only do you get the opportunity to meet other incoming freshmen, you will also meet seniors who will provide valuable advice to follow you through your University years. Join us this summer for the best freshmen experience you’ll ever have!",
+						featured: true
+				},
+				{
 						name: "LoveBytes",
 						img: "lovebytes.jpg",
 						link:"lovebytes",
@@ -35,7 +45,7 @@ We are recruiting Photographers as well! (A workshop will be provided, so if you
 Sign up at tiny.cc/OHH2016 or click the external link button.
 Signup closes at the end of week 5, so sign up fast!
 Join our family and let's have fun together! :D",
-						featured: true
+						featured: false
 				},
         {
 						name: "Welfare Night",
