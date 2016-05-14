@@ -401,7 +401,7 @@ sponsors = Sponsor.create(
 		{
 			name: "Singapore World Water Day", 
 			link: "http://www.singaporeworldwaterday.com", 
-			img: "pub_crawl.png", 
+			img: "world_water_day.png", 
 			description: "" 
 		},
 		{
