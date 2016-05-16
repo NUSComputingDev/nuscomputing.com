@@ -127,10 +127,22 @@ SoC Sports Camp will be held on 6-8 Jan 2016 at a price of $50 per camper.",
 sponsors = Sponsor.create(
 	[
 		{
+			name: "90s Candy Society", 
+			link: "http://www.90s.com.sg", 
+			img: "candy_society.png", 
+			description: "" 
+		},
+		{
 			name: "Accenture", 
 			link: "https://www.accenture.com/sg-en", 
 			img: "accenture.png", 
 			description: "Accenture is a leading global professional services company, providing a broad range of services and solutions in strategy, consulting, digital, technology and operations." 
+		},
+		{
+			name: "Aptus", 
+			link: "http://www.aptus.com.sg", 
+			img: "aptus.png", 
+			description: "" 
 		},
 		{
 			name: "Atlantic Optical", 
@@ -167,6 +179,12 @@ sponsors = Sponsor.create(
 			description: "BOTAK JONES® was born out of the idea that everyone should have access to well­made food of all types. Seeing a lack of good, well­made western food in the industrial and heartland areas, the good people at BOTAK JONES® deemed it timely to carve a market niche and take the heartlands by storm! We’ve not looked back since!" 
 		},
 		{
+			name: "Bubble Bump", 
+			link: "http://www.bubblebump.sg/", 
+			img: "bubble_bump.png", 
+			description: "" 
+		},
+		{
 			name: "Community Health Assessment Team", 
 			link: "https://www.chat.mentalhealth.sg/", 
 			img: "chat.png", 
@@ -193,6 +211,48 @@ sponsors = Sponsor.create(
 	In its efforts to develop robust solutions for the country’s strategic needs, CSIT leverages on commercial expertise and works closely with local research institutions, defence R&D and support organisations." 
 		},
 		{
+			name: "DSO", 
+			link: "https://www.dso.org.sg/", 
+			img: "dso.png", 
+			description: "" 
+		},
+		{
+			name: "Forest Adventure", 
+			link: "https://forestadventure.com.sg", 
+			img: "forest_adventure.png", 
+			description: "" 
+		},
+		{
+			name: "Glints", 
+			link: "https://glints.com/", 
+			img: "glints.png", 
+			description: "" 
+		},
+		{
+			name: "GoGoVan", 
+			link: "https://www.gogovan.sg/", 
+			img: "gogovan.png", 
+			description: "" 
+		},
+		{
+			name: "Goro Goro", 
+			link: "https://www.facebook.com/GoroGoro.Asia/", 
+			img: "gorogoro.png", 
+			description: "" 
+		},
+		{
+			name: "Gumtree", 
+			link: "http://www.gumtree.sg/", 
+			img: "gumtree.png", 
+			description: "" 
+		},
+		{
+			name: "Ippin", 
+			link: "http://www.ippin-jpc.com/", 
+			img: "ippin.png", 
+			description: "" 
+		},
+		{
 			name: "Je t’aime Perfumery Singapore", 
 			link: "https://www.jetaime-singapore.com/", 
 			img: "jetaime.png", 
@@ -209,10 +269,22 @@ sponsors = Sponsor.create(
 			description: "At JetBrains, code is our passion. For over 15 years we have strived to make the strongest, most effective developWe help developers work faster by automating common, repetitive tasks to enable them to stay focused on code design and the big picture. We provide tools to explore and familiarize with code bases faster. Our products make it easy for you to take care of quality during all stages of development and spend less time on maintenance tasks." 
 		},
 		{
+			name: "I’m Kim Korean BBQ", 
+			link: "https://www.facebook.com/imkim.asia/?ref=stream", 
+			img: "kim.png", 
+			description: "" 
+		},
+		{
 			name: "KOKOMAMA", 
 			link: "https://www.facebook.com/kokomama.marketplace", 
 			img: "kokomama.png", 
 			description: "KOKOMAMA is ​a hip fusion cafe that sells different varieties of food and beverages ­ french bakery, chilli crab/curry/clam chowder bread bowls, rice bowls, coffee (latte etc), traditional kopi/ teh and dessert such as waffles and korean bingsu. And also affordable bread for people to take away!" 
+		},
+		{
+			name: "Laffio", 
+			link: "https://www.facebook.com/laffio.sg/", 
+			img: "laffio.png", 
+			description: "" 
 		},
 		{
 			name: "Manhattan Fish Market", 
@@ -221,6 +293,18 @@ sponsors = Sponsor.create(
 			description: "At The Manhattan FISH MARKET, our guests are served with lip­smacking American­style seafood such as the famous Manhattan Fish n’ Chips, the all­time favourite Garlic Herb Mussels and the legendary Manhattan Flaming Seafood Platter.
 
 	We have come a long way with more than 50 restaurants in Asia and the Middle East, including Singapore, Malaysia, Indonesia, Thailand, Sri Lanka, Myanmar, Oman, India and Japan. We attribute our success and regional popularity to our fresh, flavourful and innovative offerings. To meet our fans' insatiable appetite for delicious seafood, we are constantly expanding and evolving with brand new restaurant interiors inspired by the famous Fulton Fish Market. Every restaurant is tastefully appointed to evoke the colourful and dynamic spirit of the iconic market!" 
+		},
+		{
+			name: "Matchaya", 
+			link: "http://www.matchaya.sg/", 
+			img: "matchaya.png", 
+			description: "" 
+		},
+		{
+			name: "MGP", 
+			link: "https://mgplabel.com/", 
+			img: "mgp.png",
+			description: ""
 		},
 		{
 			name: "Milkcow", 
@@ -267,6 +351,12 @@ sponsors = Sponsor.create(
 	Being 300% Positive will create major improvements in our lives: health, work, relationships family and future!" 
 		},
 		{
+			name: "Singapore Pub Crawl", 
+			link: "http://www.singaporepubcrawl.com.sg", 
+			img: "pub_crawl.png", 
+			description: "" 
+		},
+		{
 			name: "Shopback", 
 			link: "https://www.shopback.sg/", 
 			img: "shopback.png", 
@@ -307,6 +397,12 @@ sponsors = Sponsor.create(
 			link: "http://www.woods-singapore.com/", 
 			img: "woods.png", 
 			description: "WOODS’ has been a trusted Cough Syrup specialist and leading provider for Expel Phlegm Fast and Relieving Cough for more than 100 years since it’s first introduced in Year 1905. It is our commitment to provide consumers with a fast and safe cough solutions whenever it is needed." 
+		},
+		{
+			name: "Singapore World Water Day", 
+			link: "http://www.singaporeworldwaterday.com", 
+			img: "world_water_day.png", 
+			description: "" 
 		},
 		{
 			name: "Yakult Singapore", 
