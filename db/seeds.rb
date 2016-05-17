@@ -247,6 +247,15 @@ sponsors = Sponsor.create(
 			description: "" 
 		},
 		{
+			name: "Happi", 
+			link: "http://happi.sg/en", 
+			img: "happi.png", 
+			description: "Happi is a new social shopping platform that provides you with special deals, chances to win those things entirely free, and donates to a cause/ charity/ group you support - all without spending a dime. Simply by tapping on the Smiley button on each offering, you download a free discount coupon and automatically enters into a lucky draw contest. 
+
+Each week, we reward selected users who have 'smiled' 10 times or more with giveaways from our app. 
+(see our FB page for weekly give-away results)" 
+		},
+		{
 			name: "Ippin", 
 			link: "http://www.ippin-jpc.com/", 
 			img: "ippin.png", 
