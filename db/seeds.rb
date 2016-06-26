@@ -554,6 +554,20 @@ Tell us your tales at studentrelations@nuscomputing.com and we will do our best 
 			formalimg: "shaohui.jpg"
 		},
 		{
+			name: "Tan Wei",
+			position: "Deputy Director of Finance",
+			wingid: 0,
+			wingrank: 3,
+			cellrank: 1,
+			course: "Computer Science",
+			year: 1,
+			description: "Hello, I'm Tan Wei and I'm the way to go! Just kidding. Please look for me only when you have serious questions, like how does Computing Club manage its finance or can we hang out together? :P
+
+I love money, photography and badminton. If you are interested in sharing a life - uhm, I mean interests - with me, feel free to contact me at dy.finance(at)nuscomputing.com. I'll be more than happy to get back to you!",
+			casualimg: "tanwei.jpg",
+			formalimg: "tanwei.jpg"
+		},
+		{
 			name: "Javier Leong Lu Sheng",
 			position: "Computing Club NUSSU Representative",
 			wingid: 0,
