@@ -25,6 +25,16 @@ a {
   outline: 0;
 }
 
+.about-thumbnail {
+  position: relative;
+}
+
+.about-thumbnail img {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
 .center-wraper {
   margin: 0 auto;
 }
@@ -37,5 +47,3 @@ a {
 .wing-name-class {
   font-style: italic;
 }
-
-
