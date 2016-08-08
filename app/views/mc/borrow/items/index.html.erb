@@ -1,0 +1,8 @@
+<h1>All Items</h1>
+<h3><%= link_to "Add new item", new_mc_borrow_item_path %></h3>
+<br />
+<% @items.each do |item| %>
+	<%= image_tag item.image.url(:thumb) %>
+	<%= link_to item.label, mc_borrow_item_path(item) %>
+<% end %>
+

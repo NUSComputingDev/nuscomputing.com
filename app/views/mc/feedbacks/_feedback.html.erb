@@ -1,0 +1,6 @@
+<h2 class="subheader"><%= feedback.title %></h2>
+<%= feedback.content %>
+
+<% if feedback.email.present? %>
+<small class="subheader">By <%= mail_to feedback.email %></small>
+<% end %>

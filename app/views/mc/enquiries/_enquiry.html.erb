@@ -1,0 +1,33 @@
+<li class="accordion-navigation">
+  <a href="#enq-panel<%= enquiry.id %>" class="bold">
+    <%= fa_icon 'envelope-o', text: enquiry.name, right: false %>
+    <%= fa_icon 'chevron-down', class: 'text-muted pull-right' %>
+  </a>
+  <div id="enq-panel<%= enquiry.id %>" class="content">
+    <div class="row">
+
+      <div class="columns small-12">
+        <strong>Message:</strong>
+        <div class="panel">
+          <%= simple_format html_escape_once enquiry.message %>
+        </div>
+      </div>
+      <div class="columns medium-4 small-6">
+        <strong>Email:</strong><br>
+        <%= mail_to enquiry.email %>
+      </div>
+      <div class="columns medium-4 small-6">
+        <% if enquiry.contact.present? %>
+          <strong>Contact:</strong><br>
+          <%= enquiry.contact %>
+        <% end %>
+      </div>
+      <div class="columns medium-4 small-12">
+        <strong>Posted on:</strong><br>
+        <%= enquiry.created_at %>
+      </div>
+
+    </div>
+  </div>
+</li>
+<br>

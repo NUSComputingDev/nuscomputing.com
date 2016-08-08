@@ -1,0 +1,17 @@
+<table width="100%">
+	<thead>
+		<tr>
+			<th class="text-center" width="50">ID</th>
+			<th class="text-center" width="100">Image</th>
+			<th class="text-center">Item</th>
+			<th class="text-center" width="100">State</th>
+			<th class="text-center" width="100">Status</th>
+			<th class="text-center" width="400">Last Transaction</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% items.order(:state, :status, :label).each do |item|  %>
+				<%= render partial: "mc/borrow/items/row", locals: { item: item }  %>
+			<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,14 @@
+<tr id='<%= "item-#{item.id}" %>'>
+	<td><%= item.id %></td>
+	<td class="text-center"><%= image_tag item.image.url(:thumb), class: "th radius" %></th>
+	<td><%= link_to item.label, mc_borrow_item_path(item) %></td>
+	<td><%= item.state.capitalize %></td>
+	<td><%= item.status.capitalize %></td>
+	<td>
+		<% transaction = item.item_transactions.last %>
+		<% if transaction %>
+			<%= link_to "Transaction #{transaction.id}", mc_borrow_item_transaction_path(transaction.token) %>
+		<% end %>
+	</td>
+</tr>
+

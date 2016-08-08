@@ -62,7 +62,7 @@
 
     <tr>
       <td class="attr-name">Message:</td>
-      <td class="attr-value"><%= simple_format @enquiry.message %></td>
+      <td class="attr-value"><%= simple_format html_escape_once @enquiry.message %></td>
     </tr>
   </table>
 

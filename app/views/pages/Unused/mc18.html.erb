@@ -1,0 +1,7 @@
+<div class="mc-structure">
+    <h1>18th Management Committee</h1>
+
+    <% @winginfos.each do |wing| %>
+        <%= render partial: 'wing_div', locals: {wing: wing} %>
+    <% end %>
+</div>

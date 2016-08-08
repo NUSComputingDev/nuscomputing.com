@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
+  <style type="text/css">
+	  .wrapper {
+		  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  }
+
+	  table, th, td {
+		border: 1px solid #dddddd
+	  }
+
+	  td {
+		  padding: 15px;
+	  }
+
+	  .attr-name {
+		  font-weight: bold;
+	  }
+
+	  .footer {
+		  border-top: 1px solid #dddddd;
+		  padding-top: 8px;
+		  font-size: 12px;
+		  font-style: italic;
+	  }
+  </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <p>
+    Dear <%= @user.uid %>,
+  </p>
+  <p>
+    Thank you for submitting your locker ballot. Please confirm the ballot as follows:
+  </p>
+
+  <table>
+    <tr>
+      <td class="attr-name">Submitted By:</td>
+      <td class="attr-value"><%= @user.uid %></td>
+    </tr>
+
+    <tr>
+      <td class="attr-name">Balloting Round:</td>
+      <td class="attr-value"><%= @round.name %></td>
+    </tr>
+
+    <tr>
+      <td class="attr-name">Preferred Location:</td>
+      <td class="attr-value"><%= @ballot.location %></td>
+    </tr>
+  </table>
+
+  <p>
+    Please contact us at <%= mail_to 'connect@nuscomputing.com', 'connect@nuscomputing.com', subject: '[Locker Ballot] Enquiries' %> if you have any issues.
+  </p>
+
+  <div class="footer">
+    <a href="nuscomputing.com">NUS Computing</a>
+  </div>
+
+</div>
+</body>
+</html>

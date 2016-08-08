@@ -1,0 +1,12 @@
+<h1><%= @item_type.name %></h1>
+<%= image_tag @item_type.image.url(:medium), class: "th radius" %>
+<p><%= @item_type.description %></p>
+<%= link_to "Edit", edit_mc_borrow_item_type_path %>
+<hr>
+<ul>
+	<% @item_type.items.each do |item| %>
+		<li><%= link_to item.label, [:mc, item] %></li>
+	<% end %>
+</ul>
+	
+

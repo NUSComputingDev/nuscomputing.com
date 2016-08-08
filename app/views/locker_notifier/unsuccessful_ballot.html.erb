@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
+  <style type="text/css">
+	  .wrapper {
+		  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  }
+
+	  table, th, td {
+		  border: 1px solid #dddddd
+	  }
+
+	  td {
+		  padding: 15px;
+	  }
+
+	  .attr-name {
+		  font-weight: bold;
+	  }
+
+	  .footer {
+		  border-top: 1px solid #dddddd;
+		  padding-top: 8px;
+		  font-size: 12px;
+		  font-style: italic;
+	  }
+  </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <p>
+    Dear <%= @user.uid %>,
+  </p>
+
+  <p>
+    Thank you for taking part in the Locker Balloting Exercise. Unfortunately your ballot for the round <%= @round.name %> is <strong>unsuccessful</strong>.
+  </p>
+
+  <p>
+    If there is an upcoming balloting round, please place your ballot again. Visit <a href="portal.nuscomputing.com/locker">portal.nuscomputing.com/locker</a> to check for the next balloting round.
+    Else, please contact us at <%= mail_to 'connect@nuscomputing.com', 'connect@nuscomputing.com', subject: '[Locker Ballot] Request' %> for manual allocation.
+  </p>
+
+  <p>
+    Please contact us at <%= mail_to 'connect@nuscomputing.com', 'connect@nuscomputing.com', subject: '[Locker Ballot] Enquiries' %> if you have any other issues.
+  </p>
+
+  <div class="footer">
+    <a href="nuscomputing.com">NUS Computing</a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -3,11 +3,11 @@
 one:
   name: MyString
   position: MyString
-  wingid: 
-  wingrank: 
-  cellrank: 
+  wingid: 1
+  wingrank: 1
+  cellrank: 1
   course: MyString
-  year: 
+  year: 1
   description: MyText
   casualimg: MyString
   formalimg: MyString
@@ -15,11 +15,11 @@ one:
 two:
   name: MyString
   position: MyString
-  wingid: 
-  wingrank: 
-  cellrank: 
+  wingid: 1
+  wingrank: 1
+  cellrank: 1
   course: MyString
-  year: 
+  year: 1
   description: MyText
   casualimg: MyString
   formalimg: MyString

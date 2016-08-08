@@ -1,0 +1,4 @@
+$('#transaction-info').html('<%= j render(partial: 'trans_info', locals: { item_transaction: @item_transaction }) %>');
+$('#actions').html('<%= j render "action" %>');
+$('#item-status').html('<%= j "Status: #{@item_transaction.item.status.capitalize}" %>');
+$('#transaction-status').html('<%= j "Status: #{@item_transaction.status.capitalize}" %>');

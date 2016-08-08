@@ -1,0 +1,16 @@
+<tr id='<%= "item_transaction-#{item_transaction.id}" %>'>
+	<td>
+		<%= link_to mc_borrow_item_transaction_path(item_transaction.token) do %>
+			<%= image_tag item_transaction.qrcode.url, class: "th radius" %>
+		<% end %>
+	</td>
+	<td><%= link_to item_transaction.request.id, mc_borrow_item_request_path(item_transaction.request) %></td>
+	<td><%= item_transaction.request.user.uid %></td>
+	<td><%= local_time item_transaction.request.created_at %></td>
+	<td><%= item_transaction.status.capitalize %></td>
+	<td><%= local_time item_transaction.pending_sent_at if item_transaction.pending_sent_at %></td>
+	<td><%= local_time item_transaction.pending_expire_at if item_transaction.pending_expire_at %></td>
+	<td><%= local_time item_transaction.transaction_began_at if item_transaction.transaction_began_at %></td>
+	<td><%= local_time item_transaction.transaction_end_at if item_transaction.transaction_end_at %></td>
+	<td><%= local_time item_transaction.transaction_completed_at if item_transaction.transaction_completed_at %></td>
+</tr>

@@ -1,0 +1,2 @@
+module Mc::LockerHelper
+end

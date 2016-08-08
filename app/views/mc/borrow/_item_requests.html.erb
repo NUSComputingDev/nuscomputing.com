@@ -1,0 +1,18 @@
+<table width="100%">
+	<thead>
+		<tr>
+			<th class="text-center" width="50">ID</th>
+			<th class="text-center">Item</th>
+			<th class="text-center" width="120">Requested By</th>
+			<th class="text-center" width="200">Requested At</th>
+			<th class="text-center" width="100">Status</th>
+			<th class="text-center" width="300">Action</th>
+			<th class="text-center" width="200">Approved/Rejected By</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% item_requests.order(:status, created_at: :desc).each do |request|  %>
+				<%= render partial: "mc/borrow/item_requests/row", locals: { item_request: request }  %>
+			<% end %>
+	</tbody>
+</table>

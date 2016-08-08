@@ -1,0 +1,7 @@
+<tr id='<%= "item_type-#{type.id}" %>'>
+	<td><%= type.id %></th>
+	<td class="text-center"><%= image_tag type.image.url(:thumb), class: "th radius" %></th>
+	<td><%= link_to truncate(type.name, length: 30), mc_borrow_item_type_path(type) %></th>
+	<td><%= truncate type.description, length: 100 %></th>
+</tr>
+

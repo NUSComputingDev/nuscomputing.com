@@ -1,0 +1,18 @@
+<div class="row" xmlns="http://www.w3.org/1999/html">
+
+  <div class="large-12 columns">
+    <h3 class="bold">Enquiries</h3>
+    <p>
+      There are <%= @enquiries.count %> enquiries in total. Click to expand the enquiries.
+    </p>
+  </div>
+
+  <div class="large-12 columns">
+    <p>
+    <ul class="accordion" data-accordion>
+      <%= render @enquiries %>
+    </ul>
+    </p>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<h1>Email Blast</h1>
+<ul class="tabs" data-tab>
+	<li class="tab-title active"><a href="#blast-emails">Blast Emails</a></li>
+	<li class="tab-title"><a href="#blast-requests">Blast Requests</a></li>
+</ul>
+<div class="tabs-content">
+	<div id="blast-emails" class="content active">
+		<%= link_to "New Email Blast", new_mc_blast_blast_email_path, class: "button radius success" %>
+	</div>
+	<div id="blast-requests" class="content">
+		<%= link_to "New Request", new_mc_blast_blast_request_path, class: "button radius success" %>
+		<div class="container">
+			<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+				<% @blast_requests.each do |request| %>
+					<li class="panel"><%= render partial: 'mc/blast/blast_requests/blast_request', locals: { blast_request: request } %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+

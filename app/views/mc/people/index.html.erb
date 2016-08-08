@@ -1,0 +1,59 @@
+<div class="row">
+
+  <div class="small-12 columns">
+    <h3 class="bold">People of the MC</h3>
+    <p>
+      Edit the details of the people of MC. This will be shown on the about page on the main website.
+    </p>
+    <p>
+      An person must have a name, an image link to the casual photo, an optional image link to the formal photo, and a write-up.
+      Each image link must be a direct link to the image, i.e. the link should end with ".jpg" or similar.
+      Image dimensions must follow <strong>length = 1.5x of width</strong>, otherwise it may not show up nicely on the website.
+    </p>
+    <%= link_to new_mc_people_mc_member_path, class: 'radius button success' do %>
+      <%= fa_icon 'plus', text: 'Add MC Member', right: true %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div class="columns small-12">
+    <h3 class="bold">MC Members</h3><h6 class="subheader"><%= @mc_members.count %> members</h6>
+    <p>
+      Showing all MC members.
+    </p>
+    <table width="100%">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Wing</th>
+        <th>Position</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @mc_members.each do |member| %>
+        <tr id="event-<%= member.id %>">
+          <td><span data-tooltip
+                    aria-haspopup="true"
+                    class="has-tip radius"
+                    title="<%= "#{member.description.empty? ? 'No write-up available...' : "#{member.description}"}"%>">
+            <%= member.name %>
+	          </span>
+          </td>
+          <td><%= member.mc_wing ? member.mc_wing.wingname : "Error (Wing ID: #{member.wingid})"%></td>
+          <td><%= member.position %></td>
+          <td>
+            <ul class="button-group stack radius">
+              <li><%= link_to 'View', mc_people_mc_member_path(member), class: 'button info small expand' %></li>
+              <li><%= link_to 'Edit', edit_mc_people_mc_member_path(member), class: 'button small expand' %></li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

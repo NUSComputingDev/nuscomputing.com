@@ -1,0 +1,26 @@
+<table width="100%">
+	<thead>
+		<tr>
+			<th class="text-center" width="150" rowspan="2">QRCode</th>
+			<th class="text-center" colspan="3">Request</th>
+			<th class="text-center" width="100" rowspan="2">Status</th>
+			<th class="text-center" width="100" colspan="2">Pending</th>
+			<th class="text-center" width="200" colspan="3">Borrowing</th>
+		</tr>
+		<tr>
+			<td class="text-center">Details</td>
+			<td class="text-center">Requested By</td>
+			<td class="text-center">Requested At</td>
+			<td class="text-center">Sent At</td>
+			<td class="text-center">End At</td>
+			<td class="text-center">Started At</td>
+			<td class="text-center">End At</td>
+			<td class="text-center">Completed At</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% item_transactions.order(:status, :pending_sent_at, :transaction_began_at).each do |trans| %>
+			<%= render partial: 'mc/borrow/item_transactions/row', locals: { item_transaction: trans } %>
+		<% end %>
+	</tbody>
+</table>

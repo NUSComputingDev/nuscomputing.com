@@ -1,0 +1,42 @@
+<% if @allocations.any? %>
+  <div style="text-align: center;">
+    <p>
+      <strong><%= @allocations.count %> allocations for <%= @acad_year %></strong>
+    </p>
+  </div>
+
+  <table width="100%">
+    <thead>
+    <tr>
+      <th>User</th>
+      <th>Faculty</th>
+      <th>Locker</th>
+      <th>Last Updated</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @allocations.each do |allocation| %>
+      <tr id='<%= "allocation-#{allocation.id}" %>'>
+        <td><%= allocation.user.uid %></td>
+        <td><%= allocation.user.faculty %></td>
+        <td><%= link_to allocation.locker.name, mc_locker_locker_path(allocation.locker) %></td>
+        <td><%= local_time allocation.updated_at %></td>
+        <td>
+          <ul class="button-group stack radius">
+            <li><%= link_to 'View', mc_locker_locker_allocation_path(allocation), class: 'button info small expand' %></li>
+            <li><%= link_to 'Edit', edit_mc_locker_locker_allocation_path(allocation), class: 'button small expand' %></li>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+    <%#= paginate @allocations %>
+</tbody>
+</table>
+<% else %>
+	<div style="text-align: center;">
+		<p>
+			<strong>No allocations for <%= @acad_year %>!</strong>
+		</p>
+	</div>
+<% end %>

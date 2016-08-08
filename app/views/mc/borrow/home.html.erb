@@ -1,0 +1,42 @@
+<h1 class="text-center">Borrow System</h1>
+<ul class="tabs" data-tab>
+	<li class="tab-title active"><a href="#item-requests">Requests</a></li>
+	<li class="tab-title"><a href="#item-transactions">Transactions</a></li>
+	<li class="tab-title"><a href="#items">Items</a></li>
+	<li class="tab-title"><a href="#item-types">Types</a></li>
+</ul>
+
+<div class="tabs-content">
+	<br>
+	<div class="text-center">
+		<%= link_to mc_borrow_reload_path, class: "button radius expand", id: "reload-button", remote: true do %>
+			<%= fa_icon "spinner spin", text: "Reload", right: true, id: "spinner" %>
+		<% end %>
+		<div id="meter" class="progress"></div>
+	</div>	
+	
+	<div id="item-requests" class="content active">
+		<%= render partial: "item_requests", locals: { item_requests: @requests } %>
+	</div>
+
+	<div id="item-transactions" class="content">
+		<%= render partial: "item_transactions", locals: { item_transactions: @transactions } %>
+	</div>
+
+	<div id="items" class="content">
+		<%= render 'new_item' %>
+		<br>
+		<div id="items-table">
+			<%= render partial: "items", locals: { items: @items } %>
+		</div>
+	</div>
+
+	<div id="item-types" class="content">
+		<%= render 'new_item_type' %>
+		<br>
+		<div id="item-types-table">
+			<%= render partial: "item_types", locals: { item_types: @types } %>
+		</div>
+	</div>
+
+</div>
