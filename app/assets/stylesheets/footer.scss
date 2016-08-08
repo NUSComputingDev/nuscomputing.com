@@ -2,13 +2,10 @@
 // Place footer CSS here
 
 footer {
-  background-color: #011640;
+  background-color: rgb(1, 22, 64);
   color: ghostwhite;
   text-align: center;
-  border-top: 5px solid #db5123;
-  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.4);
+  display: table-row;
 }
 
 /* Unordered list in foot class */
@@ -22,8 +19,7 @@ footer li {
 }
 
 .footer-container {
-  padding-top: 1%;
-  padding-bottom: 1%
+	padding: 2%;
 }
 
 .copyright {

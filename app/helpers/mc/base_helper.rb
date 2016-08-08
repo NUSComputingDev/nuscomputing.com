@@ -1,2 +1,0 @@
-module Mc::BaseHelper
-end

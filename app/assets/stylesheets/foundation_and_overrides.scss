@@ -87,7 +87,7 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+   $font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -116,9 +116,9 @@ $font-family-sans-serif: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-
 // $black       : #000000;
 
 // Custom colors
-$soc-black   : #303030;
-$soc-grey    : #E1E3E4;
-$soc-blue    : #011640;
+   $soc-black   : #303030;
+   $soc-grey    : #E1E3E4;
+   $soc-blue    : #011640;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -130,9 +130,9 @@ $soc-blue    : #011640;
 
 // We use these to control various global styles
 // $body-bg: $white; // edited below
-//$body-bg: $soc-grey;
+   $body-bg: $soc-grey;
 // $body-font-color: $jet;
-$body-font-family: $font-family-sans-serif;
+// $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -1410,7 +1410,7 @@ $body-font-family: $font-family-sans-serif;
 
 // Background color for the top bar 
 // $topbar-bg-color: $oil; // edited below
-$topbar-bg-color: $soc-blue;
+   $topbar-bg-color: $soc-blue;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1419,9 +1419,9 @@ $topbar-bg-color: $soc-blue;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal; // edited below
-$topbar-title-weight: bold;
+   $topbar-title-weight: bold;
 // $topbar-title-font-size: rem-calc(17); // edited below
-$topbar-title-font-size: 16pt;
+   $topbar-title-font-size: 16pt;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
@@ -1429,12 +1429,12 @@ $topbar-title-font-size: 16pt;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal; // edited below
-$topbar-link-weight: bold;
+   $topbar-link-weight: bold;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-hover: $jet; // edited below
-$topbar-link-bg-hover: scale-color($soc-blue, $lightness: -14%);
+   $topbar-link-bg-hover: scale-color($soc-blue, $lightness: -14%);
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
@@ -1448,12 +1448,12 @@ $topbar-link-bg-hover: scale-color($soc-blue, $lightness: -14%);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil; // editied below
-$topbar-dropdown-bg: $soc-blue;
+   $topbar-dropdown-bg: $soc-blue;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-bg-hover: $jet; // editied below
-$topbar-dropdown-link-bg-hover: scale-color($soc-blue, $lightness: -14%);
+   $topbar-dropdown-link-bg-hover: scale-color($soc-blue, $lightness: -14%);
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;

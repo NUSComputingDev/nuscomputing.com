@@ -1,33 +1,24 @@
 <div class="nav-wrapper">
-  <nav class="top-bar row" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href=<%= root_url subdomain: '' %>><%= image_tag "new_logo.png", :size => "24x27", :style => "margin-right: 8pt;" %>NUS Computing</a></h1>
-      </li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-    </ul>
+    <nav class="top-bar row" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <%# to be revised %>
+              <h1><a href=<%= root_path %>><%= image_tag "new_logo.png", :size => "24x27", :style => "margin-right: 8pt;" %>NUS Computing</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <%= active_link_to 'Home', root_path, :wrap_tag => :li, :active => :exclusive%>
-        <%= active_link_to 'About', about_path, :wrap_tag => :li %>
-        <%= active_link_to 'Events', events_path, :wrap_tag => :li %>
-        <%= active_link_to 'Students', students_path, :wrap_tag => :li %>
-        <%= active_link_to 'Connect', connect_path, :wrap_tag => :li %>
-        <%= active_link_to 'Sponsors', sponsors_path, :wrap_tag => :li %>
-
-        <%# login/logout and profile button %>
-        <%# to move to the student page navbar %>
-        <%# if user_signed_in? %>
-          <!--<li><%#= active_link_to "Profile", profile_path %></li>-->
-          <!--<li><%#= active_link_to "Logout", destroy_user_session_path, method: :delete, id: "btn-logout" %></li>-->
-        <%# else %>
-          <!--<li><%#= active_link_to "Login", '/auth/ivle', id: 'btn-login' %></li>-->
-        <%# end %>
-
-      </ul>
-    </section>
-  </nav>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><%= active_link_to 'Home', root_path, class: "bold"%></li>
+                <li><%= active_link_to 'About', about_path %></li>
+                <li><%= active_link_to 'Events', events_path %></li>
+                <li><%= active_link_to 'Students', students_path %></li>
+                <li><%= active_link_to 'Connect', connect_path %></li>
+                <li><%= active_link_to 'Sponsors', sponsors_path %></li>
+            </ul>
+        </section>
+    </nav>
 </div>

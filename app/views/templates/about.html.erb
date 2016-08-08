@@ -4,18 +4,7 @@
 
   <div class='columns medium-4'>
     <div class="popup-column">
-      <ul class="tabs" data-tab>
-        <li class="tab-title active"><a href="#formalimg"><%= fa_icon 'chevron-left' %></a></li>
-        <li class="tab-title"><a href="#casualimg"><%= fa_icon 'chevron-right' %></a></li>
-      </ul>
-      <div class="tabs-content" data-equalizer>
-        <div class="content active" id="formalimg" data-equalizer-watch>
-          <%= image_tag @mcmem.formalimg %>
-        </div>
-        <div class="content" id="casualimg" data-equalizer-watch>
-          <%= image_tag @mcmem.casualimg %>
-        </div>
-      </div>
+      <%= image_tag "about/mc/formal/"+@mcmem.formalimg %>
     </div>
   </div>
 

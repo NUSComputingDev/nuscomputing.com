@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class McWingTest < ActiveSupport::TestCase
+class EnquiryMailerTest < ActionMailer::TestCase
   # test "the truth" do
   #   assert true
   # end
