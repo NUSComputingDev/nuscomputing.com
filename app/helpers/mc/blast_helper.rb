@@ -1,2 +1,0 @@
-module Mc::BlastHelper
-end

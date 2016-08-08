@@ -1,2 +1,0 @@
-module Portal::ProfileHelper
-end

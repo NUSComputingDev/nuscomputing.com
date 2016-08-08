@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  wingid: 1
+  wingid: 
   wingname: MyString
 
 two:
-  wingid: 1
+  wingid: 
   wingname: MyString

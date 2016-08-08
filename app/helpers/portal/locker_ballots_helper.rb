@@ -1,2 +1,0 @@
-module Portal::LockerBallotsHelper
-end

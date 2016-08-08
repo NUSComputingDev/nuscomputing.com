@@ -5,11 +5,9 @@ one:
   img: MyString
   link: MyString
   description: MyText
-  featured: false
 
 two:
   name: MyString
   img: MyString
   link: MyString
   description: MyText
-  featured: false

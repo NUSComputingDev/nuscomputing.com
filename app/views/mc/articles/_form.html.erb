@@ -1,7 +1,0 @@
-<%= simple_form_for [:mc, @article] do |f| %>
-	<%= f.input :title %>
-	<%= f.input :content, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full'} } %>
-	<br>
-  <%= f.button :submit, 'Submit', class: 'radius success' %>
-  <%= link_to "Cancel", :back, class: 'radius button alert' %>
-<% end %>
