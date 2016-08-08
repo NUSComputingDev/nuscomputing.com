@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="large-12 columns">
+    <h3 class="bold">View Sponsor</h3>
+  </div>
+
+  <div class="large-12 columns">
+    <%= render 'sponsor' %>
+    <br>
+  </div>
+
+  <div class="large-12 columns">
+    <ul class="button-group radius">
+      <li><%= link_to 'Back', mc_sponsors_path, class: 'button small info' %></li>
+      <li><%= link_to 'Edit', edit_mc_sponsor_path, class: 'button small success' %></li>
+      <li>
+        <%= link_to 'Delete',
+                    mc_sponsor_path,
+                    class: 'button small alert',
+                    method: :delete,
+                    data: { confirm: "Deleting \"#{@sponsor.name}\". Are you sure?" }
+        %>
+      </li>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,2 @@
+module Mc::FeedbacksHelper
+end

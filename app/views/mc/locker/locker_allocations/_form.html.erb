@@ -1,0 +1,8 @@
+<%= simple_form_for [:mc, :locker, @allocation] do |f| %>
+  <%= f.association :locker, collection: Locker.all.sort_by{|l| l.number.to_i}, label_method: lambda { |l| "#{l.name} (#{l.status})" }, value_method: :id, include_blank: false %>
+	<%= f.association :user, collection: User.all.order(:uid), label_method: :uid_and_name, value_method: :id, include_blank: false %>
+  <%= f.association :round, label_method: :name, value_method: :id, include_blank: false %>
+	<%= f.input :status, collection: LockerAllocation.statuses.symbolize_keys.keys, include_blank: false %>
+  <%= f.button :submit, 'Submit', class: 'radius success' %>
+  <%= link_to 'Cancel', :back, class: 'radius button alert' %>
+<% end %>

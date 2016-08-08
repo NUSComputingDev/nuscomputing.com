@@ -1,0 +1,9 @@
+<h1>All Types</h1>
+<%= link_to "Create New Type", new_mc_borrow_item_type_path %>
+<% @item_types.each do |type| %>
+	<div>
+		<%= image_tag type.image.url(:medium), class: "th radius" %>
+		<%= link_to type.name, [:mc, type] %>
+	</div>
+<% end %>
+

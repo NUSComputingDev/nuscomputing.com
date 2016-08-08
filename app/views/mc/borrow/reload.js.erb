@@ -1,0 +1,6 @@
+$('#item-requests').html("<%= j render partial: 'mc/borrow/item_requests', locals: { item_requests: @requests } %>");
+$('#item-transactions').html("<%= j render partial: 'mc/borrow/item_transactions', locals: { item_transactions: @transactions } %>");
+$('#items-table').html("<%= j render partial: 'mc/borrow/items', locals: { items: @items } %>");
+$('#item-types-table').html("<%= j render partial: 'mc/borrow/item_types', locals: { item_types: @types } %>");
+$('#spinner').hide();
+$('#meter').hide();

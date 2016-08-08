@@ -1,0 +1,6 @@
+<%= simple_form_for [:mc, :blast, @blast_request] do |f| %>
+	<%= f.input :image, as: :file %>
+	<%= f.input :text, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini'} } %>
+	<%= f.input :status, collection: BlastRequest.statuses.symbolize_keys.keys, include_blank: false %>
+	<%= f.button :submit, class: "button success radius" %>
+<% end %>

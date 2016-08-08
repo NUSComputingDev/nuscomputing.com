@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_ratio: 1
+  text_ratio: 1
+  blast_id: 
+  blast_request_id: 
+  position_index: 1
+
+two:
+  image_ratio: 1
+  text_ratio: 1
+  blast_id: 
+  blast_request_id: 
+  position_index: 1

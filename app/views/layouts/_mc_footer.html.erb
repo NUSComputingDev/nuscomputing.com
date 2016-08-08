@@ -1,0 +1,39 @@
+<footer>
+  <div class="row footer-container">
+
+    <div class="large-12 columns">
+	    <% if flash[:notice] %>
+        <div data-alert class="alert-box info radius">
+          <%= notice %>
+          <a href="#" class="close">&times;</a>
+        </div>
+        <div id="notice_modal_mc" class="reveal-modal large-12 small-12 columns" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <p><%= notice %></p>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+        <script>
+	        $(document).ready(function(){$('#notice_modal_mc').foundation('reveal', 'open')});
+        </script>
+      <% end %>
+      <% if flash[:alert] %>
+        <div data-alert class="alert-box warning radius">
+          <%= alert %>
+          <a href="#" class="close">&times;</a>
+        </div>
+        <div id="alert_modal_mc" class="reveal-modal large-12 small-12 columns" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	        <h3 class="bold">Alert</h3>
+          <p><%= alert %></p>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+		    <script>
+			    $(document).ready(function(){$('#alert_modal_mc').foundation('reveal', 'open')});
+		    </script>
+      <% end %>
+    </div>
+
+    <div class="large-12 columns">
+	    <%= link_to 'Main Site', root_url(:subdomain => '') %> | <%= link_to 'Student Portal', root_url(:subdomain => 'portal') %>
+    </div>
+
+  </div>
+</footer>

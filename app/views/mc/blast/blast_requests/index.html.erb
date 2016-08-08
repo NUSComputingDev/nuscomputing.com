@@ -1,0 +1,9 @@
+<h1>All Requests</h1>
+<%= link_to "New Request", new_mc_blast_blast_request_path, class: "button radius success" %>
+<div class="container">
+	<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+		<% @blast_requests.each do |request| %>
+			<li class="panel"><%= render partial: 'mc/blast/blast_requests/blast_request', locals: { blast_request: request } %></li>
+		<% end %>
+	</ul>
+</div>

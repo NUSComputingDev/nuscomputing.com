@@ -23,12 +23,6 @@
 </div>
 
 <section class="events-section">
-  <!--<div class="row">-->
-    <!--<div class="small-12 columns">-->
-      <!--<h3 class="bold">We Are Computing Club</h3>-->
-    <!--</div>-->
-    <!--<div class="small-4 columns upcoming-header-bar end"></div>-->
-  <!--</div>-->
 
   <div class="row">
     <div class="medium-7 columns">
@@ -57,21 +51,20 @@
     <div class="small-12 columns">
       <h3 class="bold">Featured Events</h3>
     </div>
-    <!--<div class="small-4 columns upcoming-header-bar end"></div>-->
   </div>
 
   <div class="row">
     <%# loop through the upcoming (at most 3) events and create the partial for each. %>
     <% count = 0 %>
     <% @events.each do |event| %>
-    	<% if event.featured && count < 3 %>
-        <%= render partial: "event", locals: {event: event} %>
-        <% count += 1 %>
-      <% end %>
+        <% if event.featured && count < 3 %>
+            <%= render partial: "event", locals: {event: event} %>
+            <% count += 1 %>
+        <% end %>
     <% end %>
     <script>
-    	// add "end" class to the last event partial to smoothen layout
-    	$(".event-columns:last").addClass("end");
+	    // add "end" class to the last event partial to smoothen layout
+	    $(".event-columns:last").addClass("end");
     </script>
   </div>
 

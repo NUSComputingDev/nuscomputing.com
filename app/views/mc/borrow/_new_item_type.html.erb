@@ -1,0 +1,19 @@
+<ul class="accordion" data-accordion>
+	<li class="accordion-navigation">
+		<a href="#new-item-type-form">Create New Type</a>
+		<div id="new-item-type-form" class="content">
+			<%= simple_form_for [:mc, :borrow, ItemType.new], remote: true do |f| %>
+				<div class="row">
+					<div class="small-6 columns">
+						<%= f.input :name %>
+						<%= f.input :description %>
+					</div>
+					<div class="small-6 columns">
+						<%= f.input :image, as: :file %>
+						<%= f.button :submit, class: "button success radius expand" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</li>
+</ul>

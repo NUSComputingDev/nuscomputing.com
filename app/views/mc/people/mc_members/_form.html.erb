@@ -1,0 +1,15 @@
+<%= simple_form_for [:mc, :people, @mc_member] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :position %>
+  <%= f.association :mc_wing, label: 'Wing', label_method: :wingname, value_method: :wingid, include_blank: false %>
+  <%= f.input :wingrank, label: raw("Wing Rank (see #{link_to 'above', '#instructions'})") %>
+  <%= f.input :cellrank, label: raw("Cell Rank (see #{link_to 'above', '#instructions'})") %>
+  <%= f.input :casualimg, label: 'Casual Photo URL (e.g. http://i.imgur.com/iP43yT.jpg)' %>
+  <%= f.input :formalimg, label: 'Formal Photo URL (e.g. http://i.imgur.com/iP43yT.jpg)' %>
+  <%= f.input :course, label: 'Course Studied (e.g. Information Systems)' %>
+  <%= f.input :year, label: 'Current Year of Study' %>
+  <%= f.input :description, label: 'Personal Write-up', :input_html => {:rows => 8} %>
+  <br>
+  <%= f.button :submit, 'Submit', class: 'radius success' %>
+  <%= link_to 'Cancel', :back, class: 'radius button alert' %>
+<% end %>

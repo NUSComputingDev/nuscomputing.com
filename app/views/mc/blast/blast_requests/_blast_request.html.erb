@@ -1,0 +1,6 @@
+<div class="text-center"><strong><%= link_to "Request ##{blast_request.id}", mc_blast_blast_request_path(blast_request)%></strong></div>
+<div class="text-center">
+	<div class="status <%= blast_request.status %>"><%= blast_request.status.capitalize %></div>
+	<div><%= image_tag blast_request.image.url(:medium), class: "th radius" %></div>
+	<div><%= truncate h(blast_request.text), length: 100 %></div>
+</div>
