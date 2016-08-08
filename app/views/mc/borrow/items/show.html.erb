@@ -1,0 +1,9 @@
+<h1><%= @item.label %></h1>
+<em>Type: <%= link_to @item.type.name, mc_borrow_item_type_path(@item.type) %></em>
+<br />
+<%= image_tag @item.image.url(:thumb) %>
+<div class="state">State: <%= @item.state.capitalize %></div>
+<div class="status">Status: <%= @item.status.capitalize %></div>
+<br />
+<%= link_to "Edit", edit_mc_borrow_item_path(@item) %>
+<%= link_to "Back", mc_borrow_items_path %>

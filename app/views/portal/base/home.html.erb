@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h3 class="bold">Portal Home</h3>
+	  <p>Welcome, <%= current_user.name %>.</p>
+    Quick Links
+    <ul>
+      <li><%= link_to 'Locker Balloting System', portal_locker_path %></li>
+      <li><%= link_to 'Main Website', root_url(subdomain: '') %></li>
+    </ul>
+  </div>
+</div>

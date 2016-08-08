@@ -1,3 +1,4 @@
+//@import "foundation";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,12 +11,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  *= require font-awesome
  *= require magnific
+ *= require custom_fonts
+ *= require owl_carousel
+ *= require foundation_calendar
+ *= require foundation_and_overrides
+ *= require jquery.gridster
+ *= require_tree .
+ *= require_self
  */
-@import "custom_fonts";
-@import "foundation_and_overrides";
-@import "owl_carousel";
+//@import "custom_fonts";
+//@import "owl_carousel";
+//@import "foundation_calendar";
+//@import "jquery.gridster";
 //@import "magnific";

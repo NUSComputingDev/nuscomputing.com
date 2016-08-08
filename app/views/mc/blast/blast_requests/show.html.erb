@@ -1,0 +1,16 @@
+<h1>Blast Request #<%= @blast_request.id %></h1>
+<div class="status <%= @blast_request.status %>"><%= @blast_request.status.capitalize %></div>
+<div class="image"><%= image_tag @blast_request.image.url, class: "th radius" %></div>
+<div class="texts">
+	<div class="raw-text">
+		<span><strong>Raw text:</strong></span>
+		<div><%= h @blast_request.text %></div>
+	</div>	
+	<hr>
+	<div class="formatted-text">
+		<span><strong>Formatted text:</strong></span>
+		<div><%= simple_format @blast_request.text %></div>
+	</div>
+</div>
+<div>Requested At: <%= local_time @blast_request.created_at %></div>
+<%= link_to "Edit", edit_mc_blast_blast_request_path(@blast_request), class: "button success radius expand" %>

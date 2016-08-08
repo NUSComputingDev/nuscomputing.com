@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  pending_sent_at: 2015-07-14 16:23:51
+  pending_expire_at: 2015-07-14 16:23:51
+  collection_began_at: 2015-07-14 16:23:51
+  collection_ended_at: 2015-07-14 16:23:51
+  token: MyString
+  item_request_id: 
+
+two:
+  status: 1
+  pending_sent_at: 2015-07-14 16:23:51
+  pending_expire_at: 2015-07-14 16:23:51
+  collection_began_at: 2015-07-14 16:23:51
+  collection_ended_at: 2015-07-14 16:23:51
+  token: MyString
+  item_request_id: 

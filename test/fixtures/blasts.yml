@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sent_at: 2015-07-16 13:57:53
+  background_image: 
+  background_color: MyString
+  width: 1
+  height: 1
+  items_position: MyText
+  member_id: 
+
+two:
+  sent_at: 2015-07-16 13:57:53
+  background_image: 
+  background_color: MyString
+  width: 1
+  height: 1
+  items_position: MyText
+  member_id: 

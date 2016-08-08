@@ -7,7 +7,7 @@
     <div class="popup-column">
       <h3 class="bold"><%= @event.name %></h3>
       <p>
-        <%= simple_format @event.description %>
+        <%= raw @event.description %>
       </p>
       <p>
         <a href="<%= @event.externalpage %>" target="_blank"><button class="radius"><i class="fa fa-external-link"></i>&nbsp;External Link</button></a>
@@ -17,7 +17,7 @@
 
   <div class='medium-4 columns'>
     <div class="popup-column">
-      <%= image_tag "events/"+@event.img %>
+      <%= link_to image_tag(@event.img), image_path(@event.img), class: 'th radius', target: '_blank' %>
     </div>
   </div>
 

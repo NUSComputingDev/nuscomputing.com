@@ -4,8 +4,12 @@ one:
   name: MyString
   link: MyString
   img: MyString
+  description: MyString
+  featured: false
 
 two:
   name: MyString
   link: MyString
   img: MyString
+  description: MyString
+  featured: false

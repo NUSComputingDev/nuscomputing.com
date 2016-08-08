@@ -1,0 +1,23 @@
+<div class="member-panel row panel">
+    <div class="columns small-12 position">
+        <h3><%= member.position %></h3>
+    </div>
+    <div class="columns small-12 medium-4 large-3">
+        <% if member.casualimg.present? %>
+            <%= image_tag "photos/18MC/"+member.casualimg+".jpg", class: "th radius" %>
+        <% end %>
+    </div>
+    <div class="columns small-12 medium-8 large-9">
+        <div class="name">
+            <%= member.name %>
+        </div>
+        <div class="course-year">
+            <% if member.course.present? && member.year.present? %>
+                <p><%= member.course %>, Year <%= member.year %></p>
+            <% end %>
+        </div>
+        <div class="description">
+            <%= simple_format(member.description) %>
+        </div>
+    </div>
+</div>

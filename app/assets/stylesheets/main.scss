@@ -9,9 +9,13 @@
   table-layout: fixed;
 }
 
-.asd {
+.main-body {
   display: table-row;
   height: 100%;
+}
+
+.main-body.main-site {
+  background: #E1E3E4;
 }
 
 // give an image radius class

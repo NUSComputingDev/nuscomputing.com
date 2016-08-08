@@ -1,0 +1,30 @@
+<div class="row">
+
+  <%= render partial: 'mc/locker/navigations', locals: {page: 'ballots'} %>
+
+  <div class="columns small-12 medium-8">
+	  <h3>Ballot Management</h3>
+	  <p>Add ballots for people who can't ballot from the portal. Edit or remove ballots if needed.</p>
+    <p>Click <em>Retrieve Ballots</em> to see all ballots made thus far for the selected round. </p>
+  </div>
+
+  <div class="columns small-12 medium-4">
+    <%= link_to new_mc_locker_locker_ballot_path, class: 'button radius success expand' do %>
+      <%= fa_icon 'plus', text: 'Create Ballot', right: true %>
+    <% end %>
+  </div>
+
+  <div class="columns small-12">
+    <%= simple_form_for :locker_ballot, url: mc_locker_locker_ballots_path, method: :get, remote: true do |f|  %>
+      <%= f.input :round, collection: LockerRound.order(acad_year: :desc), label_method: :name, value_method: :id, include_blank: false %>
+      <%= f.submit 'Retrieve Ballots', class: 'button radius info expand', name: nil %>
+    <% end %>
+
+    <div class="ballot-data">
+      <%#= render partial: 'ballots', locals: { ballots: @ballots } %>
+    </div>
+  </div>
+
+</div>
+
+

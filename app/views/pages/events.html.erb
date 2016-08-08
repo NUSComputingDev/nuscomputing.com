@@ -16,7 +16,6 @@
   </div>
 </div>
 
-<% @events = Event.all %>
 <% @events.each_slice(4) do |event_row| %>
     <div class="row" data-equalizer>
       <% event_row.each do |event| %>
@@ -24,7 +23,7 @@
             <a class="popup-link" href="/templates/events/<%= event.link %>">
               <div class='panel radius event-box'>
                 <div data-equalizer-watch>
-                  <%= image_tag "events/"+event.img %>
+                  <%= image_tag event.img %>
                 </div>
                 <hr>
                 <h6 class='bold'><%= event.name %></h6>

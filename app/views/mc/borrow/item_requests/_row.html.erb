@@ -1,0 +1,17 @@
+<tr id='<%= "request-#{item_request.id}" %>'>
+	<td><%= item_request.id %></td>
+	<td><%= link_to item_request.item.label, mc_borrow_item_path(item_request.item) %></td>
+	<td><%= item_request.user.uid %></td>
+	<td><%= local_time item_request.created_at %></td>
+	<td><%= item_request.status.capitalize %></td>
+	<td>
+		<% if item_request.pending? %>
+			<%= link_to "Approve", approve_mc_borrow_item_request_path(item_request), class: "button radius success", remote: true, method: :patch %> 
+			<%= link_to "Reject", reject_mc_borrow_item_request_path(item_request), class: "button radius alert", remote: true, method: :patch, data: { confirm: "Are you sure?" } %>
+		<% elsif item_request.approved? %>
+			<%= link_to "Reset", reset_mc_borrow_item_request_path(item_request), class: "button radius info", remote: true, method: :patch %>
+		<% end %>
+	</td>
+	<td><%= item_request.processor.email unless item_request.processor.nil? %></td>
+</tr>
+

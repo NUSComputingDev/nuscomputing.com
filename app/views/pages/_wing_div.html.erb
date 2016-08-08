@@ -1,0 +1,8 @@
+<div class="wing-panel row">
+    <h3 class="cell-name">~ <%= wing.wingname%> ~</h3>
+    <% @membersofwing = Memberinfo.where(wingid: wing.wingid).order(:wingrank).order(:cellrank)%>
+    <% @membersofwing.each do |member| %>
+        <%= render partial: 'member_div', locals: {member: member} %>
+    <% end %>
+</div>
+<hr>

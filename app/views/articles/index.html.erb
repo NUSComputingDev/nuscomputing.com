@@ -1,0 +1,21 @@
+<div id="fb-root"></div>
+<div class="row">
+	<div class="columns small-6 medium-8">
+		<%= render @articles.first if @articles.first %>
+		<hr>
+		<ul>
+			<% @articles.each do |article| %>
+				<li><%= link_to article.title, article %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="columns small-6 medium-4">
+		<div class="fb-page" data-href="https://www.facebook.com/nuscomputing" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+			<div class="fb-xfbml-parse-ignore">
+				<blockquote cite="https://www.facebook.com/nuscomputing">
+					<a href="https://www.facebook.com/nuscomputing">NUS Students&#039; Computing Club</a>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<table width="100%">
+	<thead>
+		<tr>
+			<th class="text-center" width="50">ID</th>
+			<th class="text-center" width="100">Image</th>
+			<th class="text-center" width="150">Type</th>
+			<th class="text-center">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% item_types.order(:name).each do |type|  %>
+				<%= render partial: "mc/borrow/item_types/row", locals: { type: type }  %>
+			<% end %>
+	</tbody>
+</table>

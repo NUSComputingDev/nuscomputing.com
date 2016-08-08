@@ -1,0 +1,9 @@
+<% if @item_transaction.pending? %>
+	<%= simple_form_for [:mc, :borrow, @item_transaction], remote: true do |f| %>
+		<%= f.input :transaction_end_at, as: :string, input_html: { value: (DateTime.now + 1.day).midnight, class: "datetimepicker" } %>
+		<%= f.button :submit %>
+	<% end %>
+<% elsif @item_transaction.in_process? %>
+	<%= link_to "Complete", complete_mc_borrow_item_transaction_path(@item_transaction), class: "button success radius expand", remote: true, method: :patch %>
+<% end %>
+

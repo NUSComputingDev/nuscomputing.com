@@ -1,0 +1,46 @@
+<% if @ballots.any? %>
+  <div style="text-align: center;">
+    <p>
+      <strong><%= @ballots.count %> ballots for <%= @round_name %></strong>
+    </p>
+  </div>
+	
+  <table width="100%">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Faculty</th>
+    <th>First Major</th>
+    <th>Second Major</th>
+    <th>Location</th>
+    <th>Last Updated</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @ballots.each do |ballot| %>
+      <tr id='<%= "ballot-#{ballot.id}" %>'>
+        <td><%= ballot.user.uid %></td>
+        <td><%= ballot.user.faculty || 'N/A' %></td>
+        <td><%= ballot.user.first_major || 'N/A' %></td>
+        <td><%= ballot.user.second_major || 'N/A' %></td>
+        <td><%= ballot.location %></td>
+        <td><%= local_time ballot.updated_at %></td>
+        <td>
+          <ul class="button-group stack radius">
+            <li><%= link_to 'View', mc_locker_locker_ballot_path(ballot), class: 'button info small expand' %></li>
+            <li><%= link_to 'Edit', edit_mc_locker_locker_ballot_path(ballot), class: 'button small expand' %></li>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+    <%#= paginate @ballots %>
+  </tbody>
+</table>
+<% else %>
+  <div style="text-align: center;">
+    <p>
+      <strong>No ballots for <%= @round_name %>!</strong>
+    </p>
+  </div>
+<% end %>

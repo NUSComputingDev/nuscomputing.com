@@ -1,0 +1,74 @@
+<div class="row">
+
+  <div class="small-12 columns">
+    <h3 class="bold">Profile</h3>
+	  <p>
+		  The profile information you see below is extracted from the IVLE login.
+	    We use these information to identify you for non-anonymous web services and to contact you if there is a need.
+	    Please let us know if there are any discrepancies.
+	  </p>
+
+    <table width="100%">
+      <tr>
+        <th>Name</th>
+        <td><%= current_user.name %></td>
+      </tr>
+      <tr>
+        <th>UserID</th>
+        <td><%= current_user.uid %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <th>Faculty</th>
+        <td><%= current_user.faculty %></td>
+      </tr>
+      <tr>
+        <th>First Major</th>
+        <td><%= current_user.first_major %></td>
+      </tr>
+      <tr>
+        <th>Second Major</th>
+        <td><%= current_user.second_major %></td>
+      </tr>
+      <tr>
+        <th>Matriculation Year</th>
+        <td><%= current_user.matriculation_year %></td>
+      </tr>
+    </table>
+  </div>
+
+	<hr>
+
+  <div class="small-12 columns">
+    <h3>Locker Allocation</h3>
+    <%= render partial: 'locker_allocations', locals: { locker_allocations: current_user.locker_allocations } %>
+  </div>
+
+  <!--<div class="large-12 columns">-->
+    <!--<ul class="tabs" data-tab>-->
+      <!--<li class="tab-title active"><a href="#locker-allocations">Locker Allocations</a></li>-->
+      <!--<li class="tab-title"><a href="#item-requests">Requests</a></li>-->
+      <!--<li class="tab-title"><a href="#item-transactions">Transactions</a></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
+  <!--<div class="large-12 columns">-->
+    <!--<div class="tabs-content">-->
+      <!--<div id="locker-allocations" class="content active">-->
+        <!--<%#= render partial: 'locker_allocations', locals: { locker_allocations: current_user.locker_allocations } %>-->
+      <!--</div>-->
+
+      <!--<div id="item-requests" class="content">-->
+        <!--<%#= render partial: 'item_requests', locals: { item_requests: current_user.requests } %>-->
+      <!--</div>-->
+
+      <!--<div id="item-transactions" class="content">-->
+        <!--<%#= render partial: 'item_transactions', locals: { item_transactions: current_user.item_transactions } %>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+</div>

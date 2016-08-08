@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="large-12 columns">
+    <h3 class="bold">View MC Member</h3>
+  </div>
+
+  <div class="large-12 columns">
+    <%= render 'mc_member' %>
+    <br>
+  </div>
+
+  <div class="large-12 columns">
+    <ul class="button-group radius">
+      <li><%= link_to 'Back', mc_people_path, class: 'button small info' %></li>
+      <li><%= link_to 'Edit', edit_mc_people_mc_member_path, class: 'button small success' %></li>
+      <li>
+        <%= link_to 'Delete',
+                    mc_people_mc_member_path,
+                    class: 'button small alert',
+                    method: :delete,
+                    data: { confirm: "Deleting \"#{@mc_member.name}\". Are you sure?" }
+        %>
+      </li>
+    </ul>
+  </div>
+
+</div>

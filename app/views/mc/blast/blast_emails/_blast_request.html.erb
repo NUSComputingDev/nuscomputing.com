@@ -1,0 +1,3 @@
+<div class="request-id"><%= request.id %></div>
+<div class="request-img"><%= image_tag request.image.url, class: "th radius" %></div>
+<div class="request-txt"><%= truncate(raw(request.text), length: 250) %></div>
