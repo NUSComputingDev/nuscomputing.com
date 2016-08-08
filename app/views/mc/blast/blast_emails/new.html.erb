@@ -1,0 +1,55 @@
+<h1>Email Blast Crafter</h1>
+<div class="row">
+	<%= simple_form_for [:mc, :blast, @blast_email] do |f| %>
+		<%= f.input :background_color, as: :minicolors, input_html: { value: "#004756" }%>
+	<% end %>
+	<div id="gridster-container" class="small-12 medium-6 large-7 columns">
+		<div class="gridster">
+			<ul class="no-bullet">
+			</ul>
+		</div>
+	</div>
+	<div class="small-12 medium-6 large-5 columns">
+		<div class="panel">
+			<div id="request-container">
+				<div class="clearfix text-center">
+					<a class="round button info left" id="next-button"><%= fa_icon "chevron-circle-left" %></a>
+					<a class="round button info right" id="prev-button"><%= fa_icon "chevron-circle-right" %></a>
+					<h3>Requests</h3>
+				</div>
+				<div class="text-center">
+					<a class="button success radius" id="add-button"><%= fa_icon "plus" %> Add</a>
+					<a class="button alert radius" id="del-button">Del <%= fa_icon "minus" %></a>
+				</div>
+				<div class="text-center">
+					<form>
+						<%= radio_button_tag(:orientation, "horiz", checked: true) %>
+						<%= label_tag(:orientation_horiz, "Horizontal") %>
+						<%= radio_button_tag(:orientation, "vert") %>
+						<%= label_tag(:orientation_vert, "Vertical") %>
+						<br>
+						<%= radio_button_tag(:ratio, "0") %>
+						<%= label_tag(:ratio_0, "4:0") %>
+						<%= radio_button_tag(:ratio, "1") %>
+						<%= label_tag(:ratio_1, "3:1") %>
+						<%= radio_button_tag(:ratio, "2", checked: true) %>
+						<%= label_tag(:ratio_2, "2:2") %>
+						<%= radio_button_tag(:ratio, "3") %>
+						<%= label_tag(:ratio_3, "1:3") %>
+						<%= radio_button_tag(:ratio, "4") %>
+						<%= label_tag(:ratio_4, "0:4") %>
+					</form>
+				</div>
+				<hr>
+				<div class="slick">
+					<% BlastRequest.publishable.each do |request| %>
+						<div class="text-center">
+							<%= render partial: 'blast_request', locals: { request: request } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

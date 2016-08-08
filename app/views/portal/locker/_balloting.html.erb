@@ -1,0 +1,31 @@
+<h3>Locker Ballot Application</h3>
+<% if @round %>
+	<h4>Current Ballot Round: <%= "#{@round.acad_year} (#{@round.label})" %> </h4>
+	<h5 class="subheader">From: <%= local_time @round.start %> to <%= local_time @round.end %></h5>
+	<hr>
+	<% if user_signed_in? %>
+			<% unless locker_allocated?(current_user) %>
+				<%= simple_form_for [:portal, :locker, @ballot] do |f| %>
+					<%= f.association :round, as: :hidden, input_html: { value: @round.id } %>
+					<%= f.input :location, collection: Locker.locations.keys.reject { |n| n == 'H' }, label_method: lambda {|l| LockerBallot.stat_by_location(@round, l)},
+						include_blank: false, label: 'Location (Ballots / Lockers Available)' %>
+					<%= f.button :submit %>
+				<% end %>
+				<% if @ballot.persisted? %>
+					<%= link_to 'Cancel Ballot', portal_locker_locker_ballot_path(@ballot), method: :delete, action: :destroy, data: { confirm: 'Are you sure?'}, class: 'button radius alert' %>
+				<% end %>
+			<% else %>
+				<p>
+					You have already been allocated a locker for this year.
+				</p>
+				<p>
+					Your locker number is: <strong><%= current_user.current_locker.name if current_user.current_locker %></strong>
+				</p>
+			<% end %>
+	<% else %>
+		<p>Please <%= link_to 'Sign in', '/auth/ivle' %> with your IVLE before proceeding</p>
+	<% end %>
+<% else %>
+	<p>There is no Balloting Round at the moment. Please check the schedule in <strong>Announcements</strong></p>
+<% end %>
+<p>You can check your locker allocations in <%= link_to "Profile", portal_profile_path %></p>

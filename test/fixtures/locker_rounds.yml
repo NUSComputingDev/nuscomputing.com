@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2015-08-13 02:18:33
+  end: 2015-08-13 02:18:33
+  acad_year: MyString
+  label: MyString
+  type: 1
+
+two:
+  start: 2015-08-13 02:18:33
+  end: 2015-08-13 02:18:33
+  acad_year: MyString
+  label: MyString
+  type: 1

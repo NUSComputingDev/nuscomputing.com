@@ -11,11 +11,20 @@
 </div>
 
 <div class="row white">
-	<div class="small-12 medium-12 large-12 columns">
-		<ul class="small-block-grid-2 medium-block-grid-4">
-			<% @sponsors.each do |sponsor| %>
-				<li><%= link_to image_tag("sponsors/"+sponsor.img), sponsor.link, target: "_blank" %></li>
-			<% end %>
-		</ul>
-	</div>
+  <div class="small-12 medium-12 large-12 columns">
+    <ul class="small-block-grid-2 medium-block-grid-4">
+      <% @sponsors.each do |sponsor| %>
+        <li>
+          <span data-tooltip
+                aria-haspopup="true"
+                data-options="disable_for_touch:true"
+                class="has-tip tip-right radius"
+                title="<%= "<strong>#{sponsor.name}</strong><br>#{sponsor.description.empty? ? 'No description available' : "#{sponsor.description}"}"%>",
+                style='border-bottom: initial;'>
+            <%= link_to image_tag(sponsor.img), url_for(sponsor.website), target: "_blank" %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,0 +1,54 @@
+<div class="row">
+
+  <div class="small-12 columns">
+    <h3 class="bold">User Management</h3>
+    <p>
+      Simple interface to create, update and remove Student Portal accounts.
+    </p>
+    <p>
+      An student account must have a name, an NUSNET ID, an email, and a home faculty. Other fields are optional
+    </p>
+    <%= link_to new_mc_user_path, class: 'radius button success' do %>
+      <%= fa_icon 'plus', text: 'Add Account', right: true %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div class="columns small-12">
+    <h3 class="bold">All Accounts</h3><h6 class="subheader"><%= @users.count %> student accounts</h6>
+    <p>
+      Showing all student accounts.
+    </p>
+    <table width="100%">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>NUSNET ID</th>
+        <th>Email</th>
+        <th>Home Faculty</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <% @user = user %>
+        <tr id="user-<%= user.id %>">
+          <td><%= user.name %></td>
+          <td><%= user.uid %></td>
+          <td><%= user.email %></td>
+          <td><%= user.faculty %></td>
+          <td>
+            <ul class="button-group stack radius">
+              <li><%= link_to 'View', mc_user_path(user), class: 'button info small expand' %></li>
+              <li><%= link_to 'Edit', edit_mc_user_path(user), class: 'button small expand' %></li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

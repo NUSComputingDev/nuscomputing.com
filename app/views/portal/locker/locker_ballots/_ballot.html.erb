@@ -1,0 +1,47 @@
+<div class="columns small-12">
+  <h4>Ballot Round: <%= @round.name %></h4>
+  <p>
+    If you are a Computing undergraduate, you are automatically eligible to ballot for a locker.
+    Please submit your ballot while the balloting round is still open.
+  </p>
+  <p>
+    The ballot simply consists of choosing the desired location where you would like your locker to be.
+    Scroll down to check the <%= link_to 'locker locations', '#locations' %>.
+  </p>
+  <p>
+    Please read the <%= link_to 'Locker Usage Guidelines', '#guidelines' %> before submitting your ballot.
+  </p>
+  <p>
+    You can edit or cancel your ballot any time you like while the round is open.
+  </p>
+</div>
+
+<div class="columns small-12 medium-6">
+  <h3 class="bold">Active Ballot</h3>
+  <% if @ballot.persisted? %>
+    <table width="100%">
+      <thead>
+      <tr>
+        <td>Ballot Round</td>
+        <td>Location</td>
+        <td>Last Changed</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @ballot.round.name %></td>
+        <td><%= @ballot.location %></td>
+        <td><%= local_time @ballot.updated_at %></td>
+      </tr>
+      </tbody>
+    </table>
+  <% else %>
+    <p><em>You have not submitted a ballot for this round yet!</em></p>
+  <% end %>
+</div>
+
+<div class="columns small-12 medium-6">
+  <h3 class="bold"><%= @ballot.persisted? ? 'Update' : 'Submit' %> Ballot</h3>
+  <h6 class="subheader"><%= @round.name %></h6>
+  <%= render 'form' %>
+</div>

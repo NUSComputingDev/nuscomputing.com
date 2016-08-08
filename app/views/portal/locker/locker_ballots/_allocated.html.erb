@@ -1,0 +1,9 @@
+<div class="columns small-12">
+  <p>
+    You have already been allocated a locker for this year. Your locker number is: <strong><%= current_user.current_locker.name if current_user.current_locker %></strong>
+  </p>
+  <p>
+    See more details of your locker allocation in your <%= link_to 'profile', portal_profile_path %>.
+    If there are any issues, please contact us at <%= mail_to 'connect@nuscomputing.com' %>.
+  </p>
+</div>

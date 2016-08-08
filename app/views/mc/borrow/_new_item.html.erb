@@ -1,0 +1,21 @@
+<ul class="accordion" data-accordion>
+	<li class="accordion-navigation">
+		<a href="#new-item-form">Create New Item</a>
+		<div id="new-item-form" class="content panel">
+			<%= simple_form_for [:mc, :borrow, Item.new], remote: true do |f| %>
+				<div class="row">
+					<div class="small-6 columns">
+						<%= f.input :label %>
+						<%= f.association :type, include_blank: false %>
+						<%= f.input :image, as: :file %>
+					</div>
+					<div class="small-6 columns">
+						<%= f.input :state, collection: Item.states.symbolize_keys.keys, include_blank: false %>
+						<%= f.input :status, collection: Item.statuses.symbolize_keys.keys, include_blank: false %>
+						<%= f.button :submit, class: "button success expand radius" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</li>
+</ul>

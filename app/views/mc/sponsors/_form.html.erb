@@ -1,0 +1,9 @@
+<%= simple_form_for [:mc, @sponsor] do |f| %>
+  <%= f.input :name, label: 'Sponsor Name' %>
+  <%= f.input :img, label: 'Logo Image URL (e.g. http://imgur.com/iP43yT.jpg)' %>
+  <%= f.input :website, label: 'Sponsor Website URL (include "http://")', input_html: {value: f.object.website || 'http://'} %>
+  <%= f.input :description %>
+  <br>
+  <%= f.button :submit, 'Submit', class: 'radius success' %>
+  <%= link_to 'Cancel', :back, class: 'radius button alert' %>
+<% end %>

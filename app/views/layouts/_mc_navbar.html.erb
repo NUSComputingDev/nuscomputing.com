@@ -1,0 +1,38 @@
+<div class="nav-wrapper">
+  <nav class="top-bar row" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href=<%= mc_root_path %>><%= image_tag "new_logo.png", :size => "24x27", :style => "margin-right: 8pt;" %>MC Console</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <% if member_signed_in? %>
+          <%= active_link_to 'Home', mc_root_path, :wrap_tag => :li, :active => :exclusive %>
+          <%= active_link_to 'Enquiries', mc_enquiries_path, :wrap_tag => :li %>
+          <%= active_link_to 'Blog', mc_articles_path, :wrap_tag => :li %>
+          <%= active_link_to 'People', mc_people_path, :wrap_tag => :li %>
+          <%= active_link_to 'Events', mc_events_path, :wrap_tag => :li %>
+          <%= active_link_to 'Sponsors', mc_sponsors_path, :wrap_tag => :li %>
+          <%= active_link_to 'Lockers', mc_locker_path, :wrap_tag => :li %>
+          <%= active_link_to 'Users', mc_users_path, :wrap_tag => :li %>
+        <% end %>
+      </ul>
+
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if member_signed_in? %>
+          <li><%= link_to 'Logout', destroy_member_session_path, id: 'btn-logout', method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'MC Login', '/auth/google_oauth2', id: 'btn-login' %></li>
+        <% end %>
+      </ul>
+
+    </section>
+  </nav>
+</div>

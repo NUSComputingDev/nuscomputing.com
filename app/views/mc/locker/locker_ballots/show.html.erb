@@ -1,0 +1,54 @@
+<div class="row">
+
+  <div class="columns small-12">
+    <h3>Locker Ballot</h3>
+    <table width="100%">
+      <tr>
+        <th>User ID</th>
+        <td><%= @ballot.user.uid %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= @ballot.user.email %></td>
+      </tr>
+      <tr>
+        <th>Faculty</th>
+        <td><%= @ballot.user.faculty %></td>
+      </tr>
+      <tr>
+        <th>Location Preferred</th>
+        <td><%= @ballot.location %></td>
+      </tr>
+    </table>
+    <table width="100%">
+      <tr>
+        <th>Ballot ID</th>
+        <td><%= @ballot.id %></td>
+      </tr>
+      <tr>
+        <th>Created At</th>
+        <td><%= local_time @ballot.created_at %></td>
+      </tr>
+      <tr>
+        <th>Last Updated</th>
+        <td><%= local_time @ballot.updated_at %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="large-12 columns">
+    <ul class="button-group radius">
+      <li><%= link_to 'Back', mc_locker_locker_ballots_path, class: 'button small radius info' %></li>
+      <li><%= link_to 'Edit', edit_mc_locker_locker_ballot_path(@ballot), class: 'button small radius success' %></li>
+      <li>
+        <%= link_to 'Delete',
+                    mc_locker_locker_ballot_path(@ballot),
+                    method: :delete,
+                    data: { confirm: "Deleting ballot of user #{@ballot.user.uid}. Are you sure?" },
+                    class: 'button small alert radius'
+        %>
+      </li>
+    </ul>
+  </div>
+
+</div>

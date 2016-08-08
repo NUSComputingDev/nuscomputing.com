@@ -1,0 +1,7 @@
+<h1 class="text-center">Borrow</h1>
+<p>Request to borrow items here. We will get back to you when the request is approved.</p>
+<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+	<% @item_types.each do |type| %>
+		<li class="text-center"><%= render type %></li>
+	<% end %>
+</ul>

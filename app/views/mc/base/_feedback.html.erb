@@ -1,0 +1,9 @@
+<div class="panel">
+	<strong><%= link_to feedback.title, mc_feedback_path(feedback) %></strong>
+	<div class="feedback-content">
+		<%= h feedback.content %>
+	</div>
+	<% if feedback.email.present? %>
+		<small>Posted by : <%= mail_to feedback.email %></small>
+	<% end %>
+</div>

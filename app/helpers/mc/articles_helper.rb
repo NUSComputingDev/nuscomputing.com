@@ -1,0 +1,2 @@
+module Mc::ArticlesHelper
+end

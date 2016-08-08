@@ -1,0 +1,25 @@
+<script>
+	$(function() {
+		$('.locker-button').removeClass('info');
+		$('#button-<%= page %>').addClass('info');
+	});
+</script>
+
+<div class="columns small-12">
+  <h3 class="bold">Locker Management System</h3>
+  <p><span class="label round info">Time now</span> <%= local_time Time.zone.now %></p>
+  <%= render 'mc/locker/warning' %>
+
+</div>
+
+<div class="columns small-12 text-center">
+  <ul class="button-group stack-for-small radius">
+    <li><%= link_to 'General Info', mc_locker_path, class: 'button locker-button', id: 'button-general'%></li>
+    <li><%= link_to 'Ballot Rounds', mc_locker_locker_rounds_path, class: 'button locker-button', id: 'button-rounds' %></li>
+    <li><%= link_to 'Locker Ballots', mc_locker_locker_ballots_path, class: 'button locker-button', id: 'button-ballots' %></li>
+    <li><%= link_to 'Locker Allocations', mc_locker_locker_allocations_path, class: 'button locker-button', id: 'button-allocations' %></li>
+    <li><%= link_to 'Lockers', mc_locker_lockers_path, class: 'button locker-button', id: 'button-lockers' %></li>
+  </ul>
+</div>
+
+<hr>

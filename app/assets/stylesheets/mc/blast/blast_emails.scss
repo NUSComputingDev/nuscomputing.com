@@ -1,0 +1,19 @@
+// Place all the styles related to the mc/blast/blasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	#gridster-container {
+		background: #004756;    
+		padding: 7px;
+		.gridster {
+			margin: 0 auto;
+		}
+		.gridster .gs-w {
+			background: #FFF;
+			cursor: pointer;
+			-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+		}
+	}
+}

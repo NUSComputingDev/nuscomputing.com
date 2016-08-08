@@ -1,0 +1,23 @@
+<h2 class="text-center">Transaction Info</h2>
+<table>
+	<tr>
+		<td>Pending Sent At:</td>
+		<td><%= local_time item_transaction.pending_sent_at if item_transaction.pending_sent_at %></td>
+	</tr>
+	<tr>
+		<td>Pending Expire At:</td>	
+		<td><%= local_time item_transaction.pending_expire_at if item_transaction.pending_expire_at %></td>
+	</tr>
+	<tr>
+		<td>Collected At:</td>
+		<td><%= local_time item_transaction.transaction_began_at if item_transaction.transaction_began_at %></td>
+	</tr>
+	<tr>
+		<td>End At:</td>	
+		<td><%=  local_time item_transaction.transaction_end_at if item_transaction.transaction_end_at %></td>
+	</tr>
+	<tr>
+		<td>Completed At:</td>
+		<td><%= local_time item_transaction.transaction_completed_at if item_transaction.transaction_completed_at %></td>
+	</tr>
+</table>

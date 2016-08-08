@@ -1,0 +1,14 @@
+<div class="panel text-center">
+	<h5><strong><%= truncate item.label, length: 25 %></strong></h5>
+	<%= image_tag item.image.url(:thumb), class: "th radius" %>
+	<br>
+	<div><%= item.status.capitalize %> | <%= item.state.capitalize %> | <%= item.id %></div>
+	<% if item.borrowable? %>
+		<div>
+			<%= simple_form_for ItemRequest.new do |f| %>
+				<%= f.association :item, as: :hidden, input_html: { value: item.id } %>
+				<%= f.button :submit, "Request" %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
