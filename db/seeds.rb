@@ -50,7 +50,7 @@ end
 	number_ranges.each do |range|
 		range_num = range.split('-').map { |x| x.to_i } #range_num[0] is the starting number and range_num[1] is ending
 		(range_num[0]..range_num[1]).each do |num|
-			Locker.create location: loc, number: num.to_s, status: 0 #status: 0 - vacant, 1 - occupied
+			Locker.create location: loc, number: num.to_s, status: 0 # status: 0-vacant, 1-occupied, 2-faulty 3-closed
 		end
 	end
 end
