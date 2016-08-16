@@ -4,7 +4,7 @@ class Mc::Locker::LockerAllocationsController < Mc::BaseController
 	def index
 		@allocations = nil
 		if params[:locker_allocation] && params[:locker_allocation][:year]
-			@allocations = LockerAllocation.joins(:round, :user).where('acad_year = ?', params[:locker_allocation][:year]).order("uid").page params[:page]
+			@allocations = LockerAllocation.joins(:round, :user).where('acad_year = ?', params[:locker_allocation][:year]).order('uid')
 			@acad_year = params['locker_allocation']['year']
 		end
 
