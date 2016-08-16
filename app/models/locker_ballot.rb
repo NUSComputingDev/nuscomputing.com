@@ -14,5 +14,25 @@ class LockerBallot < ActiveRecord::Base
 
 	def self.stat_by_location(round, loc)
 		"#{loc} (#{LockerBallot.in_round(round).by_location(loc).count} / #{Locker.vacant.where(location: Locker.locations[loc]).count})"
-	end
+  end
+
+  def self.to_csv
+    headers = %w{ name user_id email faculty first_major second_major ballot_round ballot_location }
+    CSV.generate(headers: true) do |csv|
+      csv << headers
+      all.each do |ballot|
+        csv << [
+            ballot.user.name,
+            ballot.user.uid,
+            ballot.user.email,
+            ballot.user.faculty,
+            ballot.user.first_major,
+            ballot.user.second_major,
+            ballot.round.name,
+            ballot.location
+        ]
+      end
+    end
+  end
+
 end
