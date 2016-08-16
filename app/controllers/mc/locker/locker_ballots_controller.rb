@@ -13,6 +13,10 @@ class Mc::Locker::LockerBallotsController < Mc::BaseController
 			if @ballots
 				format.js {}
 			end
+			format.csv {
+				@ballots = LockerBallot.all
+				send_data @ballots.to_csv, filename: 'ballots.csv', type: 'text/csv'
+			}
 		end
 	end
 

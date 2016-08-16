@@ -12,6 +12,9 @@
     <%= link_to new_mc_locker_locker_ballot_path, class: 'button radius success expand' do %>
       <%= fa_icon 'plus', text: 'Create Ballot', right: true %>
     <% end %>
+    <%= link_to mc_locker_locker_ballots_path(format: 'csv'), class: 'button radius expand' do %>
+      <%= fa_icon 'download', text: 'Download All', right: true %>
+    <% end %>
   </div>
 
   <div class="columns small-12">
