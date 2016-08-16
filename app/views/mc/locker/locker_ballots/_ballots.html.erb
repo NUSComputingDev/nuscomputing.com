@@ -1,8 +1,7 @@
 <% if @ballots.any? %>
   <div style="text-align: center;">
     <p>
-      <strong><%= @ballots.count %> ballots for <%= @round_name %></strong>
-      <strong><%= @ballots.inspect %></strong>
+      <strong><%= @ballots.count %> ballots for <%= @locker_round.name %></strong>
     </p>
   </div>
 	
@@ -35,7 +34,6 @@
         </td>
       </tr>
     <% end %>
-    <%#= paginate @ballots %>
   </tbody>
 </table>
 <% else %>

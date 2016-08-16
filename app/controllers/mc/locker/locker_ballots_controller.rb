@@ -5,10 +5,7 @@ class Mc::Locker::LockerBallotsController < Mc::BaseController
 		@ballots = nil
 		if params[:locker_ballot] && params[:locker_ballot][:round]
 			@locker_round = LockerRound.find(params['locker_ballot']['round'])
-			#@ballots = LockerBallot.joins(:user).where('locker_round_id = ?', params[:locker_ballot][:round]).order('uid')
-      @ballots = @locker_round.ballots
-			#@round_name = LockerRound.find(params['locker_ballot']['round']).name
-      @round_name = @locker_round.name
+			@ballots = LockerBallot.joins(:user).where('locker_round_id = ?', params[:locker_ballot][:round]).order('faculty', 'first_major', 'second_major', 'uid')
 		end
 
 		respond_to do |format|
