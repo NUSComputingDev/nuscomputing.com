@@ -211,6 +211,8 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    recaptcha (3.3.0)
+      json
     redis (3.2.1)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
@@ -302,7 +304,7 @@ DEPENDENCIES
   devise (~> 3.5.1)
   font-awesome-rails
   foundation-icons-sass-rails
-  foundation-rails
+  foundation-rails (= 5.5.2.1)
   gollum (~> 4.0.0)
   has_secure_token
   jbuilder (~> 2.0)
@@ -318,6 +320,7 @@ DEPENDENCIES
   paperclip
   rails (= 4.2.3)
   rake
+  recaptcha
   resque
   resque-scheduler
   rqrcode

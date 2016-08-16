@@ -30,16 +30,24 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
 	end
 
 	def update
-		if @ballot.update(ballot_params)
-      mail_notify(current_user, @ballot)
-			redirect_to portal_locker_locker_ballots_path,
-                  notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
-		end
+    if is_authenticated_user
+      if @ballot.update(ballot_params)
+        mail_notify(current_user, @ballot)
+        redirect_to portal_locker_locker_ballots_path,
+                    notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
+      end
+    else
+      show_error_message_at portal_locker_locker_ballots_path
+    end
 	end
 
 	def destroy
-		@ballot.destroy
-		redirect_to portal_locker_locker_ballots_path, notice: 'Your Ballot has been cancelled'
+		if is_authenticated_user
+      @ballot.destroy
+      redirect_to portal_locker_locker_ballots_path, notice: 'Your Ballot has been cancelled'
+    else
+      show_error_message_at portal_locker_locker_ballots_path
+    end
 	end
 
 	private 
@@ -55,4 +63,13 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
     BallotNotifier.submitted_ballot_to_user(user, ballot).deliver_later
     BallotNotifier.submitted_ballot_to_bot(user, ballot).deliver_later
   end
+
+  def is_authenticated_user
+    return @ballot.user.uid == current_user.uid
+  end
+
+  def show_error_message_at(path)
+    redirect_to path, notice: 'Invalid operation. Please try again.'
+  end
+
 end

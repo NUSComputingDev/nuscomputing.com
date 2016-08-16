@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'devise', '~> 3.5.1'
-gem 'foundation-rails'
+gem 'foundation-rails', '5.5.2.1'
 gem 'simple_form'
 gem 'ckeditor'
 gem 'paperclip'
@@ -17,6 +17,8 @@ gem 'resque-scheduler'
 gem 'mysql'
 
 gem 'active_link_to'
+
+gem 'recaptcha', require: 'recaptcha/rails'
 
 # Jquery related
 gem 'jquery-ui-rails'
