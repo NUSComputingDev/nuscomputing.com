@@ -85,10 +85,10 @@ Rails.application.configure do
 	Rails.application.routes.default_url_options = { host: 'nuscomputing.com' }
   config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = {
-		address: 'smtp.gmail.com',
+		address: 'smtp.sendgrid.net',
 		port: 587,
     domain: 'nuscomputing.com',
-		authentication: 'login',
+		authentication: 'plain',
 		user_name: Rails.application.secrets.mailer_username,
 		password: Rails.application.secrets.mailer_password,
 		enable_starttls_auto: true
