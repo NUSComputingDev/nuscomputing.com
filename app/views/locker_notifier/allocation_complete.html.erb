@@ -37,6 +37,22 @@
     Allocation for <%= @round.name %> is complete. Please log in to the system to verify the allocations. Contact the IT Director if there are any issues.
   </p>
 
+	<p>
+		The following users have successful ballots:<br>
+		<%= @allocated_users.join(' ') %>
+	  <% if @allocated_users.count == 0 %>
+	    [None]
+	  <% end %>
+	</p>
+
+  <p>
+    The following users have unsuccessful ballots:<br>
+    <%= @unallocated_users.join(' ') %>
+	  <% if @unallocated_users.count == 0 %>
+	    [None]
+	  <% end %>
+  </p>
+
   <div class="footer">
     <a href="nuscomputing.com">NUS Computing</a>
   </div>

@@ -26,6 +26,20 @@ class AllocateLockerJob < ActiveJob::Base
 				end
       end
 
+      # create email lists
+      allocated_users_email_list = []
+      allocated_users.each { |user, alloc|
+        allocated_users_email_list.push user.email
+      }
+
+      unallocated_users_email_list = []
+      unallocated_users.each { |user|
+        unallocated_users_email_list.push user.email
+      }
+
+      # notify lockerbot
+			LockerNotifier.allocation_complete(round, allocated_users_email_list, unallocated_users_email_list).deliver_later
+
 			# Send mail
 			allocated_users.each { |user, alloc|
         LockerNotifier.successful_ballot(user, round, alloc).deliver_later
@@ -34,8 +48,6 @@ class AllocateLockerJob < ActiveJob::Base
 			unallocated_users.each { |user|
         LockerNotifier.unsuccessful_ballot(user, round).deliver_later
       }
-
-      LockerNotifier.allocation_complete(round).deliver_later
 		end
 	end
 end
