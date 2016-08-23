@@ -22,13 +22,13 @@
     <%= button_to 'Test Single Mail',
                   mc_locker_test_single_path,
                   method: :post,
-                  data: { confirm: 'Test Sending SINGLE MAIL. Are you sure?', disable_with: 'Please wait...' },
+                  data: { confirm: "Test sending SINGLE MAIL with #{Rails.application.secrets.mailer_username}. Are you sure?", disable_with: 'Please wait...' },
                   class: 'button radius small alert expand'
     %>
     <%= button_to 'Test Mass Mail',
                   mc_locker_test_mass_path,
                   method: :post,
-                  data: { confirm: 'Test Sending MASS MAIL. Are you sure?', disable_with: 'Please wait...' },
+                  data: { confirm: "Test sending MASS MAIL with #{Rails.application.secrets.mailer_username}. Are you sure?", disable_with: 'Please wait...' },
                   class: 'button radius small alert expand'
     %>
   </div>
