@@ -37,6 +37,7 @@ class PagesController < ApplicationController
 
 	def enquiry
 		@enquiry = Enquiry.new(enquiry_params)
+		time_now = DateTime.now
 
 		respond_to do |format|
 			if verify_recaptcha(model: @enquiry)
@@ -44,7 +45,7 @@ class PagesController < ApplicationController
 				# send mail before saving to database.
 				# because I think it's more likely that the mailing fails than it can't save to db
 				# also to prevent multiple entries in db.
-				if EnquiryMailer.notify(@enquiry).deliver_now
+				if EnquiryMailer.notify(@enquiry, time_now).deliver_now
 					@enquiry.save
 				end
         format.html { redirect_to connect_path, notice: 'Enquiry Submitted!' }
