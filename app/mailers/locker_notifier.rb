@@ -38,8 +38,10 @@ class LockerNotifier < ApplicationMailer
     mail(to: user.email, reply_to: 'connect@nuscomputing.com', subject: '[Locker Ballot] Locker Ballot Unsuccessful') if user.email
   end
 
-  def allocation_complete(round)
+  def allocation_complete(round, allocated_users, unallocated_users)
     @round = round
+    @allocated_users = allocated_users
+    @unallocated_users = unallocated_users
     mail(to: Rails.application.secrets.locker_mail_to, reply_to: 'infotech@nuscomputing.com', subject: 'Locker Ballot Allocation Complete')
   end
 end
