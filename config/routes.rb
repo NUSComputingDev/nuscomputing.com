@@ -39,6 +39,8 @@ Rails.application.routes.draw do
           resources :locker_ballots, path: 'ballots'
           post '/allocate/:id/', to: '/mc/locker/locker_rounds#allocate', as: 'allocate'
           post '/', to: '/mc/locker#email', as: 'email'
+          post '/test_single', to: '/mc/locker#test_single_mail', as: 'test_single'
+          post '/test_mass', to: '/mc/locker#test_mass_mail', as: 'test_mass'
         end
 
         # events

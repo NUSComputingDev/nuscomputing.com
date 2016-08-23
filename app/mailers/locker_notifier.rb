@@ -7,6 +7,14 @@ class LockerNotifier < ApplicationMailer
 		mail to: user.email if user.email
   end
 
+  def test_mail(to_addr)
+    mail to: to_addr
+  end
+
+  def test_mass_mail(to_addr, count)
+    mail to: to_addr, subject: "Mass Mail Number #{count}"
+  end
+
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
