@@ -2,12 +2,12 @@ class Mc::EventsController < Mc::BaseController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@events = Event.all
+		@events = Event.order(created_at: :desc)
 		@featured_events = Event.where('featured')
 	end
 
 	def show
-		@events = Event.all.order('created_at desc')
+		@events = Event.order(created_at: :desc)
 	end
 
 	def new

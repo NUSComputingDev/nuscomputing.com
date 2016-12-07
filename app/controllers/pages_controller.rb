@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 	end
 
 	def home
-		@events = Event.all
+		@featured_events = Event.where(featured: true).limit(3)
 	end
 
 	def mcmem
@@ -17,7 +17,7 @@ class PagesController < ApplicationController
 	end
 
 	def event
-		@events = Event.all
+		@events = Event.order(created_at: :desc)
 		render 'events'
 	end
 
@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 	end
 
 	def events
-		@events = Event.all
+		@events = Event.order(created_at: :desc)
 	end
 
 	def sponsors
