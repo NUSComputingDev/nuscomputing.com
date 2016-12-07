@@ -56,7 +56,7 @@
   <div class="row">
     <%# loop through the upcoming (at most 3) events and create the partial for each. %>
     <% count = 0 %>
-    <% @events.each do |event| %>
+    <% @featured_events.each do |event| %>
         <% if event.featured && count < 3 %>
             <%= render partial: "event", locals: {event: event} %>
             <% count += 1 %>
