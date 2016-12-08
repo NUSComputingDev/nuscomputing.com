@@ -16,7 +16,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
 
         respond_to do |format|
             if DateTime.now <= @ballot.round.end && @ballot.save
-                mail_notify_submitted(current_user, @ballot)
+                mail_notify_submitted(current_user, @ballot.user, @ballot)
                 format.html {
                     redirect_to portal_locker_locker_ballots_path,
                     notice: 'Ballot application submitted! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
@@ -32,7 +32,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
     def update
         if is_authenticated_user
             if @ballot.update(ballot_params)
-                mail_notify_submitted(@ballot.user, @ballot)
+                mail_notify_submitted(current_user, @ballot.user, @ballot)
                 redirect_to portal_locker_locker_ballots_path,
                     notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
             end
@@ -60,9 +60,9 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
         @ballot = LockerBallot.find(params[:id])
     end
 
-    def mail_notify_submitted(user, ballot)
-        BallotNotifier.submitted_ballot_to_user(user, ballot).deliver_later
-        BallotNotifier.submitted_ballot_to_bot(user, ballot).deliver_later
+    def mail_notify_submitted(submitter, user, ballot)
+        BallotNotifier.submitted_ballot_to_user(submitter, user, ballot).deliver_later
+        BallotNotifier.submitted_ballot_to_bot(submitter, user, ballot).deliver_later
     end
 
     def mail_notify_deleted(submitter, user, ballot)
