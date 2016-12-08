@@ -32,7 +32,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
     def update
         if is_authenticated_user
             if @ballot.update(ballot_params)
-                mail_notify(User.find(@ballot.user_id), @ballot)
+                mail_notify(@ballot.user, @ballot)
                 redirect_to portal_locker_locker_ballots_path,
                     notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
             end
@@ -43,7 +43,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
 
     def destroy
         if is_authenticated_user
-            mail_notify(User.find(@ballot.user_id), @ballot)
+            mail_notify(@ballot.user, @ballot)
             @ballot.destroy
             redirect_to portal_locker_locker_ballots_path, notice: 'Your Ballot has been cancelled'
         else
