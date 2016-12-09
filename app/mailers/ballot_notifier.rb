@@ -23,19 +23,19 @@ class BallotNotifier < ApplicationMailer
         mail(to: Rails.application.secrets.locker_mail_to, reply_to: 'connect@nuscomputing.com', subject: '[Locker Ballot] Ballot Received') if user.email
     end
 
-    def deleted_ballot_to_user(submitter, user, ballot)
-        @round = ballot.round
+    def deleted_ballot_to_user(submitter, user, ballotRound, ballotLocation)
+        @round = ballotRound
         @submitter = submitter
         @user = user
-        @ballot = ballot
+        @location = ballotLocation
         mail(to: user.email, reply_to: 'connect@nuscomputing.com', subject: '[Locker Ballot] Ballot Rescinded') if user.email
     end
 
-    def deleted_ballot_to_bot(submitter, user, ballot)
-        @round = ballot.round
+    def deleted_ballot_to_bot(submitter, user, ballotRound, ballotLocation)
+        @round = ballotRound
         @submitter = submitter
         @user = user
-        @ballot = ballot
+        @location = ballotLocation
         mail(to: Rails.application.secrets.locker_mail_to, reply_to: 'connect@nuscomputing.com', subject: '[Locker Ballot] Ballot Rescinded') if user.email
     end
 end

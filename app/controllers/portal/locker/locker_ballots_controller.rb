@@ -43,7 +43,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
 
     def destroy
         if is_authenticated_user
-            mail_notify_deleted(current_user, @ballot.user, @ballot)
+            mail_notify_deleted(current_user, @ballot.user, @ballot.round, @ballot.location)
             @ballot.destroy
             redirect_to portal_locker_locker_ballots_path, notice: 'Your Ballot has been cancelled'
         else
@@ -65,9 +65,9 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
         BallotNotifier.submitted_ballot_to_bot(submitter, user, ballot).deliver_later
     end
 
-    def mail_notify_deleted(submitter, user, ballot)
-        BallotNotifier.deleted_ballot_to_user(submitter, user, ballot).deliver_later
-        BallotNotifier.deleted_ballot_to_bot(submitter, user, ballot).deliver_later
+    def mail_notify_deleted(submitter, user, ballotRound, ballotLocation)
+        BallotNotifier.deleted_ballot_to_user(submitter, user, ballotRound, ballotLocation).deliver_later
+        BallotNotifier.deleted_ballot_to_bot(submitter, user, ballotRound, ballotLocation).deliver_later
     end
 
     def is_authenticated_user
