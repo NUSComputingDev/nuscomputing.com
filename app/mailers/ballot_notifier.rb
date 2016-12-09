@@ -2,9 +2,9 @@ class BallotNotifier < ApplicationMailer
   # First define the value for "locker_mail_to" in secrets.yml
   default from: Rails.application.secrets.mailer_username
 
-	def test_email(user)
-		@user = user
-		mail to: user.email if user.email
+  def test_email(user)
+    @user = user
+    mail to: user.email if user.email
   end
 
   def submitted_ballot_to_user(user, ballot)

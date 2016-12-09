@@ -1,9 +1,9 @@
 class AddImageToItemTypes < ActiveRecord::Migration
- def up
+  def up
     add_attachment :item_types, :image
   end
 
   def down
     remove_attachment :item_types, :image
-	end
+  end
 end

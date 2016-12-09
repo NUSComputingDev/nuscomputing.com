@@ -200,95 +200,95 @@ ActiveRecord::Schema.define(version: 20160719085714) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "allocated",              default: false
-  end
+end
 
-  create_table "lockers", force: :cascade do |t|
-    t.integer  "location",   limit: 4,   default: 0
-    t.string   "number",     limit: 255
-    t.integer  "status",     limit: 4,   default: 0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-  end
+create_table "lockers", force: :cascade do |t|
+  t.integer  "location",   limit: 4,   default: 0
+  t.string   "number",     limit: 255
+  t.integer  "status",     limit: 4,   default: 0
+  t.datetime "created_at",                         null: false
+  t.datetime "updated_at",                         null: false
+end
 
-  create_table "mc_members", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "position",    limit: 255
-    t.integer  "wingid",      limit: 4
-    t.integer  "wingrank",    limit: 4
-    t.integer  "cellrank",    limit: 4
-    t.string   "course",      limit: 255
-    t.integer  "year",        limit: 4
-    t.text     "description", limit: 65535
-    t.string   "casualimg",   limit: 255
-    t.string   "formalimg",   limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
+create_table "mc_members", force: :cascade do |t|
+  t.string   "name",        limit: 255
+  t.string   "position",    limit: 255
+  t.integer  "wingid",      limit: 4
+  t.integer  "wingrank",    limit: 4
+  t.integer  "cellrank",    limit: 4
+  t.string   "course",      limit: 255
+  t.integer  "year",        limit: 4
+  t.text     "description", limit: 65535
+  t.string   "casualimg",   limit: 255
+  t.string   "formalimg",   limit: 255
+  t.datetime "created_at",                null: false
+  t.datetime "updated_at",                null: false
+end
 
-  create_table "mc_wings", force: :cascade do |t|
-    t.integer  "wingid",       limit: 4
-    t.string   "wingname",     limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "mc_member_id", limit: 4
-  end
+create_table "mc_wings", force: :cascade do |t|
+  t.integer  "wingid",       limit: 4
+  t.string   "wingname",     limit: 255
+  t.datetime "created_at",               null: false
+  t.datetime "updated_at",               null: false
+  t.integer  "mc_member_id", limit: 4
+end
 
-  add_index "mc_wings", ["mc_member_id"], name: "index_mc_wings_on_mc_member_id", using: :btree
+add_index "mc_wings", ["mc_member_id"], name: "index_mc_wings_on_mc_member_id", using: :btree
 
-  create_table "members", force: :cascade do |t|
-    t.string   "email",               limit: 255, default: "",              null: false
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       limit: 4,   default: 0,               null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",  limit: 255
-    t.string   "last_sign_in_ip",     limit: 255
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
-    t.integer  "role_id",             limit: 4
-    t.string   "provider",            limit: 255, default: "google_oauth2", null: false
-    t.string   "uid",                 limit: 255, default: "",              null: false
-  end
+create_table "members", force: :cascade do |t|
+  t.string   "email",               limit: 255, default: "",              null: false
+  t.datetime "remember_created_at"
+  t.integer  "sign_in_count",       limit: 4,   default: 0,               null: false
+  t.datetime "current_sign_in_at"
+  t.datetime "last_sign_in_at"
+  t.string   "current_sign_in_ip",  limit: 255
+  t.string   "last_sign_in_ip",     limit: 255
+  t.datetime "created_at",                                                null: false
+  t.datetime "updated_at",                                                null: false
+  t.integer  "role_id",             limit: 4
+  t.string   "provider",            limit: 255, default: "google_oauth2", null: false
+  t.string   "uid",                 limit: 255, default: "",              null: false
+end
 
-  add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
-  add_index "members", ["role_id"], name: "index_members_on_role_id", using: :btree
+add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
+add_index "members", ["role_id"], name: "index_members_on_role_id", using: :btree
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "name",        limit: 255,   null: false
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
+create_table "roles", force: :cascade do |t|
+  t.string   "name",        limit: 255,   null: false
+  t.text     "description", limit: 65535
+  t.datetime "created_at",                null: false
+  t.datetime "updated_at",                null: false
+end
 
-  create_table "sponsors", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "website",     limit: 255
-    t.string   "img",         limit: 255
-    t.text     "description", limit: 65535
-    t.boolean  "featured"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
+create_table "sponsors", force: :cascade do |t|
+  t.string   "name",        limit: 255
+  t.string   "website",     limit: 255
+  t.string   "img",         limit: 255
+  t.text     "description", limit: 65535
+  t.boolean  "featured"
+  t.datetime "created_at",                null: false
+  t.datetime "updated_at",                null: false
+end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "provider",            limit: 255, default: "", null: false
-    t.string   "uid",                 limit: 255, default: "", null: false
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       limit: 4,   default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",  limit: 255
-    t.string   "last_sign_in_ip",     limit: 255
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.string   "faculty",             limit: 255
-    t.string   "email",               limit: 255
-    t.string   "name",                limit: 255
-    t.string   "first_major",         limit: 255
-    t.string   "second_major",        limit: 255
-    t.string   "gender",              limit: 255
-    t.string   "matriculation_year",  limit: 255
-  end
+create_table "users", force: :cascade do |t|
+  t.string   "provider",            limit: 255, default: "", null: false
+  t.string   "uid",                 limit: 255, default: "", null: false
+  t.datetime "remember_created_at"
+  t.integer  "sign_in_count",       limit: 4,   default: 0,  null: false
+  t.datetime "current_sign_in_at"
+  t.datetime "last_sign_in_at"
+  t.string   "current_sign_in_ip",  limit: 255
+  t.string   "last_sign_in_ip",     limit: 255
+  t.datetime "created_at",                                   null: false
+  t.datetime "updated_at",                                   null: false
+  t.string   "faculty",             limit: 255
+  t.string   "email",               limit: 255
+  t.string   "name",                limit: 255
+  t.string   "first_major",         limit: 255
+  t.string   "second_major",        limit: 255
+  t.string   "gender",              limit: 255
+  t.string   "matriculation_year",  limit: 255
+end
 
-  add_foreign_key "mc_wings", "mc_members"
+add_foreign_key "mc_wings", "mc_members"
 end

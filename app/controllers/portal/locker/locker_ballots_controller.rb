@@ -1,6 +1,6 @@
 class Portal::Locker::LockerBallotsController < Portal::BaseController
-	before_action :authenticate_user!
-	before_action :set_ballot, only: [:update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_ballot, only: [:update, :destroy]
 
   def index
     current_time = DateTime.now
@@ -10,53 +10,53 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
     end
   end
 
-	def create
-		@ballot = LockerBallot.new ballot_params	
-		@ballot.user_id = current_user.id
+  def create
+    @ballot = LockerBallot.new ballot_params	
+    @ballot.user_id = current_user.id
 
-		respond_to do |format|
-			if DateTime.now <= @ballot.round.end && @ballot.save
+    respond_to do |format|
+      if DateTime.now <= @ballot.round.end && @ballot.save
         mail_notify(current_user, @ballot)
-				format.html {
+        format.html {
           redirect_to portal_locker_locker_ballots_path,
-                      notice: 'Ballot application submitted! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
-				}
-				format.json { render json: @ballot, status: :created, location: @ballot }
-			else
-				format.html { redirect_to portal_locker_locker_ballots_path }
-				format.json { render json: @ballot.errors, status: :unprocessable_entity }
-			end
-		end
-	end
+          notice: 'Ballot application submitted! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
+        }
+        format.json { render json: @ballot, status: :created, location: @ballot }
+      else
+        format.html { redirect_to portal_locker_locker_ballots_path }
+        format.json { render json: @ballot.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-	def update
+  def update
     if is_authenticated_user
       if @ballot.update(ballot_params)
         mail_notify(current_user, @ballot)
         redirect_to portal_locker_locker_ballots_path,
-                    notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
+          notice: 'Ballot updated! Please check your NUS email for confirmation. Do contact us at connect@nuscomputing.com if there are any issues.'
       end
     else
       show_error_message_at portal_locker_locker_ballots_path
     end
-	end
+  end
 
-	def destroy
-		if is_authenticated_user
+  def destroy
+    if is_authenticated_user
       @ballot.destroy
       redirect_to portal_locker_locker_ballots_path, notice: 'Your Ballot has been cancelled'
     else
       show_error_message_at portal_locker_locker_ballots_path
     end
-	end
+  end
 
-	private 
-	def ballot_params
-		params.require(:locker_ballot).permit(:location, :locker_round_id)
-	end
+  private 
+  def ballot_params
+    params.require(:locker_ballot).permit(:location, :locker_round_id)
+  end
 
-	def set_ballot
-		@ballot = LockerBallot.find(params[:id])
+  def set_ballot
+    @ballot = LockerBallot.find(params[:id])
   end
 
   def mail_notify(user, ballot)

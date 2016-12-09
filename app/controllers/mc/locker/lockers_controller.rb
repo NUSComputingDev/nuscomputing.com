@@ -1,17 +1,17 @@
 class Mc::Locker::LockersController < Mc::BaseController
-	before_action :set_locker, only: [:show, :edit, :update, :destroy]
+  before_action :set_locker, only: [:show, :edit, :update, :destroy]
 
-	def index
-		@lockers_by_location = ::Locker.lockers_by_location
-		@lockers = ::Locker.all
-	end
+  def index
+    @lockers_by_location = ::Locker.lockers_by_location
+    @lockers = ::Locker.all
+  end
 
-	def new
-		@locker = ::Locker.new
-	end
+  def new
+    @locker = ::Locker.new
+  end
 
-	def show
-	end
+  def show
+  end
 
   def create
     @locker = Locker.new locker_params
@@ -57,10 +57,10 @@ class Mc::Locker::LockersController < Mc::BaseController
     end
   end
 
-	private
-	def set_locker
-		@locker = ::Locker.find(params[:id])
-	end
+  private
+  def set_locker
+    @locker = ::Locker.find(params[:id])
+  end
   def locker_params
     params.require(:locker).permit(:location, :number, :status)
   end
