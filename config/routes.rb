@@ -155,8 +155,8 @@ Rails.application.routes.draw do
   # main root
   root 'pages#home'
 
-	#resources :feedbacks, only: [:create, :new]
-	#resources :articles, only: [:index, :show]
+  #resources :feedbacks, only: [:create, :new]
+  #resources :articles, only: [:index, :show]
 
 
 end
