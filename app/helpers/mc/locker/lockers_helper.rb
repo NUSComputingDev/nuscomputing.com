@@ -2,16 +2,16 @@ module Mc::Locker::LockersHelper
 
   def convert_status_to_class(status)
     case status
-      when 'vacant'
-        'info'
-      when 'occupied'
-        'warning'
-      when 'faulty'
-        'alert'
-      when 'closed'
-        'secondary'
-      else
-        'secondary'
+    when 'vacant'
+      'info'
+    when 'occupied'
+      'warning'
+    when 'faulty'
+      'alert'
+    when 'closed'
+      'secondary'
+    else
+      'secondary'
     end
   end
 
