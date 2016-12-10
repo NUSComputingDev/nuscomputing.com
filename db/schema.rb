@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719085714) do
+ActiveRecord::Schema.define(version: 20161208193241) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -210,6 +210,13 @@ ActiveRecord::Schema.define(version: 20160719085714) do
     t.datetime "updated_at",                         null: false
   end
 
+  create_table "mc_batches", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.boolean  "published"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "mc_members", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "position",    limit: 255
@@ -223,7 +230,10 @@ ActiveRecord::Schema.define(version: 20160719085714) do
     t.string   "formalimg",   limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "mc_batch_id", limit: 4
   end
+
+  add_index "mc_members", ["mc_batch_id"], name: "fk_rails_620cdb4165", using: :btree
 
   create_table "mc_wings", force: :cascade do |t|
     t.integer  "wingid",       limit: 4
@@ -290,5 +300,6 @@ ActiveRecord::Schema.define(version: 20160719085714) do
     t.string   "matriculation_year",  limit: 255
   end
 
+  add_foreign_key "mc_members", "mc_batches"
   add_foreign_key "mc_wings", "mc_members"
 end

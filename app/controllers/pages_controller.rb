@@ -12,7 +12,8 @@ class PagesController < ApplicationController
 	end
 
 	def about
-		@members = McMember.order('wingid', 'wingrank', 'cellrank')
+		@mc_batch = McBatch.where(published: true).order(created_at: :desc).first
+		@members = @mc_batch.mc_members.order('wingid', 'wingrank', 'cellrank')
 		@wings = McWing.order('wingid')
 	end
 
