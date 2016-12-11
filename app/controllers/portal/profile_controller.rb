@@ -1,4 +1,4 @@
 class Portal::ProfileController < Portal::BaseController
-	def show
-	end
+  def show
+  end
 end

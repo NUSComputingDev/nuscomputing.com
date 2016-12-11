@@ -36,7 +36,10 @@
     Dear <%= @user.uid %>,
   </p>
   <p>
-    Thank you for submitting your locker ballot. Please confirm the ballot as follows:
+    Your ballot has been successfully rescinded. 
+  </p>
+  <p>
+  If you didn’t make this change or if you believe an unauthorised person has accessed your account, please contact us immediately.
   </p>
 
   <table>
@@ -52,7 +55,7 @@
 
     <tr>
       <td class="attr-name">Preferred Location:</td>
-      <td class="attr-value"><%= @ballot.location %></td>
+      <td class="attr-value"><%= @location %></td>
     </tr>
   </table>
 

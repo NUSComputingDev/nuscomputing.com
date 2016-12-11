@@ -13,14 +13,14 @@ class LockerAllocation < ActiveRecord::Base
       csv << headers
       all.each do |allocation|
         csv << [
-            allocation.user.name,
-            allocation.user.uid,
-            allocation.user.email,
-            allocation.locker.location,
-            allocation.locker.number,
-            allocation.round.acad_year,
-            allocation.status
-            ]
+          allocation.user.name,
+          allocation.user.uid,
+          allocation.user.email,
+          allocation.locker.location,
+          allocation.locker.number,
+          allocation.round.acad_year,
+          allocation.status
+        ]
       end
     end
   end

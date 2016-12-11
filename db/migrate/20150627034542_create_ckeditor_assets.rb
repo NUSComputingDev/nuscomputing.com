@@ -14,13 +14,13 @@ class CreateCkeditorAssets < ActiveRecord::Migration
       t.integer :height
 
       t.timestamps
+      end
+
+      add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+      add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
     end
 
-    add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
-    add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+    def self.down
+      drop_table :ckeditor_assets
+    end
   end
-
-  def self.down
-    drop_table :ckeditor_assets
-  end
-end
