@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
 	def about
 		@mc_batch = McBatch.where(published: true).order(created_at: :desc).first
-		@members = @mc_batch.mc_members.order('wingid', 'wingrank', 'cellrank')
+		@members = @mc_batch.mc_members.order('wingid', 'wingrank', 'cellrank') if @mc_batch
 		@wings = McWing.order('wingid')
 	end
 
