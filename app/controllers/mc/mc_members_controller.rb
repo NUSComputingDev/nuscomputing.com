@@ -2,7 +2,6 @@ class Mc::McMembersController < Mc::BaseController
 	before_action :set_mc_batch
 	before_action :set_mc_member, only: [:show, :edit, :update, :destroy]
 
-
 	def new
 		@mc_member = @mc_batch.mc_members.new
 	end
