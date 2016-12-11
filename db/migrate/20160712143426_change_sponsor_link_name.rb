@@ -1,5 +1,5 @@
 class ChangeSponsorLinkName < ActiveRecord::Migration
   def change
-      rename_column :sponsors, :link, :website
+    rename_column :sponsors, :link, :website
   end
 end

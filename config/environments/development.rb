@@ -20,13 +20,13 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: 'smtp.sendgrid.net',
-      port: 587,
-      domain: 'nuscomputing.com',
-      user_name: Rails.application.secrets.mailer_username,
-      password: Rails.application.secrets.mailer_password,
-      authentication: 'plain',
-      enable_starttls_auto: true
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    domain: 'nuscomputing.com',
+    user_name: Rails.application.secrets.mailer_username,
+    password: Rails.application.secrets.mailer_password,
+    authentication: 'plain',
+    enable_starttls_auto: true
 
   }
 
@@ -52,4 +52,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-end
+  end
