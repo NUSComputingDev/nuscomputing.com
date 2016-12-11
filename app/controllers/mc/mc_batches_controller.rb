@@ -26,10 +26,27 @@ class Mc::McBatchesController < Mc::BaseController
   # POST /mc_batches.json
   def create
     @mc_batch = McBatch.new(mc_batch_params)
+    last_batch = McBatch.where(published: true).order(created_at: :desc).first
 
     respond_to do |format|
       if @mc_batch.save
-        format.html { redirect_to @mc_batch, notice: 'Mc batch was successfully created.' }
+        # copy last created and published mc_batch structure
+        if last_batch
+          mc_members = last_batch.mc_members
+          for m in mc_members
+            @mc_batch.mc_members.create(
+              name: 'To Be Added',
+              position: m.position,
+              wingid: m.wingid,
+              wingrank: m.wingrank,
+              cellrank: m.cellrank,
+              course: 'To Be Added',
+              year: 1,
+              description: 'To Be Added',
+              casualimg: 'http://i.imgur.com/n2Kns6O.jpg')
+          end
+        end
+        format.html { redirect_to @mc_batch, notice: 'MC batch was successfully created.' }
         format.json { render :show, status: :created,
           location: @mc_batch }
       else
@@ -44,7 +61,7 @@ class Mc::McBatchesController < Mc::BaseController
   def update
     respond_to do |format|
       if @mc_batch.update(mc_batch_params)
-        format.html { redirect_to @mc_batch, notice: 'Mc batch was successfully updated.' }
+        format.html { redirect_to @mc_batch, notice: 'MC batch was successfully updated.' }
         format.json { render :show, status: :ok, location: @mc_batch }
       else
         format.html { render :edit }
@@ -58,7 +75,7 @@ class Mc::McBatchesController < Mc::BaseController
   def destroy
     @mc_batch.destroy
     respond_to do |format|
-      format.html { redirect_to mc_batches_url, notice: 'Mc batch was successfully destroyed.' }
+      format.html { redirect_to mc_batches_url, notice: 'MC batch was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
