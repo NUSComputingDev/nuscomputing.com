@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # { role: member }
-{ 
+{
   acad: ['acad', 'dy.acad'],
   ar: ['alumnirelations', 'dy.alumnirelations'],
   finance: ['finance', 'dy.finance'],
@@ -37,7 +37,7 @@ end
 # Locker
 # [A, B, C, D, E, F, G, H]
 # [0, 1, 2, 3, 4, 5, 6, 7]
-{ 
+{
   0 => ["3137-3168", "3173-3208", "3529-3532"],
   1 => ["3065-3136", "3473-3504", "3413-3472", "3372-3412"],
   2 => ["3209-3280"],
@@ -516,9 +516,9 @@ mcwings = McWing.create(
   ]
 );
 
+mcbatch = McBatch.create(name: "18th Management Committee", published: true)
 
-
-mcmembers = McMember.create(
+mcmembers = mcbatch.mc_members.create(
   [
     {
       name: "Tan Yongming",
