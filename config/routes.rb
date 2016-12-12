@@ -50,8 +50,7 @@ Rails.application.routes.draw do
         resources :sponsors
 
         # people
-        namespace :people, path: 'people' do
-          get '/', to: '/mc/people#index'
+        resources :mc_batches, path: 'people', as: 'batches' do
           resources :mc_members, path: 'members'
         end
 

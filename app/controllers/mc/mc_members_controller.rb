@@ -1,19 +1,20 @@
-class Mc::People::McMembersController < Mc::BaseController
+class Mc::McMembersController < Mc::BaseController
+  before_action :set_mc_batch
   before_action :set_mc_member, only: [:show, :edit, :update, :destroy]
 
   def new
-    @mc_member = McMember.new
+    @mc_member = @mc_batch.mc_members.new
   end
 
   def show
   end
 
   def create
-    @mc_member = McMember.new mc_member_params
+    @mc_member = @mc_batch.mc_members.new(mc_member_params)
 
     respond_to do |format|
       if @mc_member.save
-        format.html { redirect_to mc_people_path, notice: 'New MC member added' }
+        format.html { redirect_to mc_batch_path(@mc_batch), notice: 'New MC member added' }
         format.json { render json: @mc_member, status: :created, location: @mc_member }
         format.js {}
       else
@@ -37,7 +38,7 @@ class Mc::People::McMembersController < Mc::BaseController
   def destroy
     respond_to do |format|
       if @mc_member.destroy
-        format.html { redirect_to mc_people_path, notice: 'MC Member successfully deleted' }
+        format.html { redirect_to mc_batch_path(@mc_batch), notice: 'MC Member successfully deleted' }
         format.js {}
       else
         format.html { redirect_to :back, notice: 'Cannot delete' }
@@ -47,8 +48,12 @@ class Mc::People::McMembersController < Mc::BaseController
 
   private
 
+  def set_mc_batch
+    @mc_batch = McBatch.find(params[:batch_id])
+  end
+
   def set_mc_member
-    @mc_member = McMember.find(params[:id])
+    @mc_member = @mc_batch.mc_members.find(params[:id])
   end
 
   def mc_member_params

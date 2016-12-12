@@ -1,16 +1,22 @@
 <div class="row">
 
   <div class="small-12 columns">
-    <h3 class="bold">People of the MC</h3>
+    <h3 class="bold"><%= @mc_batch.name %></h3>
+
     <p>
-      Edit the details of the people of MC. This will be shown on the about page on the main website.
+      Edit the details of the members of the <%= @mc_batch.name %>. This will be shown on the about page on the main website.
     </p>
     <p>
       An person must have a name, an image link to the casual photo, an optional image link to the formal photo, and a write-up.
       Each image link must be a direct link to the image, i.e. the link should end with ".jpg" or similar.
       Image dimensions must follow <strong>length = 1.5x of width</strong>, otherwise it may not show up nicely on the website.
     </p>
-    <%= link_to new_mc_people_mc_member_path, class: 'radius button success' do %>
+    <p>
+      This page is currently <%unless @mc_batch.published%>not <%end%>published.
+    </p>
+    <%= link_to 'Edit', edit_mc_batch_path(@mc_batch), class: 'radius button' %>
+    <%= link_to 'Back', mc_batches_path, class: 'radius button info' %>
+    <%= link_to new_mc_batch_mc_member_path(@mc_batch), class: 'radius button success' do %>
       <%= fa_icon 'plus', text: 'Add MC Member', right: true %>
     <% end %>
   </div>
@@ -20,7 +26,7 @@
   <div class="columns small-12">
     <h3 class="bold">MC Members</h3><h6 class="subheader"><%= @mc_members.count %> members</h6>
     <p>
-      Showing all MC members.
+      Showing all MC members in <%= @mc_batch.name %>.
     </p>
     <table width="100%">
       <thead>
@@ -45,8 +51,8 @@
           <td><%= member.position %></td>
           <td>
             <ul class="button-group stack radius">
-              <li><%= link_to 'View', mc_people_mc_member_path(member), class: 'button info small expand' %></li>
-              <li><%= link_to 'Edit', edit_mc_people_mc_member_path(member), class: 'button small expand' %></li>
+              <li><%= link_to 'View', mc_batch_mc_member_path(@mc_batch, member), class: 'button info small expand' %></li>
+              <li><%= link_to 'Edit', edit_mc_batch_mc_member_path(@mc_batch, member), class: 'button small expand' %></li>
             </ul>
           </td>
         </tr>
@@ -56,4 +62,3 @@
   </div>
 
 </div>
-
