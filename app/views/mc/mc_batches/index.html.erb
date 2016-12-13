@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h3 class="bold">People of the MC</h3>
+    <p>
+      View the individual batch for more details of the members in the batch. The batches will be ordered in descending order of their created dates. The most recently created  and published batch will appear on the main page of the About page.
+    </p>
+    <%= link_to new_mc_batch_path, class: 'radius button success' do %>
+      <%= fa_icon 'plus', text: 'Add Batch', right: true %>
+    <% end %>
+  </div>
+  <div class="columns small-12">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Published</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @mc_batches.each do |mc_batch| %>
+          <tr>
+            <td><%= mc_batch.name %></td>
+            <td><%= mc_batch.published %></td>
+            <td>
+              <ul class="button-group stack radius">
+                <li><%= link_to 'View', mc_batch, class: 'button info small expand' %></li>
+                <li><%= link_to 'Edit', edit_mc_batch_path(mc_batch), class: 'button small expand success' %></li>
+                <li><%= link_to 'Delete', mc_batch, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert small expand' %></li>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class McMember < ActiveRecord::Base
   belongs_to :mc_wing, class_name: 'McWing', foreign_key: 'wingid'
+  belongs_to :mc_batch
 
   validates :name, :position, :wingid, :wingrank, :cellrank, :course, :year, :description, :casualimg, presence: true
 

@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :lockers, through: :locker_allocations
 
   def current_locker
-		locker_allocations.active.first.locker if locker_allocations.active.first
+    locker_allocations.active.first.locker if locker_allocations.active.first
   end
 
   def uid_and_name
@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-			# Adding extra information here from the hash returned by Omniauth:IVLE
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      # Adding extra information here from the hash returned by Omniauth:IVLE
       user.email = auth.info['email']
       user.name = auth.extra['profile']['Name']
       user.faculty = auth.extra['profile']['Faculty']
@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
       user.second_major = auth.extra['profile']['SecondMajor']
       user.gender = auth.extra['profile']['Gender']
       user.matriculation_year = auth.extra['profile']['MatriculationYear']
-		end
-	end
+    end
+  end
 end

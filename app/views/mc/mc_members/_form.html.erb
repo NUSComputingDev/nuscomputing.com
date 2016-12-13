@@ -1,4 +1,4 @@
-<%= simple_form_for [:mc, :people, @mc_member] do |f| %>
+<%= simple_form_for(@mc_member, url: (@mc_member.id && [@mc_batch, @mc_member]) || mc_batch_mc_members_path(@mc_batch) ) do |f| %>
   <%= f.input :name %>
   <%= f.input :position %>
   <%= f.association :mc_wing, label: 'Wing', label_method: :wingname, value_method: :wingid, include_blank: false %>

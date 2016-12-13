@@ -5,5 +5,5 @@ class AddImageToItems < ActiveRecord::Migration
 
   def down
     remove_attachment :items, :image
-	end
+  end
 end

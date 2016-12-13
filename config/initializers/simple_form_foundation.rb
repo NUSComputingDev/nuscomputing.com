@@ -70,38 +70,38 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.use :label, class: 'hidden-for-small-up'
-    b.use :input
+                                   b.use :input
 
-    b.use :error, wrap_with: { tag: :small, class: :error }
-    # b.use :hint,  wrap_with: { tag: :span, class: :hint }
-  end
-
-  # Examples of use:
-  # - wrapper_html: {class: 'row'}, custom_wrapper_html: {class: 'column small-12'}
-  # - custom_wrapper_html: {class: 'column small-3 end'}
-  config.wrappers :customizable_wrapper, tag: 'div', error_class: :error do |b|
-    b.use :html5
-    b.optional :readonly
-
-    b.wrapper :custom_wrapper, tag: :div do |ba|
-      ba.use :label_input
+                                   b.use :error, wrap_with: { tag: :small, class: :error }
+                                   # b.use :hint,  wrap_with: { tag: :span, class: :hint }
     end
 
-    b.use :error, wrap_with: { tag: :small, class: :error }
-    # b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    # Examples of use:
+    # - wrapper_html: {class: 'row'}, custom_wrapper_html: {class: 'column small-12'}
+    # - custom_wrapper_html: {class: 'column small-3 end'}
+    config.wrappers :customizable_wrapper, tag: 'div', error_class: :error do |b|
+      b.use :html5
+      b.optional :readonly
+
+      b.wrapper :custom_wrapper, tag: :div do |ba|
+        ba.use :label_input
+      end
+
+      b.use :error, wrap_with: { tag: :small, class: :error }
+      # b.use :hint,  wrap_with: { tag: :span, class: :hint }
+    end
+
+    # CSS class for buttons
+    config.button_class = 'button'
+
+    # Set this to div to make the checkbox and radio properly work
+    # otherwise simple_form adds a label tag instead of a div arround
+    # the nested label
+    config.item_wrapper_tag = :div
+
+    # CSS class to add for error notification helper.
+    config.error_notification_class = 'alert-box alert'
+
+    # The default wrapper to be used by the FormBuilder.
+    config.default_wrapper = :vertical_form
   end
-
-  # CSS class for buttons
-  config.button_class = 'button'
-
-  # Set this to div to make the checkbox and radio properly work
-  # otherwise simple_form adds a label tag instead of a div arround
-  # the nested label
-  config.item_wrapper_tag = :div
-
-  # CSS class to add for error notification helper.
-  config.error_notification_class = 'alert-box alert'
-
-  # The default wrapper to be used by the FormBuilder.
-  config.default_wrapper = :vertical_form
-end
