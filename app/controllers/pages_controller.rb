@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   end
 
   def sponsors
-    @sponsors = Sponsor.all
+    @sponsors = Sponsor.all.where(featured: true)
   end
 
   def connect
