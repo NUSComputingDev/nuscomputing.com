@@ -1,27 +1,25 @@
 <div class="row">
   <div class="small-12 columns">
-    <h3 class="bold">People of the MC</h3>
-    <p>
-      View the individual batch for more details of the members in the batch. The batches will be ordered in descending order of their created dates. The most recently created  and published batch will appear on the main page of the About page.
-    </p>
-    <%= link_to new_mc_batch_path, class: 'radius button success' do %>
-      <%= fa_icon 'plus', text: 'Add Batch', right: true %>
-    <% end %>
+    <h3 class="bold">Sponsor Kit Downloaders</h3>
   </div>
   <div class="columns small-12">
     <table width="100%">
       <thead>
         <tr>
           <th>Name</th>
-          <th>Published</th>
-          <th colspan="1"></th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Organisation</th>
         </tr>
       </thead>
 
       <tbody>
-        <% @downloaders.each do |mc_batch| %>
+        <% @downloaders.each do |downloader| %>
           <tr>
-            <td><%= mc_batch.name %></td>
+            <td><%= downloader.name %></td>
+            <td><%= downloader.phone %></td>
+            <td><%= downloader.email %></td>
+            <td><%= downloader.organisation %></td>
           </tr>
         <% end %>
       </tbody>
