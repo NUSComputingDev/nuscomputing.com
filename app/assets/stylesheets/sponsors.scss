@@ -2,6 +2,41 @@
   background-color: white;
 }
 
-form#test-form.white-popup-block {
-	background-color: white;
+/*http://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/*/
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
 }
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  background-color: white;
+  position: relative;
+  top: 10%;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.close:hover { background: #00d9ff; }

@@ -8,16 +8,23 @@
       Please contact us at <a href="mailto:connect@nuscomputing.com">connect@nuscomputing.com</a> if you would like to be a supporter for our future events!
     </p>
     <p>
-      <h3>Download our sponsor kit</h3>
-      <%= simple_form_for(@downloader, url: create_downloader_path(@downloader)) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :phone %>
-        <%= f.input :email %>
-        <%= f.input :organisation %>
-        <%= f.button :submit, "Download" %>
-      <% end %>
-      <!-- Insert PDPA -->
+      Download our sponsor kit <a href="#form">here</a>.
     </p>
+
+    <div id="form" class="modalDialog">
+      <div class="small-10 medium-8 medium-centered large-8 large-centered columns">
+        <a href="#close" class="button small close">X</a>
+        <h3>Download our sponsor kit</h3>
+        <%= simple_form_for(@downloader, url: create_downloader_path(@downloader)) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :phone %>
+          <%= f.input :email %>
+          <%= f.input :organisation %>
+          <%= f.button :submit, "Download" %>
+        <% end %>
+        <!-- Insert PDPA -->
+      </div>
+    </div>
   </div>
 </div>
 
