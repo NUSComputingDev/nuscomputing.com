@@ -8,10 +8,15 @@
       Please contact us at <a href="mailto:connect@nuscomputing.com">connect@nuscomputing.com</a> if you would like to be a supporter for our future events!
     </p>
     <p>
-      More information regarding sponsorship opportunities can be found in our sponsor kit 
-      <a href="/downloads/sponsors/NUS CompClub Sponsor Kit 2017.pdf" download>
-        here.
-      </a>
+      <h3>Download our sponsor kit</h3>
+      <%= simple_form_for(@downloader, url: create_downloader_path(@downloader)) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :phone %>
+        <%= f.input :email %>
+        <%= f.input :organisation %>
+        <%= f.button :submit, "Download" %>
+      <% end %>
+      <!-- Insert PDPA -->
     </p>
   </div>
 </div>

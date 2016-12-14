@@ -27,6 +27,9 @@ Rails.application.routes.draw do
         # blog
         resources :articles, path: 'blog'
 
+        # downloaders
+        get 'downloaders', to: 'downloaders#index', as: 'downloaders'
+
         # enquiries
         get 'enquiries', to: 'enquiries#index', as: 'enquiries'
 
@@ -149,6 +152,9 @@ Rails.application.routes.draw do
 
     # for receiving enquiry form
     post '/connect', to: 'pages#enquiry', as: 'enquiry'
+
+    # for receiving sponsor downloader form
+    post 'download', to: 'mc/downloaders#create', as: 'create_downloader'
   end
 
   # main root

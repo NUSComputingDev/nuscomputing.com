@@ -31,6 +31,7 @@ class PagesController < ApplicationController
 
   def sponsors
     @sponsors = Sponsor.all.where(featured: true)
+    @downloader = Downloader.new
   end
 
   def connect
@@ -61,4 +62,5 @@ class PagesController < ApplicationController
   def enquiry_params
     params.require(:enquiry).permit(:name, :email, :contact, :message)
   end
+
 end
