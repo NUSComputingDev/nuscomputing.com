@@ -154,7 +154,8 @@ Rails.application.routes.draw do
     post '/connect', to: 'pages#enquiry', as: 'enquiry'
 
     # for receiving sponsor downloader form
-    post 'download', to: 'mc/downloaders#create', as: 'create_downloader'
+    post 'download', to: 'pages#createDownloader', as: 'create_downloader'
+
   end
 
   # main root

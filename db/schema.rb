@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 20161213085116) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "downloaders", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.string   "phone",        limit: 255
-    t.string   "email",        limit: 255
-    t.string   "organisation", limit: 255
+    t.string   "name",         limit: 255, null: false
+    t.string   "phone",        limit: 255, null: false
+    t.string   "email",        limit: 255, null: false
+    t.string   "organisation", limit: 255, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
