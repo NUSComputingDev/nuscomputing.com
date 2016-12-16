@@ -107,6 +107,7 @@ Rails.application.routes.draw do
 
     root 'portal/base#home', as: 'portal_root'
     get '/login', to: 'portal/base#login', as: 'portal_login'
+    get '/merchandise', to: 'portal/base#merchandise', as: 'portal_merchandise'
 
     authenticate :user do
       scope module: 'portal', as: 'portal' do
