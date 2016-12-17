@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var currPath = location.pathname;
 	setInterval(function () {
 		if (currPath != location.pathname) {
-			if (location.pathname.indexOf(currPath) == -1) $.magnificPopup.close();
+			if (location.pathname.indexOf('/events') == -1) $.magnificPopup.close();
 			// update pathname
 			currPath = location.pathname;
 		}
@@ -36,12 +36,12 @@ $(document).ready(function() {
 			}
 		}
 	});
-	
+
 	// actions for open popup via Home page
 	// disable link after "click"
-	$('.popup-instant').on("click", function () { 
-		$(this).unbind("click"); 
-		$(this).removeAttr("href"); 
+	$('.popup-instant').on("click", function () {
+		$(this).unbind("click");
+		$(this).removeAttr("href");
 	});
 	// simulate click for popup window to appear
 	$('.popup-instant').trigger("click");
