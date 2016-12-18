@@ -46,6 +46,9 @@ Rails.application.routes.draw do
         # events
         resources :events
 
+        # merchandise
+        resources :products
+
         # sponsors
         resources :sponsors
 
