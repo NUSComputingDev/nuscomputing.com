@@ -1,2 +1,27 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/mc/products/show.html.erb</p>
+<div class="row">
+
+  <div class="large-12 columns">
+    <h3 class="bold">View Product</h3>
+  </div>
+
+  <div class="large-12 columns">
+    <%= render 'product' %>
+    <br>
+  </div>
+
+  <div class="large-12 columns">
+    <ul class="button-group radius">
+      <li><%= link_to 'Back', mc_products_path, class: 'button small info' %></li>
+      <li><%= link_to 'Edit', edit_mc_product_path, class: 'button small success' %></li>
+      <li>
+        <%= link_to 'Delete',
+                    mc_product_path,
+                    class: 'button small alert',
+                    method: :delete,
+                    data: { confirm: "Deleting \"#{@product.name}\". Are you sure?" }
+        %>
+      </li>
+    </ul>
+  </div>
+
+</div>
