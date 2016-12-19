@@ -1,2 +1,76 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/mc/products/index.html.erb</p>
+<div class="row">
+
+  <div class="small-12 columns">
+    <h3 class="bold">Product Management</h3>
+    <p>
+      Simple interface to create, update and remove products. Products will be shown on the student portal under the products page.
+    </p>
+    <p>
+      A product must have a name, image link(s), description, price, description, options (e.g. colour, size, other customisations etc.), price, and stock.
+      The image link must be a direct link to the image, i.e. the link should end with ".jpg" or similar.
+    </p>
+    <%= link_to new_mc_product_path, class: 'radius button success' do %>
+      <%= fa_icon 'plus', text: 'Add Product', right: true %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div class="columns small-12">
+    <h3 class="bold">All Products</h3><h6 class="subheader"><%= @products.count %> products</h6>
+    <p>
+      Showing all products.
+    </p>
+    <table width="100%">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Images</th>
+        <th>Description</th>
+        <th>Options</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Orders</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+        <td><%= product.name %></td>
+        <td>
+          <ul>
+          <% product.images.each do |image| %>
+            <li><%= image %></li>
+          <% end %>
+          </ul>
+        </td>
+        <td><%= product.description %></td>
+        <td><%= product.options %></td>
+        <td>SGD <%= product.price %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.orders %></td>
+        <td>
+          <ul class="button-group stack radius">
+            <li>
+              <%= link_to 'View', mc_product_path(product), class: 'button info small expand' %>
+            </li>
+            <li>
+              <%= link_to 'Edit', edit_mc_product_path(product), class: 'button small expand' %>
+            </li>
+            <li>
+              <%= link_to 'Delete',
+                    mc_products_path,
+                    class: 'button small alert',
+                    method: :delete,
+                    data: { confirm: "Deleting \"#{product.name}\". Are you sure?" }
+              %>
+            </li>
+          </ul>
+        </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

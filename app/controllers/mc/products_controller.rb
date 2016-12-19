@@ -1,4 +1,4 @@
-class Mc::ProductsController < ApplicationController
+class Mc::ProductsController < Mc::BaseController
   before_action :get_product, only: [:show, :edit, :update, :destroy]
 
   def index
