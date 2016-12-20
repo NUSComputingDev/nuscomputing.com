@@ -14,7 +14,8 @@ gem 'rqrcode'
 gem 'kaminari'
 gem 'resque', require: "resque/server"
 gem 'resque-scheduler'
-gem 'mysql'
+gem 'mysql2', '~> 0.3.13'
+#gem 'activerecord-mysql2-adapter'
 
 gem 'active_link_to'
 
@@ -33,7 +34,7 @@ gem 'foundation-icons-sass-rails'
 gem 'omniauth-ivle'
 gem 'omniauth-google-oauth2'
 
-gem 'rails', '4.2.3'
+gem 'rails'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
