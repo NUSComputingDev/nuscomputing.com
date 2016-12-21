@@ -1,8 +1,10 @@
 <%= simple_form_for [:mc, @sponsor] do |f| %>
   <%= f.input :name, label: 'Sponsor Name' %>
-  <%= f.input :img, label: 'Logo Image URL (e.g. http://imgur.com/iP43yT.jpg)' %>
+  <%= f.input :img, label: 'Logo Image URL (e.g. https://imgur.com/iP43yT.jpg)',
+    input_html: { value: f.object.img || 'https://' } %>
   <!-- The field "website" was previously "link" -->
-  <%= f.input :website, label: 'Sponsor Website URL (include "http://")', input_html: {value: f.object.website || 'http://'} %>
+  <%= f.input :website, label: 'Sponsor Website URL (include "https://")',
+    input_html: { value: f.object.website || 'https://' } %>
   <%= f.input :description %>
   <%= f.input :featured %>
   <br>
