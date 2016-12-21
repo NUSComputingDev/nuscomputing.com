@@ -1,6 +1,6 @@
 class LockerRound < ActiveRecord::Base
-  has_many :ballots, class_name: "LockerBallot"
-  has_many :allocations, class_name: "LockerAllocation"
+  has_many :ballots, class_name: "LockerBallot", dependent: :restrict_with_error
+  has_many :allocations, class_name: "LockerAllocation", dependent: :restrict_with_error
 
   enum kind: [:ballot]
   scope :active_at, -> (time) { where('start <= ? and end > ?', time, time) }
