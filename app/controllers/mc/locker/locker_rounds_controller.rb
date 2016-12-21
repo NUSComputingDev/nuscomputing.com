@@ -50,7 +50,11 @@ class Mc::Locker::LockerRoundsController < Mc::BaseController
         format.html { redirect_to mc_locker_locker_rounds_path, notice: "Round successfully destroyed" }
         format.js {}
       else
-        format.html { redirect_to :back, notice: "Cannot destroy" }
+        if @round.errors.any?
+          format.html{ redirect_to :back, notice: "Cannot destroy. #{@round.errors.full_messages.first}" }
+        else 
+          format.html { redirect_to :back, notice: "Cannot destroy" }
+        end
       end
     end
   end
