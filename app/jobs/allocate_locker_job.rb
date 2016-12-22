@@ -18,6 +18,8 @@ class AllocateLockerJob < ActiveJob::Base
           locker = lockers[ballot.location].shift
           allocation = LockerAllocation.new(user_id: ballot.user.id, locker_id: locker.id, locker_round_id: round.id, status: :active)
           if allocation.save
+            ballot.success = true
+            ballot.save
             locker.update status: :occupied
             allocated_users[ballot.user] = allocation
           end
