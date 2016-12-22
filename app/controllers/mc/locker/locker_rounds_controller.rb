@@ -51,9 +51,9 @@ class Mc::Locker::LockerRoundsController < Mc::BaseController
         format.js {}
       else
         if @round.errors.any?
-          format.html{ redirect_to :back, notice: "Cannot destroy. #{@round.errors.full_messages.first}" }
+          format.html { redirect_to :back, notice: "Cannot destroy. #{@round.errors.full_messages.first}" }
         else 
-          format.html { redirect_to :back, notice: "Cannot destroy" }
+          format.html { redirect_to :back, notice: "Cannot destroy due to unknown reason." }
         end
       end
     end
