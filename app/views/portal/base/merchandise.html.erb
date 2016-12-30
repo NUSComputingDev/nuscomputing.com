@@ -1,0 +1,33 @@
+<div class="row white">
+  <div class="medium-12 large-12 columns">
+    <h3 class="bold">Our Products</h3>
+    <p>
+    </p>
+  </div>
+</div>
+
+<div class="row white">
+  <div class="small-12 medium-12 large-12 columns">
+    <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+      <li>
+        <ul>
+        <% product.images.each do |image| %>
+          <li><%= image %></li>
+        <% end %>
+        </ul>
+      </li>
+      <li><%= product.description %></li>
+      <li><%= product.options %></li>
+      <li>SGD <%= product.price %></li>
+      <li><%= product.stock %></li>
+    <% end %>
+    </ul>
+    <% if user_signed_in? %>
+      <%= link_to 'Reserve me!', '/merchandise', class: 'button round info' %>
+    <% else %>
+      <%= link_to 'Login to reserve me!', '/login', class: 'button round info' %>
+    <% end %>
+  </div>
+</div>
