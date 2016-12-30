@@ -13,6 +13,7 @@ class Portal::Locker::LockerBallotsController < Portal::BaseController
   def create
     @ballot = LockerBallot.new ballot_params	
     @ballot.user_id = current_user.id
+    @ballot.success = false
 
     respond_to do |format|
       if DateTime.now <= @ballot.round.end && @ballot.save

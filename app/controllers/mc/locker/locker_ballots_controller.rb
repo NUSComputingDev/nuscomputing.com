@@ -29,6 +29,7 @@ class Mc::Locker::LockerBallotsController < Mc::BaseController
 
   def create
     @ballot = LockerBallot.new ballot_params
+    @ballot.success = false
 
     respond_to do |format|
       if @ballot.save
