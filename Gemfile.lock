@@ -150,6 +150,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustache (0.99.8)
+    mysql (2.9.1)
     mysql2 (0.3.21)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -319,6 +320,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   kaminari
+  mysql
   mysql2 (~> 0.3.13)
   omniauth-google-oauth2
   omniauth-ivle

@@ -15,6 +15,7 @@ gem 'kaminari'
 gem 'resque', require: "resque/server"
 gem 'resque-scheduler'
 gem 'mysql2', '~> 0.3.13'
+gem 'mysql'
 #gem 'activerecord-mysql2-adapter'
 
 gem 'active_link_to'

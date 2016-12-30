@@ -7,6 +7,7 @@ $(document).ready(function() {
 		if (currPath != location.pathname) {
 			if (location.pathname.indexOf('/events') == -1) $.magnificPopup.close();
 			// update pathname
+			$('.popup-link').trigger("click");
 			currPath = location.pathname;
 		}
 	}, 1000);
