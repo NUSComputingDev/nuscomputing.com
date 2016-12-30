@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208193241) do
+ActiveRecord::Schema.define(version: 20161215153144) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 20161208193241) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "downloaders", force: :cascade do |t|
+    t.string   "name",         limit: 255, null: false
+    t.string   "phone",        limit: 255, null: false
+    t.string   "email",        limit: 255, null: false
+    t.string   "organisation", limit: 255, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "enquiries", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -210,38 +219,38 @@ ActiveRecord::Schema.define(version: 20161208193241) do
     t.datetime "updated_at",                         null: false
   end
 
-    create_table "mc_batches", force: :cascade do |t|
-      t.string   "name",       limit: 255, null: false
-      t.boolean  "published"
-      t.datetime "created_at",             null: false
-      t.datetime "updated_at",             null: false
-    end
+  create_table "mc_batches", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.boolean  "published"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
-    create_table "mc_members", force: :cascade do |t|
-      t.string   "name",        limit: 255
-      t.string   "position",    limit: 255
-      t.integer  "wingid",      limit: 4
-      t.integer  "wingrank",    limit: 4
-      t.integer  "cellrank",    limit: 4
-      t.string   "course",      limit: 255
-      t.integer  "year",        limit: 4
-      t.text     "description", limit: 65535
-      t.string   "casualimg",   limit: 255
-      t.string   "formalimg",   limit: 255
-      t.datetime "created_at",                null: false
-      t.datetime "updated_at",                null: false
-      t.integer  "mc_batch_id", limit: 4
-    end
+  create_table "mc_members", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "position",    limit: 255
+    t.integer  "wingid",      limit: 4
+    t.integer  "wingrank",    limit: 4
+    t.integer  "cellrank",    limit: 4
+    t.string   "course",      limit: 255
+    t.integer  "year",        limit: 4
+    t.text     "description", limit: 65535
+    t.string   "casualimg",   limit: 255
+    t.string   "formalimg",   limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "mc_batch_id", limit: 4
+  end
 
-    add_index "mc_members", ["mc_batch_id"], name: "fk_rails_620cdb4165", using: :btree
+  add_index "mc_members", ["mc_batch_id"], name: "fk_rails_620cdb4165", using: :btree
 
-    create_table "mc_wings", force: :cascade do |t|
-      t.integer  "wingid",       limit: 4
-      t.string   "wingname",     limit: 255
-      t.datetime "created_at",               null: false
-      t.datetime "updated_at",               null: false
-      t.integer  "mc_member_id", limit: 4
-    end
+  create_table "mc_wings", force: :cascade do |t|
+    t.integer  "wingid",       limit: 4
+    t.string   "wingname",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "mc_member_id", limit: 4
+  end
 
   add_index "mc_wings", ["mc_member_id"], name: "index_mc_wings_on_mc_member_id", using: :btree
 
@@ -275,9 +284,9 @@ ActiveRecord::Schema.define(version: 20161208193241) do
     t.string   "website",     limit: 255
     t.string   "img",         limit: 255
     t.text     "description", limit: 65535
-    t.boolean  "featured"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.boolean  "featured",                  default: true
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "users", force: :cascade do |t|

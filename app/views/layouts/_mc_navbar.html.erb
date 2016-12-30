@@ -15,6 +15,7 @@
         <% if member_signed_in? %>
           <%= active_link_to 'Home', mc_root_path, :wrap_tag => :li, :active => :exclusive %>
           <%= active_link_to 'Enquiries', mc_enquiries_path, :wrap_tag => :li %>
+          <%= active_link_to 'Downloaders', mc_downloaders_path, :wrap_tag => :li %>
           <%= active_link_to 'Blog', mc_articles_path, :wrap_tag => :li %>
           <%= active_link_to 'People', mc_batches_path, :wrap_tag => :li %>
           <%= active_link_to 'Events', mc_events_path, :wrap_tag => :li %>

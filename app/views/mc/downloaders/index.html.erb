@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="small-12 columns">
+    <h3 class="bold">Sponsor Kit Downloaders</h3>
+  </div>
+  <div class="columns small-12">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Organisation</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @downloaders.each do |downloader| %>
+          <tr>
+            <td><%= downloader.name %></td>
+            <td><%= downloader.phone %></td>
+            <td><%= downloader.email %></td>
+            <td><%= downloader.organisation %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

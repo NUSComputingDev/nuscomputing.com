@@ -31,6 +31,19 @@ class PagesController < ApplicationController
 
   def sponsors
     @sponsors = Sponsor.all.where(featured: true)
+    @downloader = Downloader.new
+  end
+
+  def createDownloader
+    @downloader = Downloader.new(downloader_params)
+    if @downloader.save
+      file = open("public/downloads/sponsors/NUS CompClub Sponsor Kit 2017.pdf")
+      send_file(file, :filename => "NUS CompClub Sponsor Kit 2017.pdf",
+        :type => "application/pdf")
+    else
+      @sponsors = Sponsor.all.where(featured: true)
+      render 'sponsors'
+    end
   end
 
   def connect
@@ -61,4 +74,9 @@ class PagesController < ApplicationController
   def enquiry_params
     params.require(:enquiry).permit(:name, :email, :contact, :message)
   end
+
+  def downloader_params
+    params.require(:downloader).permit(:name, :phone, :email, :organisation)
+  end
+
 end
